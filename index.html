@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPS RUNNER | 志水直樹 Naoki Shimizu - プロフィール</title>
+  <meta name="description" content="GPSランナー志水直樹。世界初の職業『GPSランナー』として世界12ヵ国を駆け巡り、約1,500作品・総距離15,000kmのGPSアートを制作。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --yellow: #FFE500;
+      --yellow-light: #FFF176;
+      --black: #0A0A0A;
+      --dark: #141414;
+      --gray-900: #1A1A1A;
+      --gray-800: #2A2A2A;
+      --gray-700: #3A3A3A;
+      --gray-400: #999;
+      --gray-300: #BBB;
+      --white: #FAFAFA;
+      --font-en: 'Inter', sans-serif;
+      --font-ja: 'Noto Sans JP', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 18px;
+    }
+
+    body {
+      font-family: var(--font-ja);
+      background: var(--black);
+      color: var(--white);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 0 2rem;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255, 229, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    header.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      border-bottom-color: rgba(255, 229, 0, 0.3);
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--white);
+    }
+
+    .logo-mark {
+      width: 40px;
+      height: 40px;
+      background: var(--yellow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-weight: 900;
+      font-size: 0.75rem;
+      color: var(--black);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .logo-text {
+      font-family: var(--font-en);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+    }
+
+    .logo-text span {
+      color: var(--yellow);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+      font-family: var(--font-en);
+    }
+
+    nav a:hover {
+      color: var(--yellow);
+    }
+
+    .nav-cta {
+      background: var(--yellow);
+      color: var(--black) !important;
+      padding: 0.5rem 1.25rem;
+      border-radius: 100px;
+      font-weight: 600 !important;
+      transition: transform 0.3s, box-shadow 0.3s !important;
+    }
+
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(255, 229, 0, 0.3);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+    }
+
+    .hamburger span {
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      transition: all 0.3s;
+      display: block;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 72px 2rem 0;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -30%;
+      width: 80vw;
+      height: 80vw;
+      background: radial-gradient(circle, rgba(255, 229, 0, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 200px;
+      background: linear-gradient(to top, var(--black), transparent);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 229, 0, 0.1);
+      border: 1px solid rgba(255, 229, 0, 0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--yellow);
+      margin-bottom: 1.5rem;
+      font-family: var(--font-en);
+    }
+
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 0.5rem;
+      font-family: var(--font-en);
+      letter-spacing: -0.02em;
+    }
+
+    .hero h1 span {
+      color: var(--yellow);
+      display: block;
+    }
+
+    .hero-name-ja {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--gray-400);
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-description {
+      font-size: 1.05rem;
+      color: var(--gray-300);
+      line-height: 2;
+      margin-bottom: 2rem;
+      max-width: 520px;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat {
+      text-align: left;
+    }
+
+    .stat-number {
+      font-family: var(--font-en);
+      font-size: clamp(1.8rem, 3vw, 2.5rem);
+      font-weight: 800;
+      color: var(--yellow);
+      line-height: 1.2;
+    }
+
+    .stat-number small {
+      font-size: 0.5em;
+      font-weight: 500;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+      margin-top: 0.25rem;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.85rem 2rem;
+      border-radius: 100px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--black);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(255, 229, 0, 0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid var(--gray-700);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      aspect-ratio: 4/5;
+      border-radius: 24px;
+      overflow: hidden;
+      border: 2px solid var(--gray-800);
+    }
+
+    .hero-image-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 2rem;
+      background: linear-gradient(to top, rgba(10,10,10,0.95), transparent);
+    }
+
+    .hero-image-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: var(--font-en);
+      letter-spacing: 0.05em;
+    }
+
+    /* ===== SECTION COMMON ===== */
+    section {
+      padding: 6rem 2rem;
+      position: relative;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--yellow);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 800;
+      line-height: 1.3;
+      margin-bottom: 1rem;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--gray-400);
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .section-header {
+      margin-bottom: 3.5rem;
+    }
+
+    /* ===== HIGHLIGHTS (メディア出演) ===== */
+    .highlights {
+      background: var(--dark);
+    }
+
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .highlight-card {
+      background: var(--gray-900);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--gray-800);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .highlight-card:hover {
+      border-color: var(--yellow);
+      transform: translateY(-4px);
+    }
+
+    .highlight-card-video {
+      aspect-ratio: 16/9;
+      width: 100%;
+    }
+
+    .highlight-card-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .highlight-card-body {
+      padding: 1.5rem;
+    }
+
+    .highlight-year {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--yellow);
+      letter-spacing: 0.1em;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 0.5rem 0;
+      line-height: 1.5;
+    }
+
+    .highlight-card p {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      line-height: 1.7;
+    }
+
+    /* ===== ABOUT (経歴) ===== */
+    .about {
+      background: var(--black);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+
+    .about-text {
+      font-size: 1rem;
+      color: var(--gray-300);
+      line-height: 2;
+    }
+
+    .about-text p + p {
+      margin-top: 1.5rem;
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--yellow), var(--gray-800));
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 1.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2rem;
+      top: 0.5rem;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--yellow);
+      border: 2px solid var(--black);
+      transform: translateX(-4px);
+    }
+
+    .timeline-year {
+      font-family: var(--font-en);
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--yellow);
+    }
+
+    .timeline-text {
+      font-size: 0.9rem;
+      color: var(--gray-300);
+      margin-top: 0.15rem;
+    }
+
+    /* ===== ACTIVITIES ===== */
+    .activities {
+      background: var(--dark);
+    }
+
+    .activities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .activity-card {
+      background: var(--gray-900);
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid var(--gray-800);
+      transition: border-color 0.3s, transform 0.3s;
+    }
+
+    .activity-card:hover {
+      border-color: rgba(255, 229, 0, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .activity-card-video {
+      aspect-ratio: 16/9;
+    }
+
+    .activity-card-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .activity-card-body {
+      padding: 1.25rem;
+    }
+
+    .activity-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    .activity-card p {
+      font-size: 0.8rem;
+      color: var(--gray-400);
+    }
+
+    /* ===== EVENTS ===== */
+    .events {
+      background: var(--black);
+    }
+
+    .events-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .event-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 2rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--gray-800);
+      transition: all 0.3s;
+      align-items: start;
+    }
+
+    .event-item:hover {
+      padding-left: 1rem;
+      border-bottom-color: rgba(255, 229, 0, 0.3);
+    }
+
+    .event-date {
+      font-family: var(--font-en);
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--yellow);
+      white-space: nowrap;
+    }
+
+    .event-content h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .event-content p {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      line-height: 1.6;
+    }
+
+    /* ===== SOCIAL IMPACT ===== */
+    .impact {
+      background: var(--dark);
+    }
+
+    .impact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .impact-card {
+      background: var(--gray-900);
+      border-radius: 16px;
+      padding: 2rem;
+      border: 1px solid var(--gray-800);
+      transition: border-color 0.3s;
+    }
+
+    .impact-card:hover {
+      border-color: rgba(255, 229, 0, 0.3);
+    }
+
+    .impact-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(255, 229, 0, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .impact-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+    }
+
+    .impact-card p {
+      font-size: 0.85rem;
+      color: var(--gray-400);
+      line-height: 1.8;
+    }
+
+    /* ===== CONTACT / CTA ===== */
+    .cta {
+      background: var(--black);
+      text-align: center;
+      padding: 8rem 2rem;
+      position: relative;
+    }
+
+    .cta::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60vw;
+      height: 60vw;
+      max-width: 600px;
+      max-height: 600px;
+      background: radial-gradient(circle, rgba(255, 229, 0, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      position: relative;
+    }
+
+    .cta p {
+      font-size: 1rem;
+      color: var(--gray-400);
+      margin-bottom: 2.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 3rem;
+      position: relative;
+    }
+
+    .social-link {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--gray-900);
+      border: 1px solid var(--gray-800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gray-400);
+      text-decoration: none;
+      font-size: 1.2rem;
+      transition: all 0.3s;
+    }
+
+    .social-link:hover {
+      background: var(--yellow);
+      color: var(--black);
+      border-color: var(--yellow);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid var(--gray-800);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    footer p {
+      font-size: 0.8rem;
+      color: var(--gray-700);
+      font-family: var(--font-en);
+    }
+
+    /* ===== SCROLL ANIMATIONS ===== */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ===== MOBILE NAV OVERLAY ===== */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(10, 10, 10, 0.98);
+      backdrop-filter: blur(20px);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .mobile-nav.active {
+      display: flex;
+    }
+
+    .mobile-nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--yellow);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+      }
+
+      .hero-description {
+        margin: 0 auto 2rem;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-items: center;
+      }
+
+      .stat {
+        text-align: center;
+      }
+
+      .hero-visual {
+        order: -1;
+      }
+
+      .hero-image-wrapper {
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .highlights-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-item {
+        grid-template-columns: 90px 1fr;
+        gap: 1rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section {
+        padding: 4rem 1.25rem;
+      }
+
+      .hero {
+        padding: 72px 1.25rem 0;
+      }
+
+      .hero-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.75rem;
+      }
+
+      .stat-number {
+        font-size: 1.5rem;
+      }
+
+      header {
+        padding: 0 1.25rem;
+      }
+    }
+
+    /* ===== MARQUEE ===== */
+    .marquee {
+      overflow: hidden;
+      white-space: nowrap;
+      border-top: 1px solid var(--gray-800);
+      border-bottom: 1px solid var(--gray-800);
+      padding: 1rem 0;
+      background: var(--dark);
+    }
+
+    .marquee-inner {
+      display: inline-flex;
+      animation: marquee 30s linear infinite;
+    }
+
+    .marquee-item {
+      font-family: var(--font-en);
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      letter-spacing: 0.1em;
+      padding: 0 2rem;
+    }
+
+    .marquee-item span {
+      color: var(--yellow);
+      margin-right: 0.5rem;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <a href="https://gps-run.com/" class="logo">
+      <div class="logo-mark">GPS<br>RUN</div>
+      <div class="logo-text">GPS <span>RUNNER</span></div>
+    </a>
+    <nav>
+      <a href="https://gps-run.com/">HOME</a>
+      <a href="works.html">WORKS</a>
+      <a href="#highlights">MEDIA</a>
+      <a href="profile.html">PROFILE</a>
+      <a href="global.html">GLOBAL</a>
+      <a href="offer.html">OFFER</a>
+      <a href="#events">EVENTS</a>
+      <a href="support.html" class="nav-cta">SUPPORT</a>
+    </nav>
+    <button class="hamburger" id="hamburger" aria-label="メニュー">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </header>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="https://gps-run.com/" onclick="closeMobileNav()">HOME</a>
+    <a href="works.html" onclick="closeMobileNav()">WORKS</a>
+    <a href="#highlights" onclick="closeMobileNav()">MEDIA</a>
+    <a href="profile.html" onclick="closeMobileNav()">PROFILE</a>
+    <a href="global.html" onclick="closeMobileNav()">GLOBAL</a>
+    <a href="offer.html" onclick="closeMobileNav()">OFFER</a>
+    <a href="#events" onclick="closeMobileNav()">EVENTS</a>
+    <a href="support.html" onclick="closeMobileNav()">SUPPORT</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1>
+          NAOKI
+          <span>SHIMIZU</span>
+        </h1>
+        <p class="hero-name-ja">志水 直樹 ── GPSランナー</p>
+        <p class="hero-description">
+          世界初の職業「GPSランナー」として、走って地図上に絵を描く。
+          「"競わない"ランニング文化を創ること」をミッションに、
+          「RUN FOR SMILE」をモットーに国内外で活動を展開。
+        </p>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-number">12<small> ヵ国</small></div>
+            <div class="stat-label">活動国数</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">1,500<small>+</small></div>
+            <div class="stat-label">作品数</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">15,000<small>km</small></div>
+            <div class="stat-label">総走行距離</div>
+          </div>
+        </div>
+        <div class="hero-buttons">
+          <a href="#highlights" class="btn btn-primary">MEDIA &amp; WORKS ↓</a>
+          <a href="https://gps-run.com/contact-2/" class="btn btn-outline">お問い合せ</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-image-wrapper">
+          <img src="https://gps-run.com/wp-content/uploads/2020/11/@jikosyoukai-257x300.jpg" alt="GPSランナー 志水直樹" loading="eager">
+          <div class="hero-image-overlay">
+            <span class="hero-image-tag">SINCE 2019</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <div class="marquee-inner">
+      <span class="marquee-item"><span>&#9679;</span> 世界の果てまでイッテQ!</span>
+      <span class="marquee-item"><span>&#9679;</span> 痛快！明石家電視台</span>
+      <span class="marquee-item"><span>&#9679;</span> TBS 冒険少年</span>
+      <span class="marquee-item"><span>&#9679;</span> 台湾1周 24日連続フルマラソン</span>
+      <span class="marquee-item"><span>&#9679;</span> ペルー 4,600km アルパカの地上絵</span>
+      <span class="marquee-item"><span>&#9679;</span> Asian Games 2026 コーディネーター</span>
+      <span class="marquee-item"><span>&#9679;</span> 160+ メディア掲載 (12ヵ国)</span>
+      <span class="marquee-item"><span>&#9679;</span> adidas Runtastic Ambassador</span>
+      <!-- duplicate for seamless loop -->
+      <span class="marquee-item"><span>&#9679;</span> 世界の果てまでイッテQ!</span>
+      <span class="marquee-item"><span>&#9679;</span> 痛快！明石家電視台</span>
+      <span class="marquee-item"><span>&#9679;</span> TBS 冒険少年</span>
+      <span class="marquee-item"><span>&#9679;</span> 台湾1周 24日連続フルマラソン</span>
+      <span class="marquee-item"><span>&#9679;</span> ペルー 4,600km アルパカの地上絵</span>
+      <span class="marquee-item"><span>&#9679;</span> Asian Games 2026 コーディネーター</span>
+      <span class="marquee-item"><span>&#9679;</span> 160+ メディア掲載 (12ヵ国)</span>
+      <span class="marquee-item"><span>&#9679;</span> adidas Runtastic Ambassador</span>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS (メディア出演 / 主な活動) -->
+  <section class="highlights" id="highlights">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">HIGHLIGHTS</p>
+        <h2 class="section-title">主な活動・メディア出演</h2>
+        <p class="section-subtitle">世界12ヵ国、160以上のメディアで紹介。テレビ・新聞・Webメディアまで幅広く取り上げていただいています。</p>
+      </div>
+      <div class="highlights-grid">
+        <!-- Card 1 -->
+        <div class="highlight-card fade-in">
+          <div class="highlight-card-video">
+            <iframe src="https://www.youtube.com/embed/93yKDt4Mz_0" title="明石家電視台" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="highlight-card-body">
+            <span class="highlight-year">2024</span>
+            <h3>痛快！明石家電視台 ゲスト出演</h3>
+            <p>さんまさんとの夢の共演が実現。GPSアートの魅力を全国に発信。</p>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="highlight-card fade-in">
+          <div class="highlight-card-video">
+            <iframe src="https://www.youtube.com/embed/XYfvzNeib9M" title="ペルー アルパカの地上絵" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="highlight-card-body">
+            <span class="highlight-year">2024</span>
+            <h3>ペルーで4,600km「アルパカの地上絵」制作</h3>
+            <p>EFE通信をはじめ、7ヵ国でニュースとして報道。世界が注目したGPSアートの大作。</p>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="highlight-card fade-in">
+          <div class="highlight-card-video">
+            <iframe src="https://www.youtube.com/embed/jK6p2JYDEEY" title="GPSランナー紹介" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="highlight-card-body">
+            <span class="highlight-year">2021</span>
+            <h3>世界の果てまでイッテQ！出演</h3>
+            <p>いとうあさこさんと一緒に走り、出川哲郎さんの似顔絵をGPSアートで制作。</p>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="highlight-card fade-in">
+          <div class="highlight-card-video">
+            <iframe src="https://www.youtube.com/embed/bYsgxtuuwjI?si=xr-9ZS26wIaddf2o" title="台湾1周" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="highlight-card-body">
+            <span class="highlight-year">2023</span>
+            <h3>台湾24日連続フルマラソン ── 台湾1周1,135km完走</h3>
+            <p>「阿部寛と渡辺直美の次に有名な日本人」と称される。日台友好の象徴的な挑戦。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROFILE LINK -->
+
+
+  <!-- ACTIVITIES (活動の種類) -->
+  <section class="activities" id="activities">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">ACTIVITIES</p>
+        <h2 class="section-title">活動の種類</h2>
+        <p class="section-subtitle">GPSアートを軸に、3つの柱で活動を展開しています。詳しくは各ページをご覧ください。</p>
+      </div>
+      <div class="activities-grid">
+        <a href="activity-lecture.html" class="activity-card fade-in" style="text-decoration:none;color:inherit;">
+          <div class="activity-card-video">
+            <iframe src="https://www.youtube.com/embed/jK6p2JYDEEY" title="講演会" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="activity-card-body">
+            <h3>講演会</h3>
+            <p>学校・企業・自治体向けに、挑戦と夢をテーマにした講演を実施。詳しく見る →</p>
+          </div>
+        </a>
+        <a href="activity-plogging.html" class="activity-card fade-in" style="text-decoration:none;color:inherit;">
+          <div class="activity-card-video">
+            <iframe src="https://www.youtube.com/embed/TPtlcEISZC4" title="GPSゴミ拾い × アートウォーク" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="activity-card-body">
+            <h3>GPSゴミ拾い × アートウォーク</h3>
+            <p>ゴミ拾いしながら地図にアートを描く、SDGs型社会貢献イベント。詳しく見る →</p>
+          </div>
+        </a>
+        <a href="activity-walkrun.html" class="activity-card fade-in" style="text-decoration:none;color:inherit;">
+          <div class="activity-card-video">
+            <iframe src="https://www.youtube.com/embed/7D5wPEcxtgQ" title="GPSウォーク＆ラン" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="activity-card-body">
+            <h3>GPSウォーク &amp; ラン</h3>
+            <p>歩いて・走って地図にアートを描く。誰でも参加できるイベント。詳しく見る →</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EVENTS (過去のイベント実績) -->
+  <section class="events" id="events">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">EVENT HISTORY</p>
+        <h2 class="section-title">イベント実績</h2>
+        <p class="section-subtitle">自治体・企業・団体との多数のコラボレーション実績。</p>
+      </div>
+      <div class="events-list fade-in">
+        <div class="event-item">
+          <span class="event-date">2023.5</span>
+          <div class="event-content">
+            <h3>台湾1周1,135km完走</h3>
+            <p>日本と台湾で「LOVE」のGPSアート制作</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2022.12</span>
+          <div class="event-content">
+            <h3>池田市健康推進事業「イケダの地上絵まち歩き講座」</h3>
+            <p>全6回監修。スタッフ全員65歳以上の健康づくりプログラム。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2022.11</span>
+          <div class="event-content">
+            <h3>宮城県健康推進事業「ゴミ拾い大作戦」</h3>
+            <p>伊達武将隊も参加した社会貢献イベント。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2022.11</span>
+          <div class="event-content">
+            <h3>宝塚市民120人でGPSゴミ拾いアートウォーク</h3>
+            <p>宝塚ライオンズクラブとの共催イベント。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2022.10</span>
+          <div class="event-content">
+            <h3>「PEACE WALK」イベント監修</h3>
+            <p>東京と大阪で「平」「和」を同時描画。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2022.6-7</span>
+          <div class="event-content">
+            <h3>GPSアートで47都道府県走破</h3>
+            <p>北海道15日間14作品を含む全国制覇プロジェクト。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2022.3</span>
+          <div class="event-content">
+            <h3>西宮市長選「GO to VOTE」企画</h3>
+            <p>48年ぶりに投票率40%超えを達成。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2021.7</span>
+          <div class="event-content">
+            <h3>コープこうべ100周年記念 SDGs事業「GPSプロギング」</h3>
+            <p>16店舗同時開催、約250名参加。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2021.3</span>
+          <div class="event-content">
+            <h3>アジア競技大会 開催2000日前記念イベント監修</h3>
+            <p>公式イベントのコーディネーションを担当。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2019.8</span>
+          <div class="event-content">
+            <h3>東北リアス式海岸200km走破縦断</h3>
+            <p>いいね10円 / シェア40円募金で総額13万円超の義援金を集める。</p>
+          </div>
+        </div>
+        <div class="event-item">
+          <span class="event-date">2016.2</span>
+          <div class="event-content">
+            <h3>初GPSラン「西宮LOVE」</h3>
+            <p>すべてはここから始まった。バレンタインデーに西宮の街に「LOVE」を描く。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container fade-in">
+      <p class="section-label">GET IN TOUCH</p>
+      <h2>一緒に走りませんか？</h2>
+      <p>イベント企画・メディア出演・コラボレーションなど、お気軽にお問い合せください。</p>
+      <div class="cta-buttons">
+        <a href="https://gps-run.com/contact-2/" class="btn btn-primary">お問い合せ</a>
+        <a href="mailto:naoki@gps-run.com" class="btn btn-outline">naoki@gps-run.com</a>
+      </div>
+      <div class="social-links">
+        <a href="https://www.instagram.com/gps_naoki/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/naoki.shimizu.526" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@gpsrunnertv" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2025 GPS RUNNER / Naoki Shimizu. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    // Header scroll effect
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileNav.classList.toggle('active');
+      document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+    });
+
+    function closeMobileNav() {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Scroll animations (Intersection Observer)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+    document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  </script>
+</body>
+</html>

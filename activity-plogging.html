@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GPSゴミ拾い × アートウォーク | GPS RUNNER 志水直樹</title>
+  <meta name="description" content="GPSプロギング ── ゴミ拾いしながら地図にアートを描く、SDGs型の社会貢献イベント。自治体・企業・団体と連携し全国で開催。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
+    header.scrolled{background:rgba(10,10,10,0.95);border-bottom-color:rgba(255,229,0,0.3)}
+    .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
+    .logo-mark{width:40px;height:40px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-en);font-weight:900;font-size:1.25rem;color:var(--black);letter-spacing:-0.02em;line-height:1}
+    .logo-text{font-family:var(--font-en);font-weight:700;font-size:1.3rem;letter-spacing:.08em}
+    .logo-text span{color:var(--yellow)}
+    nav{display:flex;align-items:center;gap:2rem}
+    nav a{color:var(--gray-400);text-decoration:none;font-size:1.25rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
+    nav a:hover{color:var(--yellow)}
+    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:600!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+    .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.5rem;font-weight:600}
+    .mobile-nav a:hover{color:var(--yellow)}
+    .container{max-width:900px;margin:0 auto}
+    .section-label{font-family:var(--font-en);font-size:1.25rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
+    .page-hero{padding:120px 2rem 4rem;text-align:center}
+    .page-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;margin-bottom:.75rem}
+    .page-hero>p{font-size:1.25rem;color:var(--gray-300);max-width:600px;margin:0 auto;line-height:2.1}
+    .breadcrumb{margin-bottom:1.5rem;font-size:1.25rem;color:var(--gray-400)}
+    .breadcrumb a{color:var(--gray-400);text-decoration:none}
+    .breadcrumb a:hover{color:var(--yellow)}
+    .video-section{padding:0 2rem 4rem}
+    .video-wrapper{max-width:900px;margin:0 auto;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--gray-800)}
+    .video-wrapper iframe{width:100%;height:100%;border:none}
+    section{padding:4rem 2rem}
+    .content-section{background:var(--dark)}
+    .section-title{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:1.5rem}
+    .content-text{font-size:1.3rem;color:var(--gray-300);line-height:2.1.2;max-width:900px;margin:0 auto}
+    .content-text p+p{margin-top:1.5rem}
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:2rem}
+    .feature{background:var(--gray-900);border-radius:16px;padding:2rem;border:1px solid var(--gray-800)}
+    .feature-icon{font-size:2rem;margin-bottom:1rem}
+    .feature h3{font-size:1.25rem;font-weight:700;margin-bottom:.5rem}
+    .feature p{font-size:1.25rem;color:var(--gray-400);line-height:1.9}
+    .cases{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+    .case-item{background:var(--gray-900);border-radius:12px;padding:1.5rem 2rem;border:1px solid var(--gray-800)}
+    .case-meta{display:flex;gap:1rem;align-items:center;margin-bottom:.5rem}
+    .case-date{font-family:var(--font-en);font-size:1.25rem;font-weight:700;color:var(--yellow)}
+    .case-tag{font-size:1.25rem;color:var(--gray-400);background:var(--gray-800);padding:.15rem .5rem;border-radius:4px}
+    .case-item h3{font-size:1.3rem;font-weight:600;margin-bottom:.25rem}
+    .case-item p{font-size:1.25rem;color:var(--gray-400);line-height:1.9}
+    .flow{display:flex;flex-direction:column;gap:0;margin-top:2rem}
+    .flow-step{display:flex;align-items:start;gap:1.5rem;padding:1.5rem 0;border-bottom:1px solid var(--gray-800)}
+    .flow-step:last-child{border-bottom:none}
+    .flow-badge{background:var(--yellow);color:var(--black);font-family:var(--font-en);font-weight:800;font-size:1.25rem;padding:.35rem .75rem;border-radius:6px;flex-shrink:0;white-space:nowrap}
+    .flow-step h3{font-size:1.25rem;font-weight:600;margin-bottom:.2rem}
+    .flow-step p{font-size:1.25rem;color:var(--gray-400);line-height:1.9}
+    .cta{text-align:center;padding:6rem 2rem;background:var(--black)}
+    .cta h2{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:1rem}
+    .cta p{color:var(--gray-400);margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;border-radius:100px;font-size:1.3rem;font-weight:600;text-decoration:none;transition:all .3s;border:none;font-family:var(--font-ja);cursor:pointer}
+    .btn-primary{background:var(--yellow);color:var(--black)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,229,0,0.3)}
+    .btn-outline{background:transparent;color:var(--white);border:1px solid var(--gray-700)}
+    .btn-outline:hover{border-color:var(--yellow);color:var(--yellow)}
+    .cta-buttons{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap}
+    footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
+    footer p{font-size:1.25rem;color:var(--gray-700);font-family:var(--font-en)}
+    footer a{color:var(--gray-400);text-decoration:none}
+    footer a:hover{color:var(--yellow)}
+    .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:900px){nav{display:none}.hamburger{display:flex}}
+    @media(max-width:600px){header{padding:0 1.25rem}section{padding:3rem 1.25rem}.page-hero{padding:110px 1.25rem 3rem}.video-section{padding:0 1.25rem 3rem}}
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="index.html" class="logo"><div class="logo-mark">GPS<br>RUN</div><div class="logo-text">GPS <span>RUNNER</span></div></a>
+    <nav>
+      <a href="index.html">PROFILE</a>
+      <a href="works.html">WORKS</a>
+      <a href="index.html#activities">ACTIVITIES</a>
+      <a href="support.html" class="nav-cta">SUPPORT</a>
+    </nav>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">PROFILE</a><a href="works.html">WORKS</a><a href="index.html#activities">ACTIVITIES</a><a href="support.html">SUPPORT</a>
+  </div>
+
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="index.html">HOME</a> / <a href="index.html#activities">ACTIVITIES</a> / GPSゴミ拾い</div>
+    <p class="section-label">GPS PLOGGING</p>
+    <h1>GPSゴミ拾い × アートウォーク</h1>
+    <p>ゴミ拾いしながら地図にアートを描く。楽しみながら街をきれいにする、SDGs型の社会貢献イベントです。</p>
+  </div>
+
+  <div class="video-section">
+    <div class="video-wrapper">
+      <iframe src="https://www.youtube.com/embed/TPtlcEISZC4" title="GPSプロギング" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+  </div>
+
+  <section class="content-section">
+    <div class="container fade-in">
+      <p class="section-label">ABOUT</p>
+      <h2 class="section-title">GPSプロギングとは</h2>
+      <div class="content-text">
+        <p>
+          「プロギング（Plogging）」とは、スウェーデン発祥の「ジョギングしながらゴミ拾いする」エコフィットネス。
+          GPSランナー志水直樹はこれにGPSアートを組み合わせ、
+          <strong>「歩いてゴミを拾いながら、地図にアートを描く」</strong>
+          という新しいイベントフォーマットを確立しました。
+        </p>
+        <p>
+          参加者はGPSアプリを起動し、指定されたルートを歩きながらゴミ拾い。
+          全員のルートが重なると、地図上に絵や文字が完成します。
+          楽しみながら地域をきれいにでき、完成したアートはSNSでも話題になるため、
+          まちの魅力発信にもつながります。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container fade-in">
+      <p class="section-label">FEATURES</p>
+      <h2 class="section-title">3つの特長</h2>
+      <div class="features">
+        <div class="feature">
+          <div class="feature-icon">&#x267B;&#xFE0F;</div>
+          <h3>SDGs × エンタメ</h3>
+          <p>環境美化活動をゲーム感覚で楽しめる。子どもから高齢者まで、幅広い世代が参加可能。義務感ではなく「楽しいからやる」を実現。</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#x1F3A8;</div>
+          <h3>地図に残るアート</h3>
+          <p>歩いた軌跡が地図上にアートとして残る。完成した作品はSNSでシェアでき、地域の話題づくり・観光PRにも活用可能。</p>
+        </div>
+        <div class="feature">
+          <div class="feature-icon">&#x1F91D;</div>
+          <h3>地域コミュニティ形成</h3>
+          <p>一緒に歩き、拾い、アートを完成させる体験が参加者の一体感を生む。地域住民・企業・行政の連携のきっかけに。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container fade-in">
+      <p class="section-label">CASES</p>
+      <h2 class="section-title">開催実績</h2>
+      <div class="cases">
+        <div class="case-item">
+          <div class="case-meta"><span class="case-date">2021.07</span><span class="case-tag">企業</span></div>
+          <h3>コープこうべ100周年記念 SDGs事業「GPSプロギング」</h3>
+          <p>16店舗同時開催、約250名が参加。地域密着型のSDGsイベントとして大きな反響。</p>
+        </div>
+        <div class="case-item">
+          <div class="case-meta"><span class="case-date">2022.11</span><span class="case-tag">自治体</span></div>
+          <h3>宮城県健康推進事業「ゴミ拾い大作戦」</h3>
+          <p>伊達武将隊も参加。健康推進＋環境美化の二軸で自治体事業として実施。</p>
+        </div>
+        <div class="case-item">
+          <div class="case-meta"><span class="case-date">2022.11</span><span class="case-tag">団体</span></div>
+          <h3>宝塚市民120人でGPSゴミ拾いアートウォーク</h3>
+          <p>宝塚ライオンズクラブとの共催。地域住民120名が参加した大規模イベント。</p>
+        </div>
+        <div class="case-item">
+          <div class="case-meta"><span class="case-date">2022.11</span><span class="case-tag">コラボ</span></div>
+          <h3>Princess KAGURA Japan × GPSゴミ拾いウォーク（福岡県宗像市）</h3>
+          <p>異業種コラボレーションによる地域活性化イベント。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container fade-in">
+      <p class="section-label">FLOW</p>
+      <h2 class="section-title">イベント開催の流れ</h2>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="flow-badge">STEP 1</span>
+          <div><h3>お問い合せ・ヒアリング</h3><p>開催地域・規模・目的をお聞きし、最適なプランをご提案します。</p></div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-badge">STEP 2</span>
+          <div><h3>ルート設計・準備</h3><p>GPSランナーが現地の地図をもとにアートルートを設計。ゴミ袋・軍手等の準備もサポート。</p></div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-badge">STEP 3</span>
+          <div><h3>イベント当日</h3><p>GPSアプリの使い方説明 → グループ分け → ゴミ拾いウォーク → ゴール＆アート完成！</p></div>
+        </div>
+        <div class="flow-step">
+          <span class="flow-badge">STEP 4</span>
+          <div><h3>成果共有</h3><p>完成したGPSアートと回収ゴミ量を集計。SNS発信・メディア向け素材もご提供します。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container fade-in">
+      <h2>あなたの街でもGPSプロギングを</h2>
+      <p>自治体・企業・団体向けにカスタマイズしたイベント企画をご提案します。</p>
+      <div class="cta-buttons">
+        <a href="https://gps-run.com/contact-2/" class="btn btn-primary">お問い合せ</a>
+        <a href="index.html#activities" class="btn btn-outline">活動一覧に戻る</a>
+      </div>
+    </div>
+  </section>
+
+  <footer><p><a href="index.html">GPS RUNNER</a> &middot; &copy; 2025 Naoki Shimizu.</p></footer>
+  <script>
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)});
+    document.getElementById('hamburger').addEventListener('click',function(){this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('active')});
+    var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
+  </script>
+</body>
+</html>

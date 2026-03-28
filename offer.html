@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ご依頼・オファー | GPS RUNNER 志水直樹</title>
+  <meta name="description" content="GPSランナー志水直樹への講演会・イベント・GPSアートのご依頼。学校・企業・自治体の皆さまへ。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    html{scroll-behavior:smooth;font-size:18px}
+    body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
+
+    /* HEADER */
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
+    header.scrolled{background:rgba(10,10,10,0.95);border-bottom-color:rgba(255,229,0,0.3)}
+    .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
+    .logo-mark{width:40px;height:40px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-en);font-weight:900;font-size:.85rem;color:var(--black);letter-spacing:-0.02em;line-height:1}
+    .logo-text{font-family:var(--font-en);font-weight:700;font-size:1.2rem;letter-spacing:.08em}
+    .logo-text span{color:var(--yellow)}
+    nav{display:flex;align-items:center;gap:2rem}
+    nav a{color:var(--gray-400);text-decoration:none;font-size:.95rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
+    nav a:hover,nav a.active{color:var(--yellow)}
+    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:600!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+    .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.5rem;font-weight:600}
+    .mobile-nav a:hover{color:var(--yellow)}
+
+    /* HERO */
+    .hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:72px 2rem 0;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:120vw;height:120vw;max-width:1200px;max-height:1200px;background:radial-gradient(circle,rgba(255,229,0,0.07) 0%,transparent 55%);pointer-events:none}
+    .hero-inner{max-width:800px;position:relative;z-index:2}
+    .hero-label{font-family:var(--font-en);font-size:.85rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--yellow);margin-bottom:1.5rem;display:inline-flex;align-items:center;gap:.6rem}
+    .hero-label::before{content:'';width:30px;height:2px;background:var(--yellow)}
+    .hero h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:900;line-height:1.2;margin-bottom:1.25rem}
+    .hero h1 em{font-style:normal;color:var(--yellow)}
+    .hero-sub{font-size:1.2rem;color:var(--gray-300);line-height:2;max-width:600px;margin:0 auto 2.5rem}
+    .hero-btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--yellow);color:var(--black);padding:1rem 2.5rem;border-radius:100px;font-size:1.1rem;font-weight:700;text-decoration:none;transition:all .3s;border:none;cursor:pointer;font-family:var(--font-ja)}
+    .hero-btn:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(255,229,0,0.3)}
+    .hero-btn svg{transition:transform .3s}
+    .hero-btn:hover svg{transform:translateX(4px)}
+
+    /* TRUST BAR */
+    .trust-bar{background:var(--dark);border-top:1px solid var(--gray-800);border-bottom:1px solid var(--gray-800);padding:2.5rem 2rem}
+    .trust-inner{max-width:1000px;margin:0 auto;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;text-align:center}
+    .trust-item .trust-number{font-family:var(--font-en);font-size:2.2rem;font-weight:800;color:var(--yellow)}
+    .trust-item .trust-number small{font-size:.45em;font-weight:500}
+    .trust-item .trust-label{font-size:.9rem;color:var(--gray-400);margin-top:.2rem}
+
+    /* SECTION COMMON */
+    .container{max-width:1000px;margin:0 auto}
+    section{padding:5rem 2rem}
+    .section-label{font-family:var(--font-en);font-size:.85rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
+    .section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:.75rem}
+    .section-subtitle{font-size:1.1rem;color:var(--gray-400);line-height:2;max-width:650px}
+    .section-header{margin-bottom:3rem}
+    .alt-bg{background:var(--dark)}
+
+    /* SERVICE CARDS */
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .service-card{background:var(--gray-900);border-radius:20px;padding:2.5rem 2rem;border:1px solid var(--gray-800);transition:all .4s;position:relative;overflow:hidden;display:flex;flex-direction:column}
+    .service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--yellow);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+    .service-card:hover{border-color:rgba(255,229,0,0.5);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.4)}
+    .service-card:hover::before{transform:scaleX(1)}
+    .service-icon{width:60px;height:60px;background:rgba(255,229,0,0.1);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:1.8rem;margin-bottom:1.5rem}
+    .service-card h3{font-size:1.3rem;font-weight:700;margin-bottom:.75rem}
+    .service-card p{font-size:1.05rem;color:var(--gray-400);line-height:1.9;flex:1}
+    .service-card-footer{margin-top:1.5rem;display:flex;align-items:center;justify-content:space-between}
+    .service-link{display:inline-flex;align-items:center;gap:.4rem;color:var(--yellow);text-decoration:none;font-size:.95rem;font-weight:600;transition:gap .3s}
+    .service-link:hover{gap:.7rem}
+    .service-tag{font-size:.75rem;color:var(--gray-400);background:var(--gray-800);padding:.25rem .7rem;border-radius:100px;font-family:var(--font-en);font-weight:500}
+
+    /* CLIENTS / LOGOS */
+    .clients{text-align:center}
+    .client-logos{display:flex;flex-wrap:wrap;justify-content:center;gap:1.5rem;margin-top:2rem}
+    .client-logo{background:var(--gray-900);border:1px solid var(--gray-800);border-radius:12px;padding:1rem 1.5rem;font-size:.95rem;color:var(--gray-300);font-weight:500;transition:border-color .3s}
+    .client-logo:hover{border-color:rgba(255,229,0,0.3)}
+
+    /* TESTIMONIAL */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+    .testimonial{background:var(--gray-900);border-radius:16px;padding:2rem;border:1px solid var(--gray-800);position:relative}
+    .testimonial-quote{font-size:2.5rem;color:var(--yellow);opacity:.3;position:absolute;top:.75rem;left:1.25rem;font-family:Georgia,serif;line-height:1}
+    .testimonial p{font-size:1.05rem;color:var(--gray-300);line-height:2;position:relative;z-index:1}
+    .testimonial-author{margin-top:1.25rem;font-size:.9rem;font-weight:600;color:var(--white)}
+    .testimonial-author span{display:block;font-weight:400;color:var(--gray-400);font-size:.85rem;margin-top:.15rem}
+
+    /* FLOW */
+    .flow{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:2rem;position:relative}
+    .flow::before{content:'';position:absolute;top:45px;left:calc(12.5% + 10px);right:calc(12.5% + 10px);height:2px;background:var(--gray-800)}
+    .flow-step{text-align:center;position:relative;z-index:1}
+    .flow-number{width:48px;height:48px;background:var(--yellow);color:var(--black);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--font-en);font-weight:800;font-size:1.1rem;margin:0 auto 1rem;border:4px solid var(--black)}
+    .flow-step h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem}
+    .flow-step p{font-size:.9rem;color:var(--gray-400);line-height:1.7}
+
+    /* FAQ */
+    .faq-list{max-width:760px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--gray-800)}
+    .faq-question{width:100%;background:none;border:none;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;color:var(--white);font-size:1.1rem;font-weight:600;font-family:var(--font-ja);gap:1rem}
+    .faq-question:hover{color:var(--yellow)}
+    .faq-icon{width:32px;height:32px;border-radius:8px;background:var(--gray-800);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;transition:all .3s;color:var(--gray-400)}
+    .faq-item.active .faq-icon{background:var(--yellow);color:var(--black);transform:rotate(45deg)}
+    .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
+    .faq-item.active .faq-answer{max-height:300px;padding-bottom:1.5rem}
+    .faq-answer p{font-size:1rem;color:var(--gray-400);line-height:2}
+
+    /* FINAL CTA */
+    .final-cta{text-align:center;padding:8rem 2rem;position:relative;overflow:hidden}
+    .final-cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:80vw;height:80vw;max-width:800px;max-height:800px;background:radial-gradient(circle,rgba(255,229,0,0.08) 0%,transparent 60%);pointer-events:none}
+    .final-cta h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;margin-bottom:1rem;position:relative}
+    .final-cta h2 em{font-style:normal;color:var(--yellow)}
+    .final-cta p{font-size:1.15rem;color:var(--gray-300);max-width:550px;margin:0 auto 2.5rem;position:relative;line-height:2}
+    .final-cta-btn{display:inline-flex;align-items:center;gap:.7rem;background:var(--yellow);color:var(--black);padding:1.1rem 3rem;border-radius:100px;font-size:1.15rem;font-weight:700;text-decoration:none;transition:all .3s;position:relative;font-family:var(--font-ja)}
+    .final-cta-btn:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(255,229,0,0.35)}
+    .final-cta-sub{margin-top:1.5rem;font-size:.95rem;color:var(--gray-400);position:relative}
+
+    footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
+    footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
+    footer a{color:var(--gray-400);text-decoration:none}
+    footer a:hover{color:var(--yellow)}
+    .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+
+    @media(max-width:900px){
+      nav{display:none}.hamburger{display:flex}
+      .services{grid-template-columns:1fr}
+      .flow{grid-template-columns:repeat(2,1fr)}
+      .flow::before{display:none}
+      .trust-inner{gap:2rem}
+    }
+    @media(max-width:600px){
+      header{padding:0 1.25rem}
+      section{padding:3.5rem 1.25rem}
+      .hero{padding:72px 1.25rem 0}
+      .flow{grid-template-columns:1fr;gap:2rem}
+    }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <a href="index.html" class="logo"><div class="logo-mark">GPS<br>RUN</div><div class="logo-text">GPS <span>RUNNER</span></div></a>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="profile.html">PROFILE</a>
+      <a href="works.html">WORKS</a>
+      <a href="global.html">GLOBAL</a>
+      <a href="offer.html" class="active">OFFER</a>
+      <a href="support.html" class="nav-cta">SUPPORT</a>
+    </nav>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">HOME</a><a href="profile.html">PROFILE</a><a href="works.html">WORKS</a><a href="global.html">GLOBAL</a><a href="offer.html">OFFER</a><a href="support.html">SUPPORT</a>
+  </div>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-label">FOR BUSINESS</div>
+      <h1>GPSランナーに<br><em>依頼する</em></h1>
+      <p class="hero-sub">講演会・イベント監修・GPSアート制作。<br>あなたの企画を「走って」形にします。</p>
+      <a href="https://gps-run.com/contact-2/" class="hero-btn">
+        お問い合せはこちら
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- TRUST BAR -->
+  <div class="trust-bar">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <div class="trust-number">160<small>+</small></div>
+        <div class="trust-label">メディア掲載数</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">12<small>ヵ国</small></div>
+        <div class="trust-label">活動国</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">1,500<small>+</small></div>
+        <div class="trust-label">GPS作品数</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">250<small>名</small></div>
+        <div class="trust-label">最大イベント参加者</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-number">6<small>年</small></div>
+        <div class="trust-label">プロ活動歴</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICES -->
+  <section>
+    <div class="container">
+      <div class="section-header fade-in" style="text-align:center">
+        <p class="section-label">SERVICES</p>
+        <h2 class="section-title">ご依頼メニュー</h2>
+        <p class="section-subtitle" style="margin:0 auto">目的に合わせた3つのサービスをご用意しています。</p>
+      </div>
+      <div class="services">
+        <div class="service-card fade-in">
+          <div class="service-icon">&#x1F3A4;</div>
+          <h3>講演会</h3>
+          <p>学校・企業・自治体向けに、挑戦と夢をテーマにした講演を実施。元小学校教師ならではの、心に響く話術。</p>
+          <div class="service-card-footer">
+            <a href="activity-lecture.html" class="service-link">詳しく見る &rarr;</a>
+            <span class="service-tag">LECTURE</span>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">&#x267B;&#xFE0F;</div>
+          <h3>GPSゴミ拾い &times; アートウォーク</h3>
+          <p>ゴミ拾いしながら地図にアートを描く、SDGs型社会貢献イベント。楽しみながら街をきれいに。</p>
+          <div class="service-card-footer">
+            <a href="activity-plogging.html" class="service-link">詳しく見る &rarr;</a>
+            <span class="service-tag">PLOGGING</span>
+          </div>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-icon">&#x1F3C3;</div>
+          <h3>GPSウォーク &amp; ラン</h3>
+          <p>歩いて・走って地図にアートを描く。誰でも参加できるイベント。健康推進・観光PR・チームビルディングに。</p>
+          <div class="service-card-footer">
+            <a href="activity-walkrun.html" class="service-link">詳しく見る &rarr;</a>
+            <span class="service-tag">WALK &amp; RUN</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section class="alt-bg clients">
+    <div class="container">
+      <div class="section-header fade-in" style="text-align:center">
+        <p class="section-label">CLIENTS</p>
+        <h2 class="section-title">取引・協業実績</h2>
+        <p class="section-subtitle" style="margin:0 auto">自治体から大手企業まで、幅広いパートナーと実績があります。</p>
+      </div>
+      <div class="client-logos fade-in">
+        <div class="client-logo">adidas / Runtastic</div>
+        <div class="client-logo">コープこうべ</div>
+        <div class="client-logo">日本テレビ</div>
+        <div class="client-logo">TBS</div>
+        <div class="client-logo">関西テレビ</div>
+        <div class="client-logo">MBS</div>
+        <div class="client-logo">NHK</div>
+        <div class="client-logo">池田市</div>
+        <div class="client-logo">宮城県</div>
+        <div class="client-logo">宝塚ライオンズクラブ</div>
+        <div class="client-logo">阪急阪神HD</div>
+        <div class="client-logo">伊丹市</div>
+        <div class="client-logo">立命館大学</div>
+        <div class="client-logo">Asian Games 2026</div>
+        <div class="client-logo">西宮市</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOICE -->
+  <section>
+    <div class="container">
+      <div class="section-header fade-in" style="text-align:center">
+        <p class="section-label">VOICE</p>
+        <h2 class="section-title">ご依頼者の声</h2>
+      </div>
+      <div class="testimonials fade-in">
+        <div class="testimonial">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p>子どもたちの目がキラキラ輝いていました。「夢を追うこと」を自分の言葉で語ってくれるので、説得力が違います。</p>
+          <div class="testimonial-author">K先生<span>小学校教諭 / 講演会ご依頼</span></div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p>16店舗同時開催で250名参加。準備も丁寧で、当日の盛り上がりも最高でした。SDGsの取り組みとして社内外に大きな反響がありました。</p>
+          <div class="testimonial-author">T様<span>コープこうべ / GPSプロギングご依頼</span></div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-quote">&ldquo;</div>
+          <p>65歳以上のスタッフでも楽しめる設計で感動しました。健康推進と地域活性化の両方を実現できるイベントは他にありません。</p>
+          <div class="testimonial-author">M様<span>池田市 / まち歩き講座ご依頼</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FLOW -->
+  <section class="alt-bg">
+    <div class="container">
+      <div class="section-header fade-in" style="text-align:center">
+        <p class="section-label">FLOW</p>
+        <h2 class="section-title">ご依頼の流れ</h2>
+        <p class="section-subtitle" style="margin:0 auto">お問い合せから実施まで、丁寧にサポートします。</p>
+      </div>
+      <div class="flow fade-in">
+        <div class="flow-step">
+          <div class="flow-number">1</div>
+          <h3>お問い合せ</h3>
+          <p>日程・目的・対象をお知らせください</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">2</div>
+          <h3>ヒアリング</h3>
+          <p>ご要望に合わせた企画をご提案</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">3</div>
+          <h3>準備・打合せ</h3>
+          <p>ルート設計・資料作成・当日の段取り</p>
+        </div>
+        <div class="flow-step">
+          <div class="flow-number">4</div>
+          <h3>実施</h3>
+          <p>全国どこでも出張。オンラインも対応</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="container">
+      <div class="section-header fade-in" style="text-align:center">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-title">よくある質問</h2>
+      </div>
+      <div class="faq-list fade-in">
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">費用はどのくらいですか？<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>内容・規模・場所によって異なります。まずはお気軽にお問い合せください。ご予算に合わせたプランもご提案できます。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">全国どこでも来てもらえますか？<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>はい、全国どこでも出張可能です。海外での実施実績もあります。オンライン講演にも対応しています。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">どのくらい前に依頼すればいいですか？<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>1〜2ヶ月前のご相談が理想ですが、スケジュール次第では短期間でも対応可能です。まずはご相談ください。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">参加人数に制限はありますか？<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>少人数から数百名規模まで対応可能です。コープこうべ様では16店舗同時開催・約250名で実施した実績があります。</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFaq(this)">テレビ・メディア出演の依頼もできますか？<span class="faq-icon">+</span></button>
+          <div class="faq-answer"><p>メディア出演のご依頼も承っております。「世界の果てまでイッテQ！」「明石家電視台」など多数の出演実績があります。</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="final-cta">
+    <div class="container fade-in">
+      <h2>まずは<em>お気軽に</em><br>ご相談ください</h2>
+      <p>「こんなことできる？」からでもOK。<br>GPSランナーがあなたの企画を一緒に形にします。</p>
+      <a href="https://gps-run.com/contact-2/" class="final-cta-btn">
+        お問い合せフォームへ
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <p class="final-cta-sub">naoki@gps-run.com でも受付中</p>
+    </div>
+  </section>
+
+  <footer><p><a href="index.html">GPS RUNNER</a> &middot; &copy; 2025 Naoki Shimizu.</p></footer>
+
+  <script>
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)});
+    document.getElementById('hamburger').addEventListener('click',function(){this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('active')});
+    var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
+    function toggleFaq(btn){var item=btn.parentElement;var was=item.classList.contains('active');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('active')});if(!was)item.classList.add('active')}
+  </script>
+</body>
+</html>
