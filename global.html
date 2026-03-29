@@ -74,7 +74,7 @@
     /* GALLERY STRIP */
     .gallery-strip{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;margin-top:2rem}
     .gallery-strip-item{border-radius:12px;overflow:hidden;border:1px solid var(--gray-800);background:var(--gray-800)}
-    .gallery-strip-item img{width:100%;display:block;transition:transform .4s}
+    .gallery-strip-item img{width:100%;aspect-ratio:1;object-fit:cover;display:block;transition:transform .4s}
     .gallery-strip-item:hover img{transform:scale(1.05)}
     .gallery-strip-caption{padding:.75rem;background:var(--gray-900)}
     .gallery-strip-caption p{font-size:.85rem;color:var(--gray-400);line-height:1.5}
@@ -243,11 +243,11 @@
       <h3 style="font-size:1.15rem;font-weight:700;margin-bottom:1rem">ヨーロッパでの作品</h3>
       <div class="gallery-strip" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))">
         <div class="gallery-strip-item">
-          <img src="images/6371.png" alt="フランス ワインで乾杯" loading="lazy">
+          <img src="images/6371.jpg" alt="フランス ワインで乾杯" loading="lazy">
           <div class="gallery-strip-caption"><p>フランス ワインで乾杯</p></div>
         </div>
         <div class="gallery-strip-item">
-          <img src="images/6381.png" alt="ベルサイユ宮殿のミッキーマウス" loading="lazy">
+          <img src="images/6381.jpg" alt="ベルサイユ宮殿のミッキーマウス" loading="lazy">
           <div class="gallery-strip-caption"><p>フランス ミッキーマウス</p></div>
         </div>
         <div class="gallery-strip-item">
@@ -301,11 +301,11 @@
       </div>
       <div class="gallery-strip" style="grid-template-columns:1fr 1fr">
         <div class="gallery-strip-item">
-          <img src="images/11451.jpg" alt="香港ドラゴン" loading="lazy">
+          <img src="images/11451.jpg" alt="香港ドラゴン" style="aspect-ratio:auto;object-fit:contain;background:#e8e8e8" loading="lazy">
           <div class="gallery-strip-caption"><p>ドラゴン（龍）</p></div>
         </div>
         <div class="gallery-strip-item">
-          <img src="images/hk-snoopy.jpg" alt="香港スヌーピー" loading="lazy">
+          <img src="images/hk-snoopy.jpg" alt="香港スヌーピー" style="aspect-ratio:auto;object-fit:contain;background:#e8e8e8" loading="lazy">
           <div class="gallery-strip-caption"><p>スヌーピー（香港島1周）</p></div>
         </div>
       </div>
