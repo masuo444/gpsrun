@@ -5,3 +5,4 @@ gps_art_works_complete.json
 *.JPEG
 *.jpeg
 !images/
+*.pdf
