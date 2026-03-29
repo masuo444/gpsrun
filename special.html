@@ -36,13 +36,14 @@
     section{padding:5rem 2rem}
     .alt-bg{background:var(--dark)}
     .section-label{font-family:var(--font-en);font-size:.85rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem}
-    .section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:.75rem}
-    .section-subtitle{font-size:1.1rem;color:var(--gray-400);line-height:2;max-width:700px}
+    .section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:1rem;line-height:1.4}
     .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
     .fade-in.visible{opacity:1;transform:translateY(0)}
-
-    /* HERO with banner image */
-    .hero{position:relative;padding:72px 0 0;overflow:hidden}
+    /* NOTICE BAR */
+    .notice{background:var(--orange);color:var(--black);text-align:center;padding:.6rem 2rem;font-size:.9rem;font-weight:600;margin-top:72px}
+    .notice a{color:var(--black);text-decoration:underline}
+    /* HERO */
+    .hero{position:relative;overflow:hidden}
     .hero-banner{width:100%;display:block}
     .hero-overlay{position:absolute;bottom:0;left:0;right:0;padding:3rem 2rem;background:linear-gradient(to top,rgba(10,10,10,1) 0%,rgba(10,10,10,0.8) 60%,transparent 100%)}
     .hero-overlay-inner{max-width:1000px;margin:0 auto;text-align:center}
@@ -53,30 +54,45 @@
     .hero-sub{font-size:clamp(1rem,2vw,1.3rem);color:var(--gray-300);margin-bottom:1.5rem}
     .hero-cta{display:inline-flex;align-items:center;gap:.7rem;background:linear-gradient(135deg,var(--yellow),var(--orange));color:var(--black);padding:1rem 2.5rem;border-radius:100px;font-size:1.1rem;font-weight:800;text-decoration:none;transition:all .3s;font-family:var(--font-ja);box-shadow:0 8px 30px rgba(255,107,53,0.3)}
     .hero-cta:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(255,107,53,0.4)}
-
     /* STATS */
     .stats{background:var(--dark);border-top:1px solid var(--gray-800);border-bottom:1px solid var(--gray-800);padding:2.5rem 2rem}
     .stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
     .stats-number{font-family:var(--font-en);font-size:2.2rem;font-weight:900;background:linear-gradient(135deg,var(--yellow),var(--orange));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .stats-number small{font-size:.45em;-webkit-text-fill-color:var(--gray-400)}
     .stats-label{font-size:.9rem;color:var(--gray-400);margin-top:.25rem}
-
-    /* STORY */
-    .story-text{font-size:1.1rem;color:var(--gray-300);line-height:2.2;max-width:800px}
-    .story-text p+p{margin-top:1.25rem}
-    .story-text strong{color:var(--white);font-weight:700}
-    .story-highlight{background:var(--gray-900);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:2rem 0;font-size:1.05rem;color:var(--gray-300);line-height:2.1}
-
+    /* TEXT */
+    .body-text{font-size:1.1rem;color:var(--gray-300);line-height:2.2;max-width:800px}
+    .body-text p+p{margin-top:1.25rem}
+    .body-text strong{color:var(--white);font-weight:700}
+    .highlight-box{background:var(--gray-900);border-left:4px solid var(--orange);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:2rem 0;font-size:1.05rem;color:var(--gray-300);line-height:2.1}
+    .highlight-box strong{color:var(--white)}
+    /* CRAZY LIST */
+    .crazy-list{margin:2rem 0;display:flex;flex-direction:column;gap:1rem}
+    .crazy-item{display:flex;align-items:start;gap:1rem;background:var(--gray-900);border-radius:12px;padding:1.25rem 1.5rem;border:1px solid var(--gray-800)}
+    .crazy-num{font-family:var(--font-en);font-size:1.5rem;font-weight:900;color:var(--orange);flex-shrink:0;width:36px}
+    .crazy-item p{font-size:1.05rem;color:var(--gray-300);line-height:1.8}
     /* TSHIRT */
     .tshirt-images{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
     .tshirt-images img{width:100%;border-radius:16px;border:1px solid var(--gray-800)}
-    .tshirt-images .tshirt-full{grid-column:1/-1}
+    .tshirt-full{grid-column:1/-1}
     .concept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem}
     .concept-card{background:var(--gray-900);border-radius:16px;padding:1.75rem;border:1px solid var(--gray-800);text-align:center}
     .concept-icon{font-size:2.2rem;margin-bottom:.75rem}
     .concept-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.4rem}
     .concept-card p{font-size:.9rem;color:var(--gray-400);line-height:1.8}
-
+    /* SPONSOR */
+    .sponsor-box{background:var(--gray-900);border:2px solid var(--orange);border-radius:16px;padding:2rem;margin-top:2rem}
+    .sponsor-box h3{font-size:1.2rem;font-weight:700;margin-bottom:1rem;color:var(--orange)}
+    .sponsor-box ol{margin-left:1.5rem;margin-bottom:1.25rem}
+    .sponsor-box ol li{font-size:1rem;color:var(--gray-300);padding:.3rem 0;line-height:1.8}
+    .sponsor-box .sponsor-contact{font-size:.95rem;color:var(--gray-400);margin-top:1rem;line-height:1.8}
+    .sponsor-box .sponsor-contact a{color:var(--orange);text-decoration:none;font-weight:600}
+    .sponsor-status{display:inline-block;background:var(--orange);color:var(--black);font-weight:700;font-size:.85rem;padding:.3rem .8rem;border-radius:6px;margin-bottom:.75rem}
+    /* SCHEDULE */
+    .schedule{display:flex;gap:2rem;margin-top:2rem}
+    .schedule-item{flex:1;background:var(--gray-900);border-radius:14px;padding:1.5rem;border:1px solid var(--gray-800);text-align:center}
+    .schedule-item .sch-label{font-size:.85rem;color:var(--gray-400);margin-bottom:.25rem}
+    .schedule-item .sch-value{font-size:1.3rem;font-weight:800;color:var(--white)}
     /* PLANS */
     .plans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
     .plan-card{background:var(--gray-900);border-radius:20px;border:2px solid var(--gray-800);transition:all .4s;overflow:hidden;display:flex;flex-direction:column}
@@ -102,22 +118,22 @@
     .plan-btn-outline{background:transparent;color:var(--white);border:1px solid var(--gray-700)}
     .plan-btn-outline:hover{border-color:var(--orange);color:var(--orange)}
     .plan-size{font-size:.8rem;color:var(--gray-400);text-align:center;margin-top:.6rem}
-
-    /* GALLERY STRIP for plan detail */
     .plan-gallery{display:flex;gap:.5rem;margin-top:.75rem}
-    .plan-gallery img{width:60px;height:60px;border-radius:8px;object-fit:cover;border:1px solid var(--gray-800);cursor:pointer;transition:border-color .3s}
-    .plan-gallery img:hover{border-color:var(--orange)}
-
+    .plan-gallery img{width:60px;height:60px;border-radius:8px;object-fit:cover;border:1px solid var(--gray-800)}
+    /* NEWS */
+    .news-list{display:flex;flex-direction:column;gap:1rem;margin-top:2rem}
+    .news-item{background:var(--gray-900);border-radius:12px;padding:1.25rem 1.5rem;border:1px solid var(--gray-800)}
+    .news-date{font-family:var(--font-en);font-size:.85rem;font-weight:600;color:var(--orange);margin-bottom:.25rem}
+    .news-item p{font-size:1rem;color:var(--gray-300);line-height:1.8}
     /* MESSAGE */
     .message-box{max-width:750px;margin:0 auto;background:var(--gray-900);border-radius:20px;padding:3rem;border:1px solid var(--gray-800);position:relative}
     .message-quote{font-size:4rem;color:var(--orange);opacity:.3;position:absolute;top:.5rem;left:2rem;font-family:Georgia,serif;line-height:1}
-    .message-box p{font-size:1.1rem;line-height:2.2;color:var(--gray-300);position:relative;z-index:1}
+    .message-box>p{font-size:1.1rem;line-height:2.2;color:var(--gray-300);position:relative;z-index:1}
     .message-author{margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:1rem}
     .message-author-img{width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid var(--orange)}
     .message-author-img img{width:100%;height:100%;object-fit:cover}
     .message-author-name{font-weight:700;font-size:1.05rem}
     .message-author-role{font-size:.85rem;color:var(--gray-400)}
-
     /* FINAL CTA */
     .final-cta{text-align:center;padding:8rem 2rem;position:relative;overflow:hidden}
     .final-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(255,107,53,0.06) 0%,rgba(255,229,0,0.04) 100%);pointer-events:none}
@@ -131,7 +147,7 @@
     footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
     footer a{color:var(--gray-400);text-decoration:none}
     footer a:hover{color:var(--yellow)}
-    @media(max-width:900px){nav{display:none}.hamburger{display:flex}.stats-inner{grid-template-columns:repeat(2,1fr)}.concept-grid{grid-template-columns:1fr}.tshirt-images{grid-template-columns:1fr}.plans-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}}
+    @media(max-width:900px){nav{display:none}.hamburger{display:flex}.stats-inner{grid-template-columns:repeat(2,1fr)}.concept-grid{grid-template-columns:1fr}.tshirt-images{grid-template-columns:1fr}.plans-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}.schedule{flex-direction:column;gap:1rem}}
     @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.stats-inner{gap:1rem}.message-box{padding:2rem 1.5rem}.hero-overlay{padding:2rem 1.25rem}}
   </style>
 </head>
@@ -155,14 +171,17 @@
     <a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="profile.html">PROFILE</a><a href="global.html">GLOBAL</a><a href="offer.html">OFFER</a><a href="special.html">SPECIAL</a><a href="support.html">SUPPORT</a>
   </div>
 
-  <!-- HERO (banner image) -->
+  <!-- NOTICE -->
+  <div class="notice">【SNSフォローのお願い】ランニングに集中するため、以後の発信はSNSを通してのみ行います。</div>
+
+  <!-- HERO -->
   <section class="hero">
     <img src="images/special-logo.png" alt="つながれJAPAN 3,700km" class="hero-banner">
     <div class="hero-overlay">
       <div class="hero-overlay-inner">
         <div class="hero-project">SPECIAL PROJECT 2025</div>
         <h1><em>つながれJAPAN!</em> プロジェクト</h1>
-        <p class="hero-sub">活動10周年の集大成 ── 日本列島3,700kmを一筆書きで走る</p>
+        <p class="hero-sub">「GPSランナー」活動10周年の挑戦 ── 日本列島3,700kmを一筆書きで走る</p>
         <a href="#plans" class="hero-cta">応援プランを見る ↓</a>
       </div>
     </div>
@@ -173,23 +192,66 @@
     <div class="stats-inner">
       <div class="stats-item"><div class="stats-number">3,700<small>km</small></div><div class="stats-label">一筆書き走破距離</div></div>
       <div class="stats-item"><div class="stats-number">120<small>日</small></div><div class="stats-label">プロジェクト期間</div></div>
-      <div class="stats-item"><div class="stats-number">10<small>kg</small></div><div class="stats-label">毎日背負う荷物</div></div>
+      <div class="stats-item"><div class="stats-number">~10<small>kg</small></div><div class="stats-label">毎日背負う荷物</div></div>
       <div class="stats-item"><div class="stats-number">42<small>km/日</small></div><div class="stats-label">毎日フルマラソン</div></div>
     </div>
   </div>
 
-  <!-- STORY -->
+  <!-- 1. プロジェクト紹介 -->
   <section>
     <div class="container fade-in">
-      <p class="section-label">STORY</p>
-      <h2 class="section-title">このプロジェクトについて</h2>
-      <div class="story-text">
-        <p>2016年の初GPSラン「西宮LOVE」から10年。GPSランナー志水直樹が、活動10周年の集大成として挑む壮大なプロジェクト。</p>
-        <p><strong>日本列島3,700kmを一筆書きで走り、巨大な地上絵を制作します。</strong>北海道最北端から沖縄南端に相当する距離、アップダウンはエベレスト4回分。毎日フルマラソンの距離を、約10kgの荷物を担いで走ります。</p>
-        <div class="story-highlight">
-          ランナーの右手は<strong>能登半島</strong>を向いています。2024年の能登半島地震からの復興に向けて「ともに走り続ける日本」を象徴。クラウドファンディング総額の一部を、能登復興支援ボランティア活動費に充当します。
+      <p class="section-label">01 — PROJECT</p>
+      <h2 class="section-title">つながれJAPAN! プロジェクト</h2>
+      <div class="body-text">
+        <p>2025年、志水直樹は日本列島を舞台にGPSランナーとして10年間積み上げてきた経験の集大成として、「つながれJAPAN！プロジェクト」をスタートします。</p>
+        <p><strong>3,700kmを一筆書きで走りつなぎ、ギネス級の地上絵を制作する挑戦です。</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. プロジェクト内容 -->
+  <section class="alt-bg">
+    <div class="container fade-in">
+      <p class="section-label">02 — DETAILS</p>
+      <h2 class="section-title">プロジェクトの内容</h2>
+      <div class="body-text">
+        <p><strong>&#9654; 3,700kmで描く「日本列島を走るランナー」</strong></p>
+        <p>3,700kmにわたるランニングで、日本列島を一筆書きでつなぎ、駆けるランナーの姿を描きます。</p>
+        <div class="highlight-box">
+          ランナーの右手は<strong>能登半島</strong>。復興に向けて「ともに走り続ける日本」を象徴しています。
         </div>
-        <p>コンセプトは<strong>「競争」ではなく「共走」</strong>。走ることで人と人をつなぎ、日本中に笑顔を届ける。それがGPSランナーの原点であり、このプロジェクトの目指すところです。</p>
+        <p><strong>&#9654; スタート・ゴールは西宮のえびす神社から</strong></p>
+        <p>プロジェクトのスタートとゴールには、地元・西宮市の「福男」で知られる<strong>西宮神社の赤門</strong>を選びました。地元の応援を胸にここから旅立ち、3,700kmを走り抜いて、再びこの赤門に帰ってくる。全国の皆さんと復興のために福を運びます！</p>
+        <p><strong>&#9654; クレイジーすぎるジャーニー</strong></p>
+      </div>
+      <div class="crazy-list">
+        <div class="crazy-item">
+          <span class="crazy-num">①</span>
+          <p><strong>3,700kmの道のり</strong>（北海道の最北端から沖縄の南端に相当）</p>
+        </div>
+        <div class="crazy-item">
+          <span class="crazy-num">②</span>
+          <p><strong>過酷なアップダウン</strong>（エベレスト4回分に相当）</p>
+        </div>
+        <div class="crazy-item">
+          <span class="crazy-num">③</span>
+          <p><strong>荷物を担いで毎日フルマラソン</strong>（コメ袋１つ分ぐらい / 約10kg）</p>
+        </div>
+      </div>
+      <div class="body-text" style="margin-top:1.5rem">
+        <p>一歩ずつ踏みしめ、たくさんの方々と協力しながらゴールにたどり着くその日まで走り続けます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. あなたの支援が -->
+  <section>
+    <div class="container fade-in">
+      <p class="section-label">03 — YOUR SUPPORT</p>
+      <h2 class="section-title">あなたの支援が志水の挑戦を支える</h2>
+      <div class="body-text">
+        <p>クラウドファンディングでご支援頂いた皆さんのお名前をシャツに刻み、皆さんの熱い思いも一緒に背負って走らせて頂きます！</p>
+        <p style="font-size:.9rem;color:var(--gray-400)">※当ページの支援者一覧にお名前を掲載させて頂きますが、シャツへのお名前掲載に関しては制作上3/9までとさせて頂きますのでご了承ください。<br>（クラウドファンディングの総額の一部を、能登復興支援ボランティアでの活動費に充てさせて頂きます。）</p>
       </div>
     </div>
   </section>
@@ -197,86 +259,136 @@
   <!-- T-SHIRT -->
   <section class="alt-bg">
     <div class="container fade-in">
-      <p class="section-label">OFFICIAL T-SHIRT</p>
-      <h2 class="section-title">オフィシャルTシャツ</h2>
-      <p class="section-subtitle">¥15,000以上の応援プランすべてに付属。あなたの名前が刻まれます。</p>
+      <p class="section-label">T-SHIRT DESIGN</p>
+      <h2 class="section-title">Tシャツに込める思い</h2>
+      <div class="body-text">
+        <p>人のつながりが困難な状況を乗り越える最大の力。</p>
+      </div>
       <div class="tshirt-images">
         <img src="images/special-tshirt1.png" alt="Tシャツ FRONT / BACK / SIDE" class="tshirt-full" loading="lazy">
         <img src="images/special-tshirt2.png" alt="Tシャツ詳細" loading="lazy">
         <img src="images/special-plan4.png" alt="1dayスポンサープラン" loading="lazy">
       </div>
-      <div class="concept-grid" style="margin-top:2.5rem">
+      <div class="concept-grid" style="margin-top:2rem">
         <div class="concept-card">
           <div class="concept-icon">&#x2600;&#xFE0F;</div>
           <h3>サポーター = 太陽</h3>
-          <p>プロジェクトを温かく照らす存在。支援者全員の名前をTシャツ背面に刻みます。</p>
+          <p>温かくこのプロジェクトを照らす太陽。支援者全員の名前をTシャツ背面に刻みます。</p>
         </div>
         <div class="concept-card">
           <div class="concept-icon">&#x1F30A;</div>
           <h3>青海波</h3>
-          <p>「未来永劫に平穏な生活が続くように」── 復興を願う日本の伝統柄。</p>
+          <p>復興を願い、「未来永劫に」「平穏な生活が続いていくように」という願いを込めた伝統の柄。</p>
         </div>
         <div class="concept-card">
           <div class="concept-icon">&#x1F3E2;</div>
           <h3>企業スポンサー</h3>
-          <p>縁の下の力持ちとして、企業・団体ロゴをTシャツに掲載。</p>
+          <p>このプロジェクトをサポーターと共に支えていく縁の下の力持ち。</p>
         </div>
+      </div>
+      <!-- SPONSOR BOX -->
+      <div class="sponsor-box">
+        <span class="sponsor-status">現在4社決定！</span>
+        <h3>スポンサー団体・企業様へのリターン</h3>
+        <ol>
+          <li>オフィシャルTシャツに団体・企業ロゴを掲載</li>
+          <li>プロジェクト終了後、通常20万円相当（Mパッケージ）のコラボイベントを実施</li>
+          <li>公式スポンサーとしてSNSで情報を発信</li>
+        </ol>
+        <p class="sponsor-contact">スポンサー詳細をご希望の場合、下記までご一報いただければ幸いです。個別にご相談させて頂きます。<br><a href="mailto:naoki@gps-run.com">naoki@gps-run.com</a><br>担当｜GPSランナー 志水</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. これまで -->
+  <section>
+    <div class="container fade-in">
+      <p class="section-label">04 — TRACK RECORD</p>
+      <h2 class="section-title">GPSランナー・志水直樹のこれまで</h2>
+      <div class="body-text">
+        <p>志水直樹はこれまで、<strong>台湾1,135kmの24日連続マラソン</strong>、<strong>ペルーで4,600kmの「アルパカ」の地上絵</strong>など、数々の冒険を走り抜けてきました。</p>
+        <p>10周年を迎える今回、志水の集大成として挑むのは「<strong>競争ではなく共走しながら、日本の心を一筆書きでつなぐ</strong>」という前人未到のミッション。3,700kmの旅路を通じて、支援者と共に完走を目指します。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. スケジュール -->
+  <section class="alt-bg">
+    <div class="container fade-in">
+      <p class="section-label">05 — SCHEDULE</p>
+      <h2 class="section-title">プロジェクトスケジュール</h2>
+      <div class="schedule">
+        <div class="schedule-item">
+          <div class="sch-label">スタート予定</div>
+          <div class="sch-value">2025年4月5日（土）</div>
+        </div>
+        <div class="schedule-item">
+          <div class="sch-label">期間</div>
+          <div class="sch-value">約120日間</div>
+        </div>
+        <div class="schedule-item">
+          <div class="sch-label">スケール</div>
+          <div class="sch-value">宇宙から見えるサイズ</div>
+        </div>
+      </div>
+      <div class="body-text" style="margin-top:1.5rem">
+        <p>日本各地の道を一筆書きでつなぎ、走り抜けた軌跡が宇宙から見えるサイズの地上絵となって刻まれます。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 共走 -->
+  <section>
+    <div class="container fade-in">
+      <p class="section-label">06 — CONCEPT</p>
+      <h2 class="section-title">「競争」ではなく「共走」</h2>
+      <div class="body-text">
+        <p>「つながれJAPAN！」は、復興と完走に熱い想いを込めた挑戦です。支援者の皆さまと一緒にゴールを目指し、全力で走り抜きます。</p>
+        <p>ぜひ応援とご支援をお寄せいただき、このプロジェクトの一員として、志水直樹と共に歩んでください！</p>
+        <p style="margin-top:1rem;font-weight:700;color:var(--white);font-size:1.2rem">GPSランナー　志水直樹</p>
       </div>
     </div>
   </section>
 
   <!-- PLANS -->
-  <section id="plans">
+  <section class="alt-bg" id="plans">
     <div class="container">
       <div class="fade-in" style="text-align:center;margin-bottom:3rem">
         <p class="section-label">SUPPORT PLANS</p>
         <h2 class="section-title">応援プラン</h2>
-        <p class="section-subtitle" style="margin:0 auto">あなたに合った形で、この挑戦を応援してください。すべてのプランにサポーター証明書＋支援者一覧へのお名前掲載が含まれます。</p>
+        <p style="font-size:1.05rem;color:var(--gray-400);max-width:700px;margin:0 auto;line-height:2">クラウドファンディングのコースは以下よりお選び下さい。<br>※15,000円以上のプラン全てに、プロジェクトの応援「オフィシャルTシャツ」が付いています。（3月末頃全国へ発送予定）</p>
       </div>
       <div class="plans-grid">
-        <!-- Plan 1 -->
         <div class="plan-card fade-in">
           <div class="plan-image"><img src="images/special-plan1.png" alt="3食サポートプラン" loading="lazy"></div>
           <div class="plan-body">
             <div class="plan-price-row"><span class="plan-price">&yen;3,900</span><span class="plan-price-sub">税込</span></div>
             <div class="plan-name">39（サンキュー）3食サポートプラン</div>
             <p class="plan-desc">1日分の「食事代」を支援。3,700km走破を食で支える。</p>
-            <ul class="plan-returns">
-              <li>サポーター証明書（感謝状）</li>
-              <li>支援者一覧にお名前掲載</li>
-            </ul>
+            <ul class="plan-returns"><li>サポーター証明書（感謝状）</li><li>支援者一覧にお名前掲載</li></ul>
             <a href="https://gpsrunner.official.ec/items/70879894" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">このプランで応援する</a>
           </div>
         </div>
-        <!-- Plan 2 -->
         <div class="plan-card fade-in">
           <div class="plan-image"><img src="images/special-plan2.png" alt="ゴーゴー応援プラン" loading="lazy"></div>
           <div class="plan-body">
             <div class="plan-price-row"><span class="plan-price">&yen;5,500</span><span class="plan-price-sub">税込</span></div>
             <div class="plan-name">ゴーゴー応援プラン</div>
             <p class="plan-desc">1日分の「タンパク質多めの食事」を支援。走り続ける体をサポート。</p>
-            <ul class="plan-returns">
-              <li>サポーター証明書（感謝状）</li>
-              <li>支援者一覧にお名前掲載</li>
-            </ul>
+            <ul class="plan-returns"><li>サポーター証明書（感謝状）</li><li>支援者一覧にお名前掲載</li></ul>
             <a href="https://gpsrunner.official.ec/items/70918702" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">このプランで応援する</a>
           </div>
         </div>
-        <!-- Plan 3 -->
         <div class="plan-card fade-in">
           <div class="plan-image"><img src="images/special-plan3.png" alt="全力で応援プラン" loading="lazy"></div>
           <div class="plan-body">
             <div class="plan-price-row"><span class="plan-price">&yen;10,000</span><span class="plan-price-sub">税込</span></div>
             <div class="plan-name">全力で応援プラン</div>
             <p class="plan-desc">1日分の「食事代」と「宿代」をまるごと支援。</p>
-            <ul class="plan-returns">
-              <li>サポーター証明書（感謝状）</li>
-              <li>支援者一覧にお名前掲載</li>
-            </ul>
+            <ul class="plan-returns"><li>サポーター証明書（感謝状）</li><li>支援者一覧にお名前掲載</li></ul>
             <a href="https://gpsrunner.official.ec/items/70918590" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">このプランで応援する</a>
           </div>
         </div>
-        <!-- Plan 4 (FEATURED) -->
         <div class="plan-card featured fade-in">
           <div class="plan-badge">MOST POPULAR</div>
           <div class="plan-image"><img src="images/special-plan4.png" alt="1dayスポンサープラン" loading="lazy"></div>
@@ -284,61 +396,56 @@
             <div class="plan-price-row"><span class="plan-price">&yen;15,000</span><span class="plan-price-sub">税込</span></div>
             <div class="plan-name">1dayスポンサー＋オフィシャルTシャツ</div>
             <p class="plan-desc">「1dayスポンサー」になれる。プロジェクト1日分の活動費をまるごと支援。</p>
-            <ul class="plan-returns">
-              <li>サポーター証明書（感謝状）</li>
-              <li>オフィシャルTシャツ 1枚</li>
-              <li>支援者一覧にお名前掲載</li>
-              <li>走行中の場所から感謝の動画を個別送付</li>
-              <li>LIVE配信でスポンサーとして紹介</li>
-            </ul>
+            <ul class="plan-returns"><li>サポーター証明書（感謝状）</li><li>オフィシャルTシャツ 1枚</li><li>支援者一覧にお名前掲載</li><li>走行中の場所から感謝の動画を個別送付</li><li>LIVE配信でスポンサーとして紹介</li></ul>
             <a href="https://gpsrunner.official.ec/items/70918604" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
             <p class="plan-size">サイズ：S / M / L / LL</p>
           </div>
         </div>
-        <!-- Plan 5 -->
         <div class="plan-card fade-in">
           <div class="plan-image"><img src="images/special-plan5.png" alt="装備サポートプラン" loading="lazy"></div>
           <div class="plan-body">
             <div class="plan-price-row"><span class="plan-price">&yen;30,000</span><span class="plan-price-sub">税込</span></div>
             <div class="plan-name">装備サポートプラン</div>
             <p class="plan-desc">Tシャツ付き。4か月間の装備をサポート。ザック、レインウェア、寝具、調理器具等。</p>
-            <ul class="plan-returns">
-              <li>サポーター証明書（感謝状）</li>
-              <li>オフィシャルTシャツ 1枚</li>
-              <li>支援者一覧にお名前掲載</li>
-              <li>走行中の場所から感謝の動画を個別送付</li>
-              <li>LIVE配信でスポンサーとして紹介</li>
-            </ul>
+            <ul class="plan-returns"><li>サポーター証明書（感謝状）</li><li>オフィシャルTシャツ 1枚</li><li>支援者一覧にお名前掲載</li><li>走行中の場所から感謝の動画を個別送付</li><li>LIVE配信でスポンサーとして紹介</li></ul>
             <a href="https://gpsrunner.official.ec/items/70918663" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
             <p class="plan-size">サイズ：S / M / L / LL</p>
-            <div class="plan-gallery">
-              <img src="images/special-plan5-2.png" alt="装備サポート詳細1" loading="lazy">
-              <img src="images/special-plan5-3.png" alt="装備サポート詳細2" loading="lazy">
-            </div>
+            <div class="plan-gallery"><img src="images/special-plan5-2.png" alt="" loading="lazy"><img src="images/special-plan5-3.png" alt="" loading="lazy"></div>
           </div>
         </div>
-        <!-- Plan 6 -->
         <div class="plan-card fade-in">
           <div class="plan-image"><img src="images/special-plan6.png" alt="大感謝プラン" loading="lazy"></div>
           <div class="plan-body">
             <div class="plan-price-row"><span class="plan-price">&yen;50,000</span><span class="plan-price-sub">税込</span></div>
             <div class="plan-name">大感謝プラン</div>
             <p class="plan-desc">がっつりサポート＋能登に応援を届ける。支援の一部を現地復興活動費に充当。</p>
-            <ul class="plan-returns">
-              <li>サポーター証明書（感謝状）</li>
-              <li>オフィシャルTシャツ 1枚</li>
-              <li>支援者一覧にお名前掲載</li>
-              <li>走行中の場所から感謝の動画を個別送付</li>
-              <li>LIVE配信でスポンサーとして紹介</li>
-              <li>能登復興支援活動費に一部充当</li>
-            </ul>
+            <ul class="plan-returns"><li>サポーター証明書（感謝状）</li><li>オフィシャルTシャツ 1枚</li><li>支援者一覧にお名前掲載</li><li>走行中の場所から感謝の動画を個別送付</li><li>LIVE配信でスポンサーとして紹介</li><li>能登復興支援活動費に一部充当</li></ul>
             <a href="https://gpsrunner.official.ec/items/70918669" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
             <p class="plan-size">サイズ：S / M / L / LL</p>
-            <div class="plan-gallery">
-              <img src="images/special-plan6-2.png" alt="大感謝プラン詳細1" loading="lazy">
-              <img src="images/special-plan6-3.png" alt="大感謝プラン詳細2" loading="lazy">
-            </div>
+            <div class="plan-gallery"><img src="images/special-plan6-2.png" alt="" loading="lazy"><img src="images/special-plan6-3.png" alt="" loading="lazy"></div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS / BLOG -->
+  <section>
+    <div class="container fade-in">
+      <p class="section-label">NEWS</p>
+      <h2 class="section-title">最新情報</h2>
+      <div class="news-list">
+        <div class="news-item">
+          <div class="news-date">2025/05/28</div>
+          <p>【SNSフォローのお願い】ランニングに集中するため、以後の発信はSNSを通してのみ行います。</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2025/04/16</div>
+          <p>【現在地】１２日間かけて山口県岩国市に到着！</p>
+        </div>
+        <div class="news-item">
+          <div class="news-date">2025/03/13</div>
+          <p>【感謝】クラウドファンディング目標額の2,000,000円に到達しました！</p>
         </div>
       </div>
     </div>
@@ -351,12 +458,7 @@
       <h2 class="section-title" style="text-align:center;margin-bottom:2rem">志水直樹より</h2>
       <div class="message-box">
         <div class="message-quote">&ldquo;</div>
-        <p>
-          10年前、バレンタインデーに「西宮LOVE」と走って描いたあの日から、GPSアートは僕の人生そのものになりました。<br><br>
-          台湾1,135km、ペルー4,600km、世界12ヵ国。全部、応援してくれる皆さんの力があったから走り切れました。<br><br>
-          今度は日本全土3,700km。「競争」じゃない、「共走」── みんなで一緒に走る。能登への想いも、この足に乗せて。<br><br>
-          一緒に、日本を一筆で繋いでください。<br><strong>RUN FOR SMILE.</strong>
-        </p>
+        <p>「つながれJAPAN！」は、復興と完走に熱い想いを込めた挑戦です。支援者の皆さまと一緒にゴールを目指し、全力で走り抜きます。<br><br>ぜひ応援とご支援をお寄せいただき、このプロジェクトの一員として、志水直樹と共に歩んでください！<br><br><strong>RUN FOR SMILE.</strong></p>
         <div class="message-author">
           <div class="message-author-img"><img src="images/hero.jpg" alt="志水直樹"></div>
           <div>
