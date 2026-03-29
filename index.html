@@ -560,25 +560,29 @@
 
     .activities-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
     }
 
     .activity-card {
       background: var(--gray-900);
-      border-radius: 16px;
+      border-radius: 20px;
       overflow: hidden;
-      border: 1px solid var(--gray-800);
-      transition: border-color 0.3s, transform 0.3s;
+      border: 2px solid var(--gray-800);
+      transition: all 0.4s;
+      display: flex;
+      flex-direction: column;
     }
 
     .activity-card:hover {
-      border-color: rgba(255, 229, 0, 0.6);
-      transform: translateY(-2px);
+      border-color: var(--yellow);
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
     }
 
     .activity-card-video {
       aspect-ratio: 16/9;
+      position: relative;
     }
 
     .activity-card-video iframe {
@@ -588,18 +592,55 @@
     }
 
     .activity-card-body {
-      padding: 1.25rem;
+      padding: 1.75rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .activity-card-icon {
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
     }
 
     .activity-card h3 {
-      font-size: 1rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
     }
 
-    .activity-card p {
-      font-size: 0.8rem;
-      color: var(--gray-400);
+    .activity-card-desc {
+      font-size: 1rem;
+      color: var(--gray-300);
+      line-height: 1.9;
+      flex: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .activity-card-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--yellow);
+      color: var(--black);
+      padding: 0.75rem 1.5rem;
+      border-radius: 100px;
+      font-size: 1rem;
+      font-weight: 700;
+      transition: all 0.3s;
+      align-self: flex-start;
+    }
+
+    .activity-card:hover .activity-card-btn {
+      box-shadow: 0 6px 20px rgba(255, 229, 0, 0.3);
+    }
+
+    @media (max-width: 900px) {
+      .activities-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
     }
 
     /* ===== EVENTS ===== */
@@ -1120,8 +1161,10 @@
             <iframe src="https://www.youtube.com/embed/jK6p2JYDEEY" title="講演会" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="activity-card-body">
+            <div class="activity-card-icon">&#x1F3A4;</div>
             <h3>講演会</h3>
-            <p>学校・企業・自治体向けに、挑戦と夢をテーマにした講演を実施。詳しく見る →</p>
+            <p class="activity-card-desc">学校・企業・自治体・各種団体向けに、挑戦と夢をテーマにした講演を実施しています。</p>
+            <span class="activity-card-btn">詳しく見る &rarr;</span>
           </div>
         </a>
         <a href="activity-plogging.html" class="activity-card fade-in" style="text-decoration:none;color:inherit;">
@@ -1129,8 +1172,10 @@
             <iframe src="https://www.youtube.com/embed/TPtlcEISZC4" title="GPSゴミ拾い × アートウォーク" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="activity-card-body">
-            <h3>GPSゴミ拾い × アートウォーク</h3>
-            <p>ゴミ拾いしながら地図にアートを描く、SDGs型社会貢献イベント。詳しく見る →</p>
+            <div class="activity-card-icon">&#x267B;&#xFE0F;</div>
+            <h3>GPSゴミ拾い &times; アートウォーク</h3>
+            <p class="activity-card-desc">ゴミ拾いしながら地図にアートを描く、SDGs型社会貢献イベント。</p>
+            <span class="activity-card-btn">詳しく見る &rarr;</span>
           </div>
         </a>
         <a href="activity-walkrun.html" class="activity-card fade-in" style="text-decoration:none;color:inherit;">
@@ -1138,8 +1183,10 @@
             <iframe src="https://www.youtube.com/embed/7D5wPEcxtgQ" title="GPSウォーク＆ラン" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="activity-card-body">
+            <div class="activity-card-icon">&#x1F3C3;</div>
             <h3>GPSウォーク &amp; ラン</h3>
-            <p>歩いて・走って地図にアートを描く。誰でも参加できるイベント。詳しく見る →</p>
+            <p class="activity-card-desc">歩いて・走って地図にアートを描く。誰でも参加できるイベント。</p>
+            <span class="activity-card-btn">詳しく見る &rarr;</span>
           </div>
         </a>
       </div>
