@@ -60,11 +60,11 @@
     .count-badge{font-family:var(--font-en);font-size:1.25rem;color:var(--gray-400);white-space:nowrap}
     .count-badge strong{color:var(--yellow);font-weight:700}
     .gallery{max-width:1400px;margin:0 auto;padding:2rem}
-    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.25rem}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
     .work-card{background:var(--gray-900);border-radius:14px;overflow:hidden;border:1px solid var(--gray-800);transition:all .3s;cursor:pointer;display:block}
     .work-card:hover{border-color:rgba(255,229,0,0.6);transform:translateY(-4px);box-shadow:0 12px 40px rgba(255,229,0,0.3)}
     .work-card-image{aspect-ratio:1;overflow:hidden;position:relative;background:var(--gray-800)}
-    .work-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
+    .work-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;image-rendering:auto}
     .work-card:hover .work-card-image img{transform:scale(1.05)}
     .work-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.8) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:1rem}
     .work-card:hover .work-card-overlay{opacity:1}
