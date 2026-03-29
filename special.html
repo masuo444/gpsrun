@@ -4,16 +4,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ELEVEN RUN 2026 | GPS RUNNER 志水直樹</title>
-  <meta name="description" content="GPSランナー志水直樹のELEVEN RUN 2026。片道切符で渡米、アメリカ大陸11ヵ国を駆け抜けるGPSアートプロジェクト。応援プランはこちら。">
+  <meta name="description" content="GPSランナー志水直樹のELEVEN RUN 2026。片道切符で渡米、アメリカ大陸11ヵ国を駆け抜けるGPSアートプロジェクト。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{--yellow:#FFE500;--blue:#1a4b8c;--red:#c41e3a;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    :root{--blue:#1a4b8c;--red:#c41e3a;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--yellow:#FFE500;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
     html{scroll-behavior:smooth;font-size:18px}
     body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
-    header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
     header.scrolled{background:rgba(10,10,10,0.95)}
     .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
     .logo-mark{width:40px;height:40px;background:var(--yellow);border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font-en);font-weight:900;font-size:.85rem;color:var(--black);line-height:1}
@@ -31,286 +31,321 @@
     .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
     .mobile-nav.active{display:flex}
     .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.5rem;font-weight:600}
-    .mobile-nav a:hover{color:var(--yellow)}
-    .container{max-width:1000px;margin:0 auto}
+    .container{max-width:900px;margin:0 auto}
     section{padding:5rem 2rem}
     .alt-bg{background:var(--dark)}
-    .section-label{font-family:var(--font-en);font-size:.85rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem}
-    .section-title{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;margin-bottom:1rem;line-height:1.4}
+    .sl{font-family:var(--font-en);font-size:.85rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem}
+    .st{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:1.25rem;line-height:1.4}
+    .txt{font-size:1.1rem;color:var(--gray-300);line-height:2.2;max-width:800px}
+    .txt p+p{margin-top:1.25rem}
+    .txt strong{color:var(--white);font-weight:700}
+    .txt em{font-style:normal;color:var(--red);font-weight:700}
+    .hbox{background:var(--gray-900);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:1.5rem 0;font-size:1.05rem;color:var(--gray-300);line-height:2.1}
+    .hbox strong{color:var(--white)}
+    .ig{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+    .ig img{width:100%;border-radius:12px;border:1px solid var(--gray-800);display:block}
+    .ig-full{grid-column:1/-1}
     .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
     .fade-in.visible{opacity:1;transform:translateY(0)}
     /* HERO */
-    .hero{padding:100px 2rem 3rem;text-align:center;position:relative;overflow:hidden}
-    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,75,140,0.1) 0%,rgba(196,30,58,0.05) 100%);pointer-events:none}
+    .hero{padding:100px 2rem 2rem;text-align:center;position:relative}
+    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,75,140,0.08),rgba(196,30,58,0.04));pointer-events:none}
     .hero-inner{max-width:850px;margin:0 auto;position:relative;z-index:2}
-    .hero-project{font-family:var(--font-en);font-size:.85rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:1rem;display:inline-flex;align-items:center;gap:.75rem}
-    .hero-project::before,.hero-project::after{content:'';width:24px;height:2px;background:var(--red)}
+    .hero-tag{font-family:var(--font-en);font-size:.85rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:1rem}
     .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:900;line-height:1.15;margin-bottom:.75rem}
     .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .hero-sub{font-size:clamp(1rem,2vw,1.3rem);color:var(--gray-300);margin-bottom:1rem;line-height:1.7}
-    .hero-desc{font-size:1.1rem;color:var(--gray-300);line-height:2.1;max-width:650px;margin:0 auto 2rem}
+    .hero-sub{font-size:1.2rem;color:var(--gray-300);margin-bottom:2rem}
     .hero-cta{display:inline-flex;align-items:center;gap:.7rem;background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;padding:1rem 2.5rem;border-radius:100px;font-size:1.1rem;font-weight:800;text-decoration:none;transition:all .3s;font-family:var(--font-ja);box-shadow:0 8px 30px rgba(196,30,58,0.3)}
     .hero-cta:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(196,30,58,0.4)}
-    /* HERO IMAGE */
     .hero-img{margin-top:2rem;border-radius:16px;overflow:hidden;border:1px solid var(--gray-800)}
     .hero-img img{width:100%;display:block}
-    /* STATS */
-    .stats{background:var(--dark);border-top:1px solid var(--gray-800);border-bottom:1px solid var(--gray-800);padding:2.5rem 2rem}
-    .stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center}
-    .stats-number{font-family:var(--font-en);font-size:2.2rem;font-weight:900;background:linear-gradient(135deg,var(--blue),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-    .stats-number small{font-size:.45em;-webkit-text-fill-color:var(--gray-400)}
-    .stats-label{font-size:.9rem;color:var(--gray-400);margin-top:.25rem}
-    /* TEXT */
-    .body-text{font-size:1.1rem;color:var(--gray-300);line-height:2.2;max-width:800px}
-    .body-text p+p{margin-top:1.25rem}
-    .body-text strong{color:var(--white);font-weight:700}
-    .highlight-box{background:var(--gray-900);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:2rem 0;font-size:1.05rem;color:var(--gray-300);line-height:2.1}
-    .highlight-box strong{color:var(--white)}
-    /* IMAGE GRID */
-    .img-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2rem}
-    .img-grid img{width:100%;border-radius:12px;border:1px solid var(--gray-800)}
-    .img-full{grid-column:1/-1}
     /* PLANS */
-    .plans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem}
+    .plans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
     .plan-card{background:var(--gray-900);border-radius:20px;border:2px solid var(--gray-800);transition:all .4s;overflow:hidden;display:flex;flex-direction:column}
     .plan-card:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
-    .plan-card.featured{border-color:var(--red)}
-    .plan-card.featured .plan-badge{display:block}
-    .plan-badge{display:none;background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;text-align:center;padding:.5rem;font-family:var(--font-en);font-size:.8rem;font-weight:800;letter-spacing:.1em}
+    .plan-card.pop{border-color:var(--red)}
+    .plan-card.pop .pop-badge{display:block}
+    .pop-badge{display:none;background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;text-align:center;padding:.5rem;font-family:var(--font-en);font-size:.8rem;font-weight:800;letter-spacing:.1em}
     .plan-image{width:100%;aspect-ratio:1;overflow:hidden;background:var(--gray-800)}
-    .plan-image img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-    .plan-card:hover .plan-image img{transform:scale(1.03)}
-    .plan-body{padding:1.75rem;flex:1;display:flex;flex-direction:column}
-    .plan-price-row{display:flex;align-items:baseline;gap:.4rem;margin-bottom:.5rem}
-    .plan-price{font-family:var(--font-en);font-size:2.2rem;font-weight:900;color:var(--white)}
-    .plan-price-sub{font-size:.9rem;color:var(--gray-400)}
-    .plan-name{font-size:1.15rem;font-weight:700;margin-bottom:.5rem}
-    .plan-desc{font-size:.95rem;color:var(--gray-400);line-height:1.8;margin-bottom:1rem}
+    .plan-image img{width:100%;height:100%;object-fit:cover}
+    .plan-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+    .plan-price{font-family:var(--font-en);font-size:2rem;font-weight:900;color:var(--white)}
+    .plan-price small{font-size:.5em;color:var(--gray-400);font-weight:500}
+    .plan-name{font-size:1.1rem;font-weight:700;margin:.4rem 0}
+    .plan-desc{font-size:.9rem;color:var(--gray-400);line-height:1.8;margin-bottom:1rem}
     .plan-returns{list-style:none;margin-bottom:1.5rem;flex:1}
-    .plan-returns li{font-size:.9rem;color:var(--gray-300);padding:.45rem 0;border-bottom:1px solid var(--gray-800);display:flex;align-items:start;gap:.5rem;line-height:1.6}
+    .plan-returns li{font-size:.85rem;color:var(--gray-300);padding:.4rem 0;border-bottom:1px solid var(--gray-800);display:flex;align-items:start;gap:.4rem;line-height:1.6}
     .plan-returns li::before{content:'✓';color:var(--red);font-weight:700;flex-shrink:0}
-    .plan-btn{display:block;text-align:center;padding:1rem;border-radius:12px;font-size:1rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-ja)}
+    .plan-btn{display:block;text-align:center;padding:.9rem;border-radius:12px;font-size:1rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-ja)}
     .plan-btn-primary{background:linear-gradient(135deg,var(--blue),var(--red));color:#fff}
-    .plan-btn-primary:hover{box-shadow:0 8px 24px rgba(196,30,58,0.3);transform:translateY(-1px)}
+    .plan-btn-primary:hover{box-shadow:0 8px 24px rgba(196,30,58,0.3)}
     .plan-btn-outline{background:transparent;color:var(--white);border:1px solid var(--gray-700)}
     .plan-btn-outline:hover{border-color:var(--red);color:var(--red)}
+    /* BUDGET */
+    .budget-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0}
+    .budget-item{background:var(--gray-900);border:1px solid var(--gray-800);border-radius:12px;padding:1.25rem;text-align:center}
+    .budget-item h4{font-size:1rem;font-weight:700;margin-bottom:.25rem}
+    .budget-item p{font-size:.9rem;color:var(--gray-400)}
+    .budget-total{background:var(--red);color:#fff;border-radius:12px;padding:1.25rem;text-align:center;font-size:1.3rem;font-weight:800;margin:1rem 0}
     /* VIDEO */
     .video-wrapper{max-width:900px;margin:2rem auto 0;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--gray-800)}
     .video-wrapper iframe{width:100%;height:100%;border:none}
     /* MESSAGE */
-    .message-box{max-width:750px;margin:0 auto;background:var(--gray-900);border-radius:20px;padding:3rem;border:1px solid var(--gray-800);position:relative}
-    .message-quote{font-size:4rem;color:var(--red);opacity:.3;position:absolute;top:.5rem;left:2rem;font-family:Georgia,serif;line-height:1}
-    .message-box>p{font-size:1.1rem;line-height:2.2;color:var(--gray-300);position:relative;z-index:1}
-    .message-author{margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:1rem}
-    .message-author-img{width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid var(--red)}
-    .message-author-img img{width:100%;height:100%;object-fit:cover}
-    .message-author-name{font-weight:700;font-size:1.05rem}
-    .message-author-role{font-size:.85rem;color:var(--gray-400)}
+    .msg-box{max-width:750px;margin:0 auto;background:var(--gray-900);border-radius:20px;padding:3rem;border:1px solid var(--gray-800);position:relative}
+    .msg-box .q{font-size:4rem;color:var(--red);opacity:.3;position:absolute;top:.5rem;left:2rem;font-family:Georgia,serif;line-height:1}
+    .msg-box>p{font-size:1.1rem;line-height:2.2;color:var(--gray-300);position:relative;z-index:1}
+    .msg-author{margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:1rem}
+    .msg-author-img{width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid var(--red)}
+    .msg-author-img img{width:100%;height:100%;object-fit:cover}
     /* FINAL CTA */
-    .final-cta{text-align:center;padding:8rem 2rem;position:relative;overflow:hidden}
-    .final-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,75,140,0.06) 0%,rgba(196,30,58,0.04) 100%);pointer-events:none}
+    .final-cta{text-align:center;padding:8rem 2rem;position:relative}
+    .final-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,75,140,0.06),rgba(196,30,58,0.04));pointer-events:none}
     .final-cta h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;margin-bottom:1rem;position:relative}
     .final-cta h2 em{font-style:normal;color:var(--red)}
     .final-cta p{font-size:1.1rem;color:var(--gray-300);max-width:550px;margin:0 auto 2.5rem;position:relative;line-height:2}
     .final-cta-btn{display:inline-flex;align-items:center;gap:.7rem;background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;padding:1.2rem 3.5rem;border-radius:100px;font-size:1.2rem;font-weight:800;text-decoration:none;transition:all .3s;position:relative;font-family:var(--font-ja);box-shadow:0 8px 30px rgba(196,30,58,0.3)}
     .final-cta-btn:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(196,30,58,0.4)}
-    .final-cta-note{margin-top:1.5rem;font-size:.9rem;color:var(--gray-400);position:relative}
     footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
     footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
     footer a{color:var(--gray-400);text-decoration:none}
-    footer a:hover{color:var(--yellow)}
-    @media(max-width:900px){nav{display:none}.hamburger{display:flex}.stats-inner{grid-template-columns:repeat(3,1fr)}.plans-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}.img-grid{grid-template-columns:1fr}}
-    @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.stats-inner{gap:1rem}.message-box{padding:2rem 1.5rem}}
+    @media(max-width:900px){nav{display:none}.hamburger{display:flex}.plans-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}.ig{grid-template-columns:1fr}.budget-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.msg-box{padding:2rem 1.5rem}}
   </style>
 </head>
 <body>
   <header id="header">
     <a href="index.html" class="logo"><div class="logo-mark">GPS<br>RUN</div><div class="logo-text">GPS <span>RUNNER</span></div></a>
     <nav>
-      <a href="index.html">HOME</a>
-      <a href="works.html">WORKS</a>
-      <a href="profile.html">PROFILE</a>
-      <a href="global.html">GLOBAL</a>
-      <a href="offer.html">OFFER</a>
-      <a href="special.html" class="active">SPECIAL</a>
-      <a href="support.html" class="nav-cta">SUPPORT</a>
+      <a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="profile.html">PROFILE</a><a href="global.html">GLOBAL</a><a href="offer.html">OFFER</a><a href="special.html" class="active">SPECIAL</a><a href="support.html" class="nav-cta">SUPPORT</a>
     </nav>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </header>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="profile.html">PROFILE</a><a href="global.html">GLOBAL</a><a href="offer.html">OFFER</a><a href="special.html">SPECIAL</a><a href="support.html">SUPPORT</a>
-  </div>
+  <div class="mobile-nav" id="mobileNav"><a href="index.html">HOME</a><a href="works.html">WORKS</a><a href="profile.html">PROFILE</a><a href="global.html">GLOBAL</a><a href="offer.html">OFFER</a><a href="special.html">SPECIAL</a><a href="support.html">SUPPORT</a></div>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
-      <div class="hero-project">SPECIAL PROJECT 2026</div>
+      <div class="hero-tag">SPECIAL PROJECT 2026</div>
       <h1><em>ELEVEN RUN</em> 2026</h1>
-      <p class="hero-sub">RUN FOR SMILE! 11年目は11ヵ国を笑顔に ── アメリカ大陸へ</p>
-      <p class="hero-desc">2026年、世界中の熱い視線はアメリカ大陸へ。歴史上初の3ヶ国共同開催FIFAサッカーワールドカップ。視聴者3.5〜5億人。この注目を追い風に、<strong>11ヶ国を駆け抜けて世界に感動と笑顔をお届けするGPSアートを制作します。</strong></p>
+      <p class="hero-sub">── RUN FOR SMILE! 11年目は11ヵ国を笑顔に ──</p>
       <a href="#plans" class="hero-cta">応援プランを見る ↓</a>
-      <div class="hero-img">
-        <img src="images/eleven-profile.png" alt="ELEVEN RUN 2026" loading="eager">
-      </div>
+      <div class="hero-img"><img src="images/cf-p1-2.png" alt="アメリカ大陸へ" loading="eager"></div>
     </div>
   </section>
 
-
-  <!-- PROJECT -->
+  <!-- 1. プロジェクトについて -->
   <section>
     <div class="container fade-in">
-      <p class="section-label">01 — PROJECT</p>
-      <h2 class="section-title">ELEVEN RUN 2026 プロジェクト</h2>
-      <div class="body-text">
-        <p>2026年、GPSランナー志水直樹は<strong>片道切符で渡米</strong>。アメリカ、カナダ、メキシコ、コロンビア、エクアドル、ペルー、ボリビア、チリ、アルゼンチン、ウルグアイ、ブラジルの<strong>11ヶ国を駆け抜ける</strong>壮大なプロジェクトです。</p>
-        <p>危険な国も多数で"予期せぬ事態"が起きない方がおかしいプロジェクト。それでも人類史上誰もやったことの無い挑戦だから挑み続ける。</p>
+      <p class="sl">01 — PROJECT</p>
+      <h2 class="st">プロジェクトについて</h2>
+      <div class="txt">
+        <p>2026年、世界中の熱い視線はアメリカ大陸へ。</p>
+        <p>アメリカ・カナダ・メキシコ、歴史上初の3ヶ国共同開催のFIFAサッカーワールドカップが開催されるためです。</p>
+        <p>視聴者3.5〜5億人。この世界から集まる注目を追い風に、<em>11ヶ国を駆け抜けて世界に感動と笑顔をお届けするGPSアートを制作</em>します。</p>
       </div>
-      <div class="img-grid">
-        <img src="images/eleven-schedule.png" alt="プロジェクト概要" class="img-full" loading="lazy">
+      <div class="ig">
+        <img src="images/cf-p2-1.png" alt="W杯マスコット＆3都市" class="ig-full" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>前半の舞台は開催国のアメリカ・メキシコ・カナダ！それぞれの国をモチーフにした、FIFAワールドカップ2026の<em>公式マスコット3体をギネス級の特大サイズ</em>で描き、スポーツ×アートの力で大会を盛り上げます！</p>
+        <p><em>ゴールはニューヨークのマンハッタン！</em>ワールドカップ開会式前日にゴールを予定。そのまま後半の南米8ヶ国旅に挑戦します。</p>
+      </div>
+      <div class="ig">
+        <img src="images/cf-p3-1.png" alt="11ヵ国ルートマップ" class="ig-full" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>渡米後、5ヶ月ほどかけてブラジルを目指します。</p>
+        <div class="hbox">
+          <strong>▶ プロジェクトの前半（北中米編）</strong><br>北中米<strong>3ヶ国でW杯を盛り上げるGPSアート</strong>を制作！<br><br>
+          <strong>▶ プロジェクトの後半（南米編）</strong><br>W杯の開会式をスタートの合図に、サッカー熱止まぬ南米へ。コロンビア、エクアドル、ペルー、ボリビア、チリ、アルゼンチン、ウルグアイ、ブラジル、<strong>8ヵ国でGPSアートを描く冒険</strong>に着手！
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- WHY -->
+  <!-- 2. 危険と隣り合わせの冒険 -->
   <section class="alt-bg">
     <div class="container fade-in">
-      <p class="section-label">02 — CHALLENGE</p>
-      <h2 class="section-title">それでも挑戦し続ける理由</h2>
-      <div class="body-text">
-        <p>それでも挑戦し続けるのは、人類史上誰もやったことの無い挑戦だから。そしてそこにまだ誰も見たことが無い感動が待っているから。</p>
-        <div class="highlight-box">
-          <strong>アートが導く名所や怪しい裏路地。</strong>そこで走って描くと、どんな素敵な笑顔や景色と巡り合えるのか。皆さんとも喜びや感動を共有できるよう、<strong>instagramやYoutubeで世界各地の魅力を発信しながら進みます！</strong>
-        </div>
+      <p class="sl">02 — ADVENTURE</p>
+      <h2 class="st">危険と隣り合わせの冒険</h2>
+      <div class="ig">
+        <img src="images/cf-p4-1.jpeg" alt="砂漠の道" loading="lazy">
+        <img src="images/cf-p4-2.jpeg" alt="野犬" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>これまでも30ヶ国を旅し、3,000ドルを詐欺で盗られたり、野犬に襲われて死にかけたり、アンデス山脈4,000mでタクシーに捨てられて遭難したりと、様々な事件に遭遇してきました。</p>
+      </div>
+      <div class="ig">
+        <img src="images/cf-p4-3.jpeg" alt="危険な街" loading="lazy">
+        <img src="images/cf-p4-4.jpeg" alt="銃弾" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>そして今回はおそらく、これまでで最も過酷な<em>中南米を中心に11ヵ国</em>で連続して走って作品を描きます。「安全確保」がこのプロジェクトにおける至上命題の1つです。（少しでも安全な宿に泊まりたい）</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. それでも挑戦し続ける理由 -->
+  <section>
+    <div class="container fade-in">
+      <p class="sl">03 — WHY</p>
+      <h2 class="st">それでも挑戦し続ける理由</h2>
+      <div class="ig">
+        <img src="images/cf-p5-1.jpeg" alt="現地の人との交流" loading="lazy">
+        <img src="images/cf-p5-4.jpeg" alt="アルパカの軌跡" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>それでも挑戦し続けるのは、人類史上誰もやったことの無い挑戦だから、そしてそこにまだ誰も見たことが無い感動が待っているから。</p>
+        <p><em>アートが導く名所や怪しい裏路地。</em></p>
+        <p>そこで走って描くと、どんな素敵な笑顔や景色と巡り合えるのか。皆さんとも喜びや感動を共有できるよう、<em>instagramやYoutubeで世界各地の魅力を発信</em>しながら進みます！</p>
         <p>このプロジェクトのチームメンバーは現在10人。<strong>最後の1人は、サポーターの皆さんです！</strong></p>
       </div>
     </div>
   </section>
 
-  <!-- SUPPORT -->
-  <section>
+  <!-- 次世代にも伝えたい -->
+  <section class="alt-bg">
     <div class="container fade-in">
-      <p class="section-label">03 — YOUR SUPPORT</p>
-      <h2 class="section-title">応援・サポートについて</h2>
-      <div class="body-text">
-        <p>このプロジェクトを支えて下さる全ての方々が、ELEVEN RUN 2026の<strong>11人目のプロジェクトメンバー</strong>です！</p>
+      <p class="sl">04 — NEXT GENERATION</p>
+      <h2 class="st">次世代にも伝えたい・つなぎたい</h2>
+      <div class="ig">
+        <img src="images/cf-p6-1.png" alt="教え子との写真" class="ig-full" loading="lazy">
       </div>
-      <div class="img-grid">
-        <img src="images/eleven-banner.png" alt="応援サポート" loading="lazy">
-        <img src="images/eleven-clearfile.png" alt="限定クリアファイル" loading="lazy">
+      <div class="txt" style="margin-top:1.5rem">
+        <p>僕の活動の原点は小学校教師時代、脳性マヒの車いすの児童の担任を2年間受け持った際に決めた<strong>「"競わない"ランニング文化を創る」</strong>という夢。</p>
+        <p>今回のチャレンジは、大好きな教え子たちや未来を創る世界中の子どもたちに、挑戦する楽しさを伝えるとともに、国境を越えた素敵なつながりを<strong>次世代に残すための挑戦</strong>でもあります。</p>
+        <p>皆さんの応援・サポートが<em>未来のチャレンジャーを生み出す大きな力</em>になります！</p>
       </div>
     </div>
   </section>
 
-  <!-- VIDEO -->
+  <!-- 応援・サポートについて -->
+  <section>
+    <div class="container fade-in">
+      <p class="sl">05 — SUPPORT</p>
+      <h2 class="st">応援・サポートについて</h2>
+      <div class="ig">
+        <img src="images/cf-p8-1.jpeg" alt="チームのリストバンド" loading="lazy">
+        <img src="images/cf-p7-1.jpeg" alt="チームメンバー" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>このプロジェクトを支えて下さる全ての方々が、ELEVEN RUN 2026の<strong>11人目のプロジェクトメンバー</strong>です！</p>
+        <p>ちょっぴり支えたい方も、がっつり応援してくださる方も、プロジェクトの象徴になってくださる方も。すべての支援が、世界11ヶ国での大冒険をより安全に進め、より大きなチャレンジを創り、そして支える大きな力になります！</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 資金の使い道 -->
   <section class="alt-bg">
     <div class="container fade-in">
-      <p class="section-label">MOVIE</p>
-      <h2 class="section-title">プロモーション動画</h2>
-      <div class="video-wrapper">
+      <p class="sl">06 — BUDGET</p>
+      <h2 class="st">クラウドファンディング資金の使い道</h2>
+      <div class="budget-grid">
+        <div class="budget-item"><h4>渡航費・滞在費・食費・エイド費</h4></div>
+        <div class="budget-item"><h4>11ヵ国を駆け抜ける装備</h4></div>
+        <div class="budget-item"><h4>通信・記録・編集費</h4></div>
+        <div class="budget-item"><h4>現地の方々との交流費</h4></div>
+      </div>
+      <div class="budget-total">合計110万円（1ヶ国10万円を想定）</div>
+      <div class="txt"><p>すべて、この挑戦を完遂するために大切に使います！</p></div>
+      <div class="ig">
+        <img src="images/cf-p9-2.jpeg" alt="現地の少年との交流" class="ig-full" loading="lazy">
+      </div>
+      <div class="video-wrapper" style="margin-top:2rem">
         <iframe src="https://www.youtube.com/embed/LEyp6qdhxUY" title="ELEVEN RUN 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </section>
 
   <!-- PLANS -->
-  <section class="alt-bg" id="plans">
+  <section id="plans">
     <div class="container">
       <div class="fade-in" style="text-align:center;margin-bottom:3rem">
-        <p class="section-label">SUPPORT PLANS</p>
-        <h2 class="section-title">応援プラン</h2>
-        <p style="font-size:1.05rem;color:var(--gray-400);max-width:700px;margin:0 auto;line-height:2">すべての支援が、11ヶ国での大冒険をより安全に進め、より大きなチャレンジを創る大きな力になります！</p>
+        <p class="sl">SUPPORT PLANS</p>
+        <h2 class="st">クラウドファンディングコース一覧（全8コース）</h2>
       </div>
       <div class="plans-grid">
         <div class="plan-card fade-in">
-          <div class="plan-image"><img src="images/eleven-plan1.png" alt="3食サポートプラン" loading="lazy"></div>
+          <div class="plan-image"><img src="images/eleven-plan1.png" alt="3食サポート" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;3,900</span><span class="plan-price-sub">税込</span></div>
+            <div class="plan-price">&yen;3,900 <small>税込</small></div>
             <div class="plan-name">39（サンキュー）3食サポートプラン</div>
-            <p class="plan-desc">3食分の食費として、走り切るためのエネルギーに。</p>
+            <p class="plan-desc">3食分の食費をサポート</p>
             <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li></ul>
-            <a href="https://perudegps.official.ec/items/85402049" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">このプランで応援する</a>
+            <a href="https://perudegps.official.ec/items/85402049" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">応援する</a>
           </div>
         </div>
-        <div class="plan-card featured fade-in">
-          <div class="plan-badge">POPULAR</div>
-          <div class="plan-image"><img src="images/eleven-plan2.png" alt="全力応援プラン" loading="lazy"></div>
+        <div class="plan-card pop fade-in">
+          <div class="pop-badge">POPULAR</div>
+          <div class="plan-image"><img src="images/eleven-plan2.png" alt="全力応援" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;10,000</span><span class="plan-price-sub">税込</span></div>
+            <div class="plan-price">&yen;10,000 <small>税込</small></div>
             <div class="plan-name">全力応援プラン</div>
-            <p class="plan-desc">食費・移動費に。11ヶ国のどこかから「お礼の動画」を個別にお送り！</p>
+            <p class="plan-desc">食費や移動費をサポート</p>
             <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li><li>11ヶ国のどこかからお礼動画</li></ul>
-            <a href="https://perudegps.official.ec/items/86712736" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
+            <a href="https://perudegps.official.ec/items/86712736" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">応援する</a>
           </div>
         </div>
         <div class="plan-card fade-in">
-          <div class="plan-image"><img src="images/eleven-plan3.png" alt="1dayスポンサープラン" loading="lazy"></div>
+          <div class="plan-image"><img src="images/eleven-plan3.png" alt="1dayスポンサー" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;15,000</span><span class="plan-price-sub">税込</span></div>
+            <div class="plan-price">&yen;15,000 <small>税込</small></div>
             <div class="plan-name">1dayスポンサー＋限定クリアファイル</div>
-            <p class="plan-desc">1日の食事・宿泊をまるごとサポート！SNSライブでネームコール。</p>
-            <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li><li>お礼の動画を個別にお送り</li><li>1dayスポンサーとしてSNS配信でネームコール</li><li>限定クリアファイル（支援者名入り）</li></ul>
-            <a href="https://perudegps.official.ec/items/79747462" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">このプランで応援する</a>
+            <p class="plan-desc">1日の食事＋宿泊をサポート</p>
+            <ul class="plan-returns"><li>¥10,000コースの全リターン</li><li>SNS配信でネームコール</li><li>限定クリアファイル</li></ul>
+            <a href="https://perudegps.official.ec/items/79747462" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">応援する</a>
           </div>
         </div>
         <div class="plan-card fade-in">
-          <div class="plan-image"><img src="images/eleven-plan4.png" alt="安全な宿を提供するプラン" loading="lazy"></div>
+          <div class="plan-image"><img src="images/eleven-plan4.png" alt="安全な宿" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;20,000</span><span class="plan-price-sub">税込</span></div>
+            <div class="plan-price">&yen;20,000 <small>税込</small></div>
             <div class="plan-name">安全な宿を提供するプラン</div>
-            <p class="plan-desc">中南米の危険エリアでの宿代に。過去に財布から5万円抜き取り、毒ダニ、感電シャワー等の経験あり。</p>
-            <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li><li>中南米の宿泊先からお礼の特別動画</li><li>1dayスポンサーとしてSNS配信でネームコール</li><li>限定クリアファイル（支援者名入り）</li></ul>
-            <a href="https://perudegps.official.ec/items/79748113" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
+            <p class="plan-desc">安全な宿での睡眠を提供</p>
+            <ul class="plan-returns"><li>¥15,000コースの全リターン</li><li>中南米の宿から特別動画</li></ul>
+            <a href="https://perudegps.official.ec/items/79748113" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">応援する</a>
           </div>
         </div>
         <div class="plan-card fade-in">
-          <div class="plan-image"><img src="images/eleven-plan5.png" alt="乾杯スポンサープラン" loading="lazy"></div>
+          <div class="plan-image"><img src="images/eleven-plan5.png" alt="乾杯スポンサー" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;20,000</span><span class="plan-price-sub">税込</span></div>
-            <div class="plan-name">現地での「乾杯スポンサー」になるプラン</div>
-            <p class="plan-desc">世界を繋ぐ最高の1杯はあなたのおかげ！現地の方々との乾杯動画をお届け。</p>
-            <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li><li>地元の方々と飲みながらお礼の特別動画</li><li>1dayスポンサーとしてSNS配信でネームコール</li><li>限定クリアファイル（支援者名入り）</li></ul>
-            <a href="https://perudegps.official.ec/items/79748584" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
+            <div class="plan-price">&yen;20,000 <small>税込</small></div>
+            <div class="plan-name">現地での「乾杯スポンサー」</div>
+            <p class="plan-desc">世界を繋ぐ最高の1杯を</p>
+            <ul class="plan-returns"><li>¥15,000コースの全リターン</li><li>地元の方々との乾杯動画</li></ul>
+            <a href="https://perudegps.official.ec/items/79748584" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">応援する</a>
           </div>
         </div>
         <div class="plan-card fade-in">
-          <div class="plan-image"><img src="images/eleven-plan6.png" alt="装備サポートプラン" loading="lazy"></div>
+          <div class="plan-image"><img src="images/eleven-plan6.png" alt="装備サポート" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;30,000</span><span class="plan-price-sub">税込</span></div>
+            <div class="plan-price">&yen;30,000 <small>税込</small></div>
             <div class="plan-name">がんばれ！装備サポートプラン</div>
-            <p class="plan-desc">アンデス山脈、イカ砂漠、アマゾンエリアを縦横断。命を守る装備を支援。</p>
-            <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li><li>過酷な現場からお礼の動画</li><li>1dayスポンサーとしてSNS配信でネームコール</li><li>限定クリアファイル（支援者名入り）</li></ul>
-            <a href="https://perudegps.official.ec/items/77053530" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
+            <p class="plan-desc">命を守る装備を支援</p>
+            <ul class="plan-returns"><li>¥15,000コースの全リターン</li><li>過酷な現場からお礼動画</li></ul>
+            <a href="https://perudegps.official.ec/items/77053530" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">応援する</a>
           </div>
         </div>
         <div class="plan-card fade-in">
-          <div class="plan-image"><img src="images/eleven-plan7.png" alt="つながり共創プラン" loading="lazy"></div>
+          <div class="plan-image"><img src="images/eleven-plan7.png" alt="つながり共創" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;50,000</span><span class="plan-price-sub">税込</span></div>
+            <div class="plan-price">&yen;50,000 <small>税込</small></div>
             <div class="plan-name">つながり共創プラン</div>
-            <p class="plan-desc">現地との交流・子どもへのサッカーボールプレゼント等。"日本人って素敵だな！"を世界に届ける。</p>
-            <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li><li>地元の方々とのお礼の特別動画</li><li>プロジェクトグッズセット（クリアファイル、タオル等）</li></ul>
-            <a href="https://perudegps.official.ec/items/79749449" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
+            <p class="plan-desc">世界との友情醸造をサポート</p>
+            <ul class="plan-returns"><li>感謝状＋支援者一覧掲載</li><li>地元の方々との特別動画</li><li>グッズセット（クリアファイル、タオル等）</li></ul>
+            <a href="https://perudegps.official.ec/items/79749449" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">応援する</a>
           </div>
         </div>
         <div class="plan-card fade-in">
-          <div class="plan-image"><img src="images/eleven-plan8.png" alt="行け、なおき！プラン" loading="lazy"></div>
+          <div class="plan-image"><img src="images/eleven-plan8.png" alt="行け、なおき！" loading="lazy"></div>
           <div class="plan-body">
-            <div class="plan-price-row"><span class="plan-price">&yen;100,000</span><span class="plan-price-sub">税込</span></div>
+            <div class="plan-price">&yen;100,000 <small>税込</small></div>
             <div class="plan-name">行け、なおき！プラン</div>
-            <p class="plan-desc">人類史上初の挑戦を特大の想いで応援。イグアスの滝等の名所からお礼動画＋お土産付き。</p>
-            <ul class="plan-returns"><li>感謝状（サポーター証明書）</li><li>支援者一覧にお名前掲載</li><li>名所（イグアスの滝等）からのお礼動画</li><li>プロジェクトグッズ（クリアファイル、タオル）</li><li>11ヶ国からのお土産</li></ul>
-            <a href="https://perudegps.official.ec/items/79748810" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">このプランで応援する</a>
+            <p class="plan-desc">人類史上初の挑戦を特大応援</p>
+            <ul class="plan-returns"><li>感謝状＋支援者一覧掲載</li><li>名所（イグアスの滝等）からお礼動画</li><li>グッズ（クリアファイル、タオル）</li><li>11ヶ国からのお土産</li></ul>
+            <a href="https://perudegps.official.ec/items/79748810" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">応援する</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUPPORTERS -->
-  <section>
-    <div class="container fade-in">
-      <div class="img-grid">
-        <img src="images/eleven-route.png" alt="PROJECT SUPPORTER" class="img-full" loading="lazy">
       </div>
     </div>
   </section>
@@ -318,16 +353,16 @@
   <!-- MESSAGE -->
   <section class="alt-bg">
     <div class="container fade-in">
-      <p class="section-label" style="text-align:center">MESSAGE</p>
-      <h2 class="section-title" style="text-align:center;margin-bottom:2rem">志水直樹より</h2>
-      <div class="message-box">
-        <div class="message-quote">&ldquo;</div>
-        <p>挑戦し続けるのは、人類史上誰もやったことの無い挑戦だから。そしてそこにまだ誰も見たことが無い感動が待っているから。<br><br>アメリカ大陸11ヵ国。危険な国も多数。それでもアートが導く名所や怪しい裏路地で、どんな素敵な笑顔や景色と巡り合えるのか。<br><br>最後の1人は、あなたです。一緒に冒険しましょう！<br><strong>RUN FOR SMILE.</strong></p>
-        <div class="message-author">
-          <div class="message-author-img"><img src="images/hero.jpg" alt="志水直樹"></div>
+      <p class="sl" style="text-align:center">MESSAGE</p>
+      <h2 class="st" style="text-align:center">志水直樹より</h2>
+      <div class="msg-box">
+        <div class="q">&ldquo;</div>
+        <p>11年目の挑戦、ELEVEN RUN 2026。<br><br>サポーター全員が伴走者！<br>世界11ヵ国を共に走りましょう！<br><br>応援、どうぞよろしくお願いします！<br><br><strong>RUN FOR SMILE.</strong></p>
+        <div class="msg-author">
+          <div class="msg-author-img"><img src="images/hero.jpg" alt="志水直樹"></div>
           <div>
-            <div class="message-author-name">志水 直樹</div>
-            <div class="message-author-role">GPSランナー / GPS RUNNER</div>
+            <div style="font-weight:700;font-size:1.05rem">志水 直樹</div>
+            <div style="font-size:.85rem;color:var(--gray-400)">GPSランナー / GPS RUNNER</div>
           </div>
         </div>
       </div>
@@ -340,7 +375,7 @@
       <h2>11ヵ国の<em>冒険</em>に、参加しよう。</h2>
       <p>あなたの応援が、人類史上初の挑戦を支えます。<br>11人目のメンバーになってください。</p>
       <a href="#plans" class="final-cta-btn">応援プランを選ぶ</a>
-      <p class="final-cta-note">支払方法：クレジットカード / PayPay / 銀行振込 / コンビニ払い</p>
+      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--gray-400);position:relative">支払方法：クレジットカード / PayPay / 銀行振込 / コンビニ払い</p>
     </div>
   </section>
 
