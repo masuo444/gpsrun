@@ -16,7 +16,9 @@
     header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
     header.scrolled{background:rgba(10,10,10,0.95);border-bottom-color:rgba(255,229,0,0.3)}
     .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
-    .logo-img{height:48px;width:auto;display:block}
+    .logo-img{height:40px;width:auto;display:block;border-radius:8px}
+    .logo-text{font-family:var(--font-en);font-weight:700;font-size:1.1rem;letter-spacing:.08em}
+    .logo-text span{color:var(--yellow)}
     nav{display:flex;align-items:center;gap:2rem}
     nav a{color:var(--gray-400);text-decoration:none;font-size:1.25rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
     nav a:hover{color:var(--yellow)}
@@ -99,7 +101,7 @@
 </head>
 <body>
   <header id="header">
-    <a href="index.html" class="logo"><img src="3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"></a>
+    <a href="index.html" class="logo"><img src="3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"><div class="logo-text">GPS <span>RUNNER</span></div></a>
     <nav>
       <a href="index.html">HOME</a>
       <a href="works.html">WORKS</a>
