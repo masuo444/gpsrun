@@ -4,5 +4,7 @@ test.html
 gps_art_works_complete.json
 *.JPEG
 *.jpeg
-!images/
+!images/*.jpg
+!images/*.jpeg
+!3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg
 *.pdf
