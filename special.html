@@ -11,7 +11,7 @@
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{--blue:#1a4b8c;--red:#c41e3a;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--yellow:#FFE500;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
-    html{scroll-behavior:smooth;font-size:18px}
+    html{scroll-behavior:smooth;font-size:16px}
     body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
     header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
     header.scrolled{background:rgba(10,10,10,0.95)}
@@ -48,7 +48,7 @@
     .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
     .fade-in.visible{opacity:1;transform:translateY(0)}
     /* HERO */
-    .hero{padding:100px 2rem 2rem;text-align:center;position:relative}
+    .hero{padding:100px 2rem 4rem;text-align:center;position:relative}
     .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,75,140,0.08),rgba(196,30,58,0.04));pointer-events:none}
     .hero-inner{max-width:850px;margin:0 auto;position:relative;z-index:2}
     .hero-tag{font-family:var(--font-en);font-size:.85rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:1rem}
@@ -108,8 +108,9 @@
     footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
     footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
     footer a{color:var(--gray-400);text-decoration:none}
-    @media(max-width:900px){nav{display:none}.hamburger{display:flex}.plans-grid{grid-template-columns:1fr;max-width:400px;margin-left:auto;margin-right:auto}.ig{grid-template-columns:1fr}.budget-grid{grid-template-columns:1fr}}
-    @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.msg-box{padding:2rem 1.5rem}}
+    @media(max-width:900px){nav{display:none}.hamburger{display:flex}.plans-grid{grid-template-columns:repeat(2,1fr)}.ig{grid-template-columns:1fr}.budget-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.msg-box{padding:2rem 1.5rem}.plan-price{font-size:1.6rem}}
+    @media(max-width:400px){.plans-grid{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}.hero h1{font-size:2rem}.budget-grid{grid-template-columns:1fr}section{padding:2.5rem 1rem}}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
