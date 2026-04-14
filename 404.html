@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found | GPS RUNNER 志水直樹</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--gray-400:#999;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    body{font-family:var(--font-ja);background:var(--black);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center}
+    .code{font-family:var(--font-en);font-size:clamp(5rem,20vw,10rem);font-weight:900;color:var(--yellow);line-height:1;letter-spacing:-.04em;opacity:.15;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;user-select:none;white-space:nowrap}
+    .inner{position:relative;z-index:1}
+    .label{font-family:var(--font-en);font-size:.8rem;font-weight:700;letter-spacing:.2em;color:var(--yellow);text-transform:uppercase;margin-bottom:1.5rem}
+    h1{font-size:clamp(1.4rem,4vw,2rem);font-weight:700;line-height:1.5;margin-bottom:.75rem}
+    p{font-size:1rem;color:var(--gray-400);line-height:1.8;margin-bottom:2.5rem;max-width:400px}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--yellow);color:var(--black);text-decoration:none;padding:.85rem 2rem;border-radius:100px;font-size:.95rem;font-weight:700;transition:transform .2s,box-shadow .2s}
+    .btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,229,0,.3)}
+    .btn-outline{background:transparent;color:var(--white);border:1px solid #3A3A3A;margin-left:.75rem}
+    .btn-outline:hover{border-color:var(--yellow);color:var(--yellow);box-shadow:none}
+    @media(max-width:480px){.btn-outline{margin-left:0;margin-top:.75rem}.btns{flex-direction:column;align-items:center}}
+    .btns{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem}
+  </style>
+</head>
+<body>
+  <div class="code">404</div>
+  <div class="inner">
+    <p class="label">Page Not Found</p>
+    <h1>ページが見つかりませんでした</h1>
+    <p>お探しのページは移動・削除されたか、URLが間違っている可能性があります。</p>
+    <div class="btns">
+      <a href="index.html" class="btn">ホームへ戻る</a>
+      <a href="works.html" class="btn btn-outline">作品集を見る</a>
+    </div>
+  </div>
+</body>
+</html>
