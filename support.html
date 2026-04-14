@@ -55,12 +55,80 @@
     .sub{font-size:1rem;color:var(--gray-400);max-width:600px;margin:0 auto 2.5rem;line-height:1.9}
 
     /* WHY SUPPORT */
-    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;max-width:800px;margin:0 auto}
-    .why-card{background:var(--gray-900);border:1px solid var(--gray-800);border-radius:16px;padding:2rem;transition:border-color .3s}
-    .why-card:hover{border-color:rgba(255,229,0,0.3)}
-    .why-icon{font-size:2rem;margin-bottom:.75rem}
-    .why-card h3{font-size:1.05rem;font-weight:700;margin-bottom:.5rem}
-    .why-card p{font-size:.9rem;color:var(--gray-400);line-height:1.8}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:980px;margin:0 auto}
+    .why-card{
+      position:relative;
+      min-height:280px;
+      background:
+        radial-gradient(circle at top right, rgba(255,229,0,0.09), transparent 32%),
+        linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
+        var(--gray-900);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:26px;
+      padding:1.8rem 1.8rem 2rem;
+      overflow:hidden;
+      transition:transform .35s,border-color .35s,box-shadow .35s;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+    .why-card::before{
+      content:'';
+      position:absolute;
+      top:0;
+      left:0;
+      right:0;
+      height:1px;
+      background:linear-gradient(90deg, transparent, rgba(255,229,0,0.9), transparent);
+      opacity:.7;
+    }
+    .why-card::after{
+      content:'';
+      position:absolute;
+      inset:0;
+      border-radius:26px;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.02);
+      pointer-events:none;
+    }
+    .why-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(255,229,0,0.28);
+      box-shadow:0 20px 50px rgba(0,0,0,0.35);
+    }
+    .why-card-top{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      margin-bottom:auto;
+      gap:1rem;
+    }
+    .why-label{
+      font-family:var(--font-en);
+      font-size:.72rem;
+      letter-spacing:.18em;
+      text-transform:uppercase;
+      color:var(--yellow);
+    }
+    .why-num{
+      font-family:var(--font-en);
+      font-size:2.5rem;
+      line-height:1;
+      font-weight:900;
+      color:rgba(255,255,255,0.08);
+    }
+    .why-card h3{
+      font-size:1.55rem;
+      font-weight:800;
+      line-height:1.35;
+      margin:1.25rem 0 .85rem;
+      letter-spacing:-.01em;
+    }
+    .why-card p{
+      font-size:1rem;
+      color:var(--gray-300);
+      line-height:1.95;
+      max-width:28ch;
+    }
 
     /* PLANS */
     .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:0 auto}
@@ -161,6 +229,7 @@
       <a href="global.html">GLOBAL</a>
       <a href="offer.html">OFFER</a>
       <a href="special.html">PROJECT</a>
+      <a href="contact.html">CONTACT</a>
       <a href="support.html" class="nav-cta active">SUPPORT</a>
     </nav>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
@@ -172,6 +241,7 @@
     <a href="global.html">GLOBAL</a>
     <a href="offer.html">OFFER</a>
     <a href="special.html">PROJECT</a>
+    <a href="contact.html">CONTACT</a>
     <a href="support.html">SUPPORT</a>
   </div>
 
@@ -194,22 +264,34 @@
       </div>
       <div class="why-grid">
         <div class="why-card fade-in">
-          <div class="why-icon">&#x1F30D;</div>
+          <div class="why-card-top">
+            <div class="why-label">Global Scope</div>
+            <div class="why-num">01</div>
+          </div>
           <h3>活動は世界規模</h3>
           <p>11ヵ国を駆け巡る渡航費・宿泊費・装備費。一つひとつのプロジェクトに大きなコストがかかります。</p>
         </div>
         <div class="why-card fade-in">
-          <div class="why-icon">&#x1F3A8;</div>
+          <div class="why-card-top">
+            <div class="why-label">Keep Creating</div>
+            <div class="why-num">02</div>
+          </div>
           <h3>アートは止められない</h3>
           <p>スポンサー料やイベント出演料だけでは賄いきれない。継続的な支援が、創作を止めない力になります。</p>
         </div>
         <div class="why-card fade-in">
-          <div class="why-icon">&#x1F91D;</div>
+          <div class="why-card-top">
+            <div class="why-label">Run Together</div>
+            <div class="why-num">03</div>
+          </div>
           <h3>一緒に走る仲間</h3>
           <p>サポーターは「支援者」ではなく「チームメンバー」。活動レポートで旅を共有し、一緒に世界を走ります。</p>
         </div>
         <div class="why-card fade-in">
-          <div class="why-icon">&#x1F476;</div>
+          <div class="why-card-top">
+            <div class="why-label">Next Generation</div>
+            <div class="why-num">04</div>
+          </div>
           <h3>次世代につなぐ</h3>
           <p>教え子や世界中の子どもたちに挑戦する楽しさを伝え、"競わない"ランニング文化を次の世代へ。</p>
         </div>
@@ -377,7 +459,7 @@
     </div>
   </section>
 
-  <footer><p><a href="index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu.</p></footer>
+  <footer><p><a href="index.html">GPS RUNNER</a> &middot; &copy; 2025 Naoki Shimizu.</p></footer>
 
   <script>
     // Header scroll
