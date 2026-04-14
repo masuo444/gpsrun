@@ -981,6 +981,16 @@
       0% { transform: translateX(0); }
       100% { transform: translateX(-50%); }
     }
+
+    @media(max-width:400px){
+      .hero-stats{grid-template-columns:repeat(3,1fr);gap:.5rem}
+      .stat-number{font-size:1.4rem}
+      .hero h1{font-size:2rem}
+      .hero-name-ja{font-size:1rem}
+      .btn{padding:.75rem 1.5rem;font-size:.85rem}
+      .event-item{grid-template-columns:80px 1fr;gap:.75rem}
+      .event-date{font-size:.8rem}
+    }
   </style>
 </head>
 <body>
@@ -1221,7 +1231,7 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2025 GPS RUNNER / Naoki Shimizu. All Rights Reserved.</p>
+    <p>&copy; 2026 GPS RUNNER / Naoki Shimizu. All Rights Reserved.</p>
   </footer>
 
   <script>

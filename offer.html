@@ -106,7 +106,7 @@
     .faq-item{border-bottom:1px solid var(--gray-800)}
     .faq-question{width:100%;background:none;border:none;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;text-align:left;color:var(--white);font-size:1.1rem;font-weight:600;font-family:var(--font-ja);gap:1rem}
     .faq-question:hover{color:var(--yellow)}
-    .faq-icon{width:32px;height:32px;border-radius:8px;background:var(--gray-800);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;transition:all .3s;color:var(--gray-400)}
+    .faq-icon{width:44px;height:44px;border-radius:10px;background:var(--gray-800);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;transition:all .3s;color:var(--gray-400)}
     .faq-item.active .faq-icon{background:var(--yellow);color:var(--black);transform:rotate(45deg)}
     .faq-answer{max-height:0;overflow:hidden;transition:max-height .4s ease}
     .faq-item.active .faq-answer{max-height:300px;padding-bottom:1.5rem}
@@ -141,6 +141,14 @@
       section{padding:3.5rem 1.25rem}
       .hero{padding:72px 1.25rem 0}
       .flow{grid-template-columns:1fr;gap:2rem}
+    }
+
+    @media(max-width:500px){
+      .trust-inner{flex-direction:column;align-items:center;gap:1.5rem}
+      .trust-item .trust-number{font-size:1.8rem}
+      .services{gap:1rem}
+      .service-card{padding:2rem 1.5rem}
+      .faq-header{padding:1.1rem 1rem}
     }
   </style>
 </head>
@@ -382,7 +390,7 @@
     </div>
   </section>
 
-  <footer><p><a href="index.html">GPS RUNNER</a> &middot; &copy; 2025 Naoki Shimizu.</p></footer>
+  <footer><p><a href="index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu.</p></footer>
 
   <script>
     window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)});

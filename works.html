@@ -135,6 +135,17 @@
     footer a{color:var(--gray-400);text-decoration:none}
     @media(max-width:900px){nav{display:none}.hamburger{display:flex}.toolbar-inner{flex-direction:column;align-items:stretch}.toolbar-right{justify-content:space-between}.search-box{flex:1}.search-box input{width:100%}.lightbox-content{flex-direction:column;max-height:90vh;overflow-y:auto}.lightbox-info{width:100%;order:2}.lightbox-image{order:1}}
     @media(max-width:600px){header{padding:0 1.25rem}.page-hero{padding:110px 1.25rem 2rem}.toolbar{padding:.75rem 1.25rem}.gallery{padding:1.25rem}.gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}.work-card-body{padding:.75rem}.work-card h3{font-size:1.25rem}.work-card-excerpt{display:none}}
+
+    @media(max-width:400px){
+      .gallery-grid{grid-template-columns:repeat(2,1fr);gap:.5rem}
+      .work-card h3{font-size:1.1rem}
+      .stats-bar{gap:1.5rem}
+      .stat-number{font-size:1.3rem}
+      .filters{gap:.35rem}
+      .filter-btn{padding:.35rem .75rem;font-size:1.1rem}
+      .lb-nav-prev{left:.5rem}
+      .lb-nav-next{right:.5rem}
+    }
   </style>
 </head>
 <body>
@@ -222,7 +233,7 @@
     </div>
     <p class="lb-counter" id="lbCounter"></p>
   </div>
-  <footer><p><a href="index.html">GPS RUNNER</a> · © 2025 Naoki Shimizu.</p></footer>
+  <footer><p><a href="index.html">GPS RUNNER</a> · © 2026 Naoki Shimizu.</p></footer>
 
   <script src="data.js"></script>
   <script>
