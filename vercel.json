@@ -24,8 +24,5 @@
     }
   ],
   "rewrites": [],
-  "redirects": [],
-  "errors": [
-    { "statusCode": 404, "source": "/(.*)", "destination": "/404.html" }
-  ]
+  "redirects": []
 }

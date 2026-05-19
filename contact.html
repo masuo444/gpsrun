@@ -285,6 +285,7 @@
       color: var(--gray-700);
       font-family: var(--font-en);
     }
+    #successMsg .btn-outline { display: inline-flex; width: auto; }
     @media (max-width: 980px) {
       nav { display: none; }
       .hamburger { display: flex; }
@@ -302,24 +303,24 @@
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
   <meta property="og:title" content="お問い合わせ CONTACT | GPS RUNNER 志水直樹">
   <meta property="og:description" content="GPSランナー志水直樹へのお問い合わせ。講演・イベント・メディア出演・コラボレーションのご依頼はこちらから。">
-  <meta property="og:url" content="https://gpsrun.vercel.app/contact.html">
-  <meta property="og:image" content="https://gpsrun.vercel.app/images/hero.jpg">
+  <meta property="og:url" content="https://official.gps-run.com/contact.html">
+  <meta property="og:image" content="https://official.gps-run.com/images/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="お問い合わせ CONTACT | GPS RUNNER 志水直樹">
   <meta name="twitter:description" content="GPSランナー志水直樹へのお問い合わせ。講演・イベント・メディア出演・コラボレーションのご依頼はこちらから。">
-  <meta name="twitter:image" content="https://gpsrun.vercel.app/images/hero.jpg">
+  <meta name="twitter:image" content="https://official.gps-run.com/images/ogp.jpg">
   <meta name="keywords" content="お問い合わせ,GPSランナー,志水直樹,取材依頼,講演依頼,イベント,コラボ">
   <meta name="author" content="志水直樹 Naoki Shimizu">
-  <link rel="canonical" href="https://gpsrun.vercel.app/contact.html">
-  <link rel="icon" href="/images/hero.jpg" type="image/jpeg">
+  <link rel="canonical" href="https://official.gps-run.com/contact.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "ContactPage",
-    "url": "https://gpsrun.vercel.app/contact.html",
+    "url": "https://official.gps-run.com/contact.html",
     "name": "お問い合わせ CONTACT | GPS RUNNER 志水直樹",
     "description": "GPSランナー志水直樹へのお問い合わせ。取材、イベント依頼、講演、その他のご相談はこちらから。",
     "inLanguage": "ja"
@@ -366,56 +367,61 @@
         <h1>お問い合わせ<br><span>フォーム</span></h1>
         <p class="lead">必要事項をご入力ください。</p>
 
-        <form id="contactForm" action="https://formsubmit.co/gpsrunnaoki@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="【お問い合わせ】GPS RUNNER">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_next" value="https://gpsrun.vercel.app/contact.html?sent=1">
-          <div class="field-group">
-            <div>
-              <label for="name">名前</label>
-              <input id="name" name="名前" type="text" placeholder="例：山田 太郎" required>
+        <div id="formWrap">
+          <form id="contactForm">
+            <div class="field-group">
+              <div>
+                <label for="name">名前</label>
+                <input id="name" name="名前" type="text" placeholder="例：山田 太郎" required>
+              </div>
+              <div>
+                <label for="email">メールアドレス</label>
+                <input id="email" name="メールアドレス" type="email" placeholder="example@example.com" required>
+              </div>
             </div>
-            <div>
-              <label for="email">メールアドレス</label>
-              <input id="email" name="メールアドレス" type="email" placeholder="example@example.com" required>
+
+            <div class="field-group">
+              <div>
+                <label for="type">お問い合わせ種類</label>
+                <select id="type" name="お問い合わせ種類" required>
+                  <option value="">選択してください</option>
+                  <option value="取材">取材</option>
+                  <option value="イベントの依頼">イベントの依頼</option>
+                  <option value="講演">講演</option>
+                  <option value="その他">その他</option>
+                </select>
+              </div>
+              <div>
+                <label for="phone">電話番号<span class="optional">任意</span></label>
+                <input id="phone" name="電話番号" type="tel" inputmode="tel" placeholder="例：090-1234-5678">
+              </div>
             </div>
-          </div>
 
-          <div class="field-group">
             <div>
-              <label for="type">お問い合わせ種類</label>
-              <select id="type" name="お問い合わせ種類" required>
-                <option value="">選択してください</option>
-                <option value="取材">取材</option>
-                <option value="イベントの依頼">イベントの依頼</option>
-                <option value="講演">講演</option>
-                <option value="その他">その他</option>
-              </select>
+              <label for="message">相談内容</label>
+              <textarea id="message" name="相談内容" placeholder="ご相談内容、ご希望日程、企画概要などをご記入ください。" required></textarea>
             </div>
-            <div>
-              <label for="phone">電話番号<span class="optional">任意</span></label>
-              <input id="phone" name="電話番号" type="tel" inputmode="tel" placeholder="例：090-1234-5678">
+
+            <div id="formStatus" class="form-status" aria-live="polite"></div>
+
+            <div class="actions">
+              <button type="submit" class="btn btn-primary" id="submitBtn">メールを送信する</button>
             </div>
-          </div>
+          </form>
+        </div>
 
-          <div>
-            <label for="message">相談内容</label>
-            <textarea id="message" name="相談内容" placeholder="ご相談内容、ご希望日程、企画概要などをご記入ください。" required></textarea>
-          </div>
-
-          <div id="formStatus" class="form-status" aria-live="polite"></div>
-
-          <div class="actions">
-            <button type="submit" class="btn btn-primary">メールを送信する</button>
-          </div>
-        </form>
+        <div id="successMsg" style="display:none; text-align:center; padding:2rem 0;">
+          <div style="font-size:3rem; margin-bottom:1rem;">✓</div>
+          <h2 style="font-size:1.6rem; margin-bottom:0.75rem;">送信しました！</h2>
+          <p style="color:var(--gray-300); margin-bottom:1.5rem;">お問い合わせを受け付けました。<br>2〜3営業日以内にご返信します。</p>
+          <a href="index.html" class="btn btn-outline">トップに戻る</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <p>&copy; 2026 GPS RUNNER / Naoki Shimizu. All Rights Reserved.</p>
+    <p>&copy; 2026 GPS RUNNER / Naoki Shimizu. All Rights Reserved. &middot; <a href="tokushoho.html">特定商取引法に基づく表記</a> &middot; <a href="privacy.html">プライバシーポリシー</a></p>
   </footer>
 
   <script>
@@ -433,17 +439,40 @@
 
     const form = document.getElementById('contactForm');
     const status = document.getElementById('formStatus');
+    const submitBtn = document.getElementById('submitBtn');
 
-    if (window.location.search.includes('sent=1')) {
-      status.textContent = '送信ありがとうございました。';
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      submitBtn.disabled = true;
+      submitBtn.textContent = '送信中...';
+      status.textContent = '';
       status.classList.remove('error');
-      window.history.replaceState({}, '', window.location.pathname);
-    }
 
-    form.addEventListener('submit', () => {
-      status.textContent = '送信中です...';
-      status.classList.remove('error');
+      const data = new FormData(form);
+      data.append('_subject', '【お問い合わせ】GPS RUNNER');
+      data.append('_template', 'table');
+      data.append('_captcha', 'false');
+
+      try {
+        const res = await fetch('https://formsubmit.co/ajax/gpsrunnaoki@gmail.com', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: data,
+        });
+        if (res.ok) {
+          document.getElementById('formWrap').style.display = 'none';
+          document.getElementById('successMsg').style.display = 'block';
+        } else {
+          throw new Error();
+        }
+      } catch {
+        status.textContent = '送信に失敗しました。時間をおいて再度お試しください。';
+        status.classList.add('error');
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'メールを送信する';
+      }
     });
   </script>
+  <script src="https://kanade-ai.com/widget.js" data-shop="gps-runner" data-color="#FFE500" data-position="right"></script>
 </body>
 </html>

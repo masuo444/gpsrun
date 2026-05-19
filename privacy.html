@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>プライバシーポリシー | GPS RUNNER 志水直樹</title>
+  <meta name="description" content="GPS RUNNER 志水直樹のプライバシーポリシーページです。個人情報の取り扱いについて説明しています。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    html{scroll-behavior:smooth;font-size:18px}
+    body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
+
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
+    header.scrolled{background:rgba(10,10,10,0.95);border-bottom-color:rgba(255,229,0,0.3)}
+    .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
+    .logo-img{height:40px;width:auto;display:block;border-radius:8px}
+    .logo-text{font-family:var(--font-en);font-weight:700;font-size:1.1rem;letter-spacing:.08em}
+    .logo-text span{color:var(--yellow)}
+    nav{display:flex;align-items:center;gap:2rem}
+    nav a{color:var(--gray-400);text-decoration:none;font-size:.95rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
+    nav a:hover{color:var(--yellow)}
+    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:600!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+    .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.5rem;font-weight:600}
+    .mobile-nav a:hover{color:var(--yellow)}
+
+    .page-hero{padding:120px 2rem 3rem;text-align:center}
+    .page-hero h1{font-size:clamp(1.6rem,3vw,2.2rem);font-weight:800;margin-bottom:.5rem}
+    .page-hero p{font-size:.95rem;color:var(--gray-400)}
+
+    .container{max-width:800px;margin:0 auto}
+    .section{padding:2rem 2rem 5rem}
+
+    .policy-block{background:var(--gray-900);border:1px solid var(--gray-800);border-radius:16px;padding:2.5rem;margin-bottom:1.5rem}
+    .policy-block h2{font-size:1.05rem;font-weight:700;color:var(--yellow);margin-bottom:1rem;padding-bottom:.75rem;border-bottom:1px solid var(--gray-800)}
+    .policy-block p{font-size:.95rem;color:var(--gray-300);line-height:2;margin-bottom:.75rem}
+    .policy-block p:last-child{margin-bottom:0}
+    .policy-block ul{list-style:none;margin:.5rem 0 .75rem 0}
+    .policy-block ul li{font-size:.95rem;color:var(--gray-300);line-height:1.9;padding:.25rem 0 .25rem 1.25rem;position:relative}
+    .policy-block ul li::before{content:'・';position:absolute;left:0;color:var(--yellow)}
+    .policy-block a{color:var(--yellow);text-decoration:none}
+    .policy-block a:hover{text-decoration:underline}
+
+    .updated{font-size:.85rem;color:var(--gray-400);text-align:right;margin-bottom:2rem}
+
+    footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
+    footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
+    footer a{color:var(--gray-400);text-decoration:none}
+    footer a:hover{color:var(--yellow)}
+
+    @media(max-width:900px){nav{display:none}.hamburger{display:flex}}
+    @media(max-width:600px){.policy-block{padding:1.5rem}}
+  </style>
+  <link rel="canonical" href="https://official.gps-run.com/privacy.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="header">
+    <a href="index.html" class="logo">
+      <img src="3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img">
+      <div class="logo-text">GPS <span>RUNNER</span></div>
+    </a>
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="works.html">WORKS</a>
+      <a href="profile.html">PROFILE</a>
+      <a href="global.html">GLOBAL</a>
+      <a href="offer.html">OFFER</a>
+      <a href="special.html">PROJECT</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="support.html" class="nav-cta">SUPPORT</a>
+    </nav>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">HOME</a>
+    <a href="works.html">WORKS</a>
+    <a href="profile.html">PROFILE</a>
+    <a href="global.html">GLOBAL</a>
+    <a href="offer.html">OFFER</a>
+    <a href="special.html">PROJECT</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="support.html">SUPPORT</a>
+  </div>
+
+  <div class="page-hero">
+    <h1>プライバシーポリシー</h1>
+    <p>Privacy Policy</p>
+  </div>
+
+  <div class="section">
+    <div class="container">
+      <p class="updated">最終更新日：2026年5月19日</p>
+
+      <div class="policy-block">
+        <h2>1. 基本方針</h2>
+        <p>志水直樹（以下「当サイト運営者」）は、GPS RUNNER 公式サイト（https://official.gps-run.com/ 以下「本サイト」）において、ユーザーの個人情報の保護を重要な責務と考え、適切な管理・利用に努めます。</p>
+      </div>
+
+      <div class="policy-block">
+        <h2>2. 収集する個人情報</h2>
+        <p>本サイトでは、以下の場合に個人情報を収集します。</p>
+        <ul>
+          <li>お問い合わせフォームの送信時：氏名、メールアドレス、メッセージ内容</li>
+          <li>月額サポートプランへのお申し込み時：氏名、メールアドレス、クレジットカード情報（カード情報はStripe社が管理し、当サイト運営者には通知されません）</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h2>3. 個人情報の利用目的</h2>
+        <p>収集した個人情報は、以下の目的にのみ使用します。</p>
+        <ul>
+          <li>お問い合わせへの返信・対応</li>
+          <li>月額サポートプランの提供・管理・お知らせの送付</li>
+          <li>サービス改善のための統計的分析（個人を特定しない形）</li>
+          <li>法令に基づく対応</li>
+        </ul>
+      </div>
+
+      <div class="policy-block">
+        <h2>4. 個人情報の第三者提供</h2>
+        <p>当サイト運営者は、以下の場合を除き、ユーザーの個人情報を第三者に提供・開示しません。</p>
+        <ul>
+          <li>ユーザー本人の同意がある場合</li>
+          <li>法令に基づき開示が必要な場合</li>
+          <li>人の生命・身体・財産の保護のために必要な場合</li>
+        </ul>
+        <p>なお、決済処理のためにStripe, Inc.に必要な情報を提供します。Stripeのプライバシーポリシーは <a href="https://stripe.com/jp/privacy" target="_blank" rel="noopener noreferrer">stripe.com/jp/privacy</a> をご覧ください。</p>
+      </div>
+
+      <div class="policy-block">
+        <h2>5. Cookieおよびアクセス解析</h2>
+        <p>本サイトでは、サービス向上を目的としてCookieを使用する場合があります。また、Google Analytics等のアクセス解析ツールを利用しており、収集されたデータは匿名で統計処理されます。個人を特定する情報は含まれません。</p>
+        <p>ブラウザの設定によりCookieを無効にすることができますが、一部のサービスが利用できなくなる場合があります。</p>
+      </div>
+
+      <div class="policy-block">
+        <h2>6. 個人情報の管理・安全対策</h2>
+        <p>収集した個人情報は、不正アクセス・漏洩・改ざん・紛失を防ぐため、適切な安全管理措置を講じます。決済情報はStripe社のセキュリティ基準（PCI DSS準拠）に則って管理されます。</p>
+      </div>
+
+      <div class="policy-block">
+        <h2>7. 個人情報の開示・訂正・削除</h2>
+        <p>ユーザーは、自身の個人情報について開示・訂正・削除を請求する権利を有します。ご要望は下記お問い合わせ先までご連絡ください。合理的な期間内に対応いたします。</p>
+      </div>
+
+      <div class="policy-block">
+        <h2>8. プライバシーポリシーの変更</h2>
+        <p>本ポリシーは、法令の改正やサービス内容の変更に応じて予告なく改定することがあります。最新のポリシーは常に本ページに掲載します。</p>
+      </div>
+
+      <div class="policy-block">
+        <h2>9. お問い合わせ</h2>
+        <p>個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください。</p>
+        <ul>
+          <li>氏名：志水 直樹（Naoki Shimizu）</li>
+          <li>メールアドレス：<a href="mailto:gpsrunnaoki@gmail.com">gpsrunnaoki@gmail.com</a></li>
+          <li>お問い合わせフォーム：<a href="contact.html">こちら</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>
+      <a href="index.html">GPS RUNNER</a> &middot;
+      &copy; 2026 Naoki Shimizu. &middot;
+      <a href="tokushoho.html">特定商取引法に基づく表記</a> &middot;
+      <a href="privacy.html">プライバシーポリシー</a>
+    </p>
+  </footer>
+
+  <script>
+    window.addEventListener('scroll', function() {
+      document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+    });
+    document.getElementById('hamburger').addEventListener('click', function() {
+      this.classList.toggle('active');
+      document.getElementById('mobileNav').classList.toggle('active');
+    });
+  </script>
+  <script src="https://kanade-ai.com/widget.js" data-shop="gps-runner" data-color="#FFE500" data-position="right"></script>
+</body>
+</html>
