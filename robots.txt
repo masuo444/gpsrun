@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gpsrun.vercel.app/sitemap.xml
+Sitemap: https://official.gps-run.com/sitemap.xml
