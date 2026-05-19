@@ -1,22 +1,13 @@
 /**
- * SAQT（サクッと）チャットボット ウィジェット
- * Gemini API 連携版
- *
- * 使い方:
- * <script src="chatbot.js"
- *   data-knowledge="knowledge.json"
- *   data-gemini-key="YOUR_GEMINI_API_KEY"
- *   data-primary-color="#f97316"
- * ></script>
- *
- * data-gemini-key がない場合はキーワードマッチングにフォールバック
+ * GPS RUNNER Chatbot Widget
+ * CarSensor-inspired UI / Mobile-first
  */
 (function() {
     'use strict';
 
     const scriptTag = document.currentScript;
     const knowledgePath = scriptTag?.getAttribute('data-knowledge') || './knowledge.json';
-    const primaryColor = scriptTag?.getAttribute('data-primary-color') || '#f97316';
+    const primaryColor = scriptTag?.getAttribute('data-primary-color') || '#FFE500';
     const greetingOverride = scriptTag?.getAttribute('data-greeting') || '';
     const geminiKey = scriptTag?.getAttribute('data-gemini-key') || '';
 
@@ -24,7 +15,7 @@
     let settings = {};
     let conversationHistory = [];
 
-    // --- CSS読み込み ---
+    // --- CSS ---
     function loadCSS() {
         const cssPath = scriptTag?.src?.replace('chatbot.js', 'chatbot.css') || './chatbot.css';
         const link = document.createElement('link');
@@ -40,7 +31,7 @@
         }
     }
 
-    // --- Knowledge Base 読み込み ---
+    // --- Knowledge ---
     async function loadKnowledge() {
         try {
             const res = await fetch(knowledgePath);
@@ -49,7 +40,6 @@
             knowledge = data.entries || [];
             settings = data.settings || {};
         } catch (e) {
-            console.warn('[SAQT Chat] knowledge.json 読み込み失敗:', e.message);
             knowledge = [];
             settings = {
                 bot_name: 'サポート',
@@ -62,22 +52,16 @@
 
     // --- Gemini API ---
     function buildSystemPrompt() {
-        let knowledgeText = '';
-        if (knowledge && knowledge.length > 0) {
-            knowledgeText = knowledge.map(e =>
-                `【${e.category || ''}】\nQ: ${(e.questions || []).join(' / ')}\nA: ${e.answer}`
-            ).join('\n\n');
-        }
+        const knowledgeText = (knowledge || []).map(e =>
+            `【${e.category || ''}】\nQ: ${(e.questions || []).join(' / ')}\nA: ${e.answer}`
+        ).join('\n\n');
 
-        return `あなたは「SAQT（サクッと）」のWebサイトに設置されたサポートチャットボットです。
-
-以下のルールを厳守してください:
-- 丁寧だが簡潔に回答する（長くても200文字程度）
-- 以下のナレッジベースの情報に基づいて正確に回答する
-- ナレッジベースにない情報は推測せず「お問い合わせください（info@saqt-ai.com）」と案内する
-- 「AI」「人工知能」という言葉は使わない。チャットボットのことは「自動応答チャット」「チャットボット」と呼ぶ
-- 競合他社の悪口は言わない
-- 下手に出すぎない。プロフェッショナルなトーンで
+        return `あなたはGPS RUNNER（志水直樹）の公式サイトに設置されたサポートチャットボットです。
+ルール:
+- 丁寧だが簡潔に（150文字以内を目安）
+- ナレッジベースの情報のみ回答。不明な点は「お問い合わせフォームからご連絡ください」と案内
+- 「AI」「人工知能」という言葉は使わない
+- 返答に改行を適度に使い読みやすくする
 
 ナレッジベース:
 ${knowledgeText}`;
@@ -85,61 +69,34 @@ ${knowledgeText}`;
 
     async function askGemini(userMessage) {
         if (!geminiKey) return null;
-
         conversationHistory.push({ role: 'user', parts: [{ text: userMessage }] });
-
-        // 会話履歴は直近10ターンに制限（コスト節約）
         const recentHistory = conversationHistory.slice(-10);
-
-        const requestBody = {
-            system_instruction: {
-                parts: [{ text: buildSystemPrompt() }]
-            },
-            contents: recentHistory,
-            generationConfig: {
-                temperature: 0.3,
-                maxOutputTokens: 300,
-                topP: 0.8,
-            }
-        };
-
         try {
             const res = await fetch(
                 `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${geminiKey}`,
                 {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(requestBody),
+                    body: JSON.stringify({
+                        system_instruction: { parts: [{ text: buildSystemPrompt() }] },
+                        contents: recentHistory,
+                        generationConfig: { temperature: 0.3, maxOutputTokens: 250 }
+                    })
                 }
             );
-
-            if (!res.ok) {
-                console.warn('[SAQT Chat] Gemini API error:', res.status);
-                return null;
-            }
-
+            if (!res.ok) return null;
             const data = await res.json();
             const reply = data?.candidates?.[0]?.content?.parts?.[0]?.text || null;
-
-            if (reply) {
-                conversationHistory.push({ role: 'model', parts: [{ text: reply }] });
-            }
-
+            if (reply) conversationHistory.push({ role: 'model', parts: [{ text: reply }] });
             return reply;
-        } catch (e) {
-            console.warn('[SAQT Chat] Gemini API error:', e.message);
-            return null;
-        }
+        } catch { return null; }
     }
 
-    // --- キーワードマッチング（フォールバック用）---
+    // --- Keyword matching ---
     function findAnswerByKeyword(userMessage) {
         if (!knowledge || knowledge.length === 0) return null;
-
         const msg = userMessage.toLowerCase().replace(/[？?！!。、\s]/g, '');
-        let bestMatch = null;
-        let bestScore = 0;
-
+        let bestMatch = null, bestScore = 0;
         for (const entry of knowledge) {
             let score = 0;
             for (const kw of (entry.keywords || [])) {
@@ -153,84 +110,106 @@ ${knowledgeText}`;
             }
             if (score > bestScore) { bestScore = score; bestMatch = entry; }
         }
-
         return bestScore >= 5 ? bestMatch?.answer : null;
     }
 
-    // --- 回答を取得（Gemini優先、フォールバック: キーワード） ---
     async function getAnswer(userMessage) {
-        // Gemini APIがあればそちらを使う
         if (geminiKey) {
-            const geminiReply = await askGemini(userMessage);
-            if (geminiReply) return geminiReply;
+            const reply = await askGemini(userMessage);
+            if (reply) return reply;
         }
-
-        // フォールバック: キーワードマッチング
-        const keywordAnswer = findAnswerByKeyword(userMessage);
-        if (keywordAnswer) return keywordAnswer;
-
-        return settings.fallback || 'お問い合わせフォームからご連絡ください。';
+        const kw = findAnswerByKeyword(userMessage);
+        if (kw) return kw;
+        const fallbackUrl = settings.fallback_url || 'contact.html';
+        const fallbackLabel = settings.fallback_url_label || 'お問い合わせフォームへ';
+        return `${settings.fallback || 'うまく答えられませんでした。'}\n\n<a href="${escapeHtml(fallbackUrl)}" style="color:inherit;font-weight:600;text-decoration:underline;">${escapeHtml(fallbackLabel)}</a>`;
     }
 
-    // --- UI構築 ---
+    // --- UI ---
     function buildWidget() {
         document.documentElement.style.setProperty('--saqt-primary', primaryColor);
 
+        // Floating button
         const btn = document.createElement('button');
         btn.className = 'saqt-chat-btn';
         btn.setAttribute('aria-label', 'チャットを開く');
         btn.innerHTML = `
             <svg class="saqt-icon-chat" viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            <svg class="saqt-icon-close" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
+            <svg class="saqt-icon-close" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke="#0A0A0A" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg>
             <span class="saqt-chat-badge">1</span>
         `;
 
+        // Chat window
         const win = document.createElement('div');
         win.className = 'saqt-chat-window';
+        win.setAttribute('role', 'dialog');
+        win.setAttribute('aria-label', 'サポートチャット');
+
         const botName = settings.bot_name || 'サポート';
         const greeting = greetingOverride || settings.greeting || 'こんにちは！';
-        const modeLabel = geminiKey ? '' : '';
 
         win.innerHTML = `
             <div class="saqt-chat-header">
-                <div class="saqt-chat-avatar">
-                    <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-                </div>
+                <div class="saqt-chat-avatar">🏃</div>
                 <div class="saqt-chat-header-info">
                     <h3>${escapeHtml(botName)}</h3>
-                    <p>通常すぐに返信${modeLabel}</p>
+                    <p><span class="saqt-status-dot"></span>オンライン</p>
                 </div>
+                <button class="saqt-header-close" aria-label="チャットを閉じる">
+                    <svg viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
             </div>
-            <div class="saqt-chat-messages" id="saqt-messages"></div>
-            <div class="saqt-quick-replies" id="saqt-quick"></div>
+            <div class="saqt-chat-messages" id="saqt-messages" role="log" aria-live="polite"></div>
+            <div class="saqt-quick-replies" id="saqt-quick" aria-label="クイック返信"></div>
             <div class="saqt-chat-input-area">
-                <input type="text" class="saqt-chat-input" id="saqt-input" placeholder="メッセージを入力..." autocomplete="off">
+                <input type="text" class="saqt-chat-input" id="saqt-input"
+                    placeholder="メッセージを入力..." autocomplete="off"
+                    inputmode="text" enterkeyhint="send">
                 <button class="saqt-chat-send" id="saqt-send" aria-label="送信">
                     <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
                 </button>
             </div>
-            <div class="saqt-chat-powered">Powered by <a href="https://saqt-ai.com" target="_blank" rel="noopener">SAQT</a></div>
+            <div class="saqt-chat-powered">GPS RUNNER 公式サポート</div>
         `;
 
         document.body.appendChild(btn);
         document.body.appendChild(win);
 
         const messagesEl = win.querySelector('#saqt-messages');
-        const inputEl = win.querySelector('#saqt-input');
-        const sendBtn = win.querySelector('#saqt-send');
-        const quickEl = win.querySelector('#saqt-quick');
-        const badge = btn.querySelector('.saqt-chat-badge');
+        const inputEl    = win.querySelector('#saqt-input');
+        const sendBtn    = win.querySelector('#saqt-send');
+        const quickEl    = win.querySelector('#saqt-quick');
+        const closeBtn   = win.querySelector('.saqt-header-close');
+        const badge      = btn.querySelector('.saqt-chat-badge');
         let isOpen = false;
         let isProcessing = false;
 
-        btn.addEventListener('click', () => {
-            isOpen = !isOpen;
-            win.classList.toggle('open', isOpen);
-            btn.classList.toggle('active', isOpen);
+        function openChat() {
+            isOpen = true;
+            win.classList.add('open');
+            btn.classList.add('active');
             badge.classList.add('hidden');
-            if (isOpen) inputEl.focus();
+            // スマホでキーボードが遅れて開くのを防ぐため少し待つ
+            setTimeout(() => inputEl.focus(), 300);
+        }
+
+        function closeChat() {
+            isOpen = false;
+            win.classList.remove('open');
+            btn.classList.remove('active');
+        }
+
+        btn.addEventListener('click', () => isOpen ? closeChat() : openChat());
+        closeBtn.addEventListener('click', closeChat);
+
+        // スマホ: ウィンドウ外タップで閉じる
+        document.addEventListener('click', (e) => {
+            if (isOpen && !win.contains(e.target) && !btn.contains(e.target)) {
+                closeChat();
+            }
         });
 
+        // 初期メッセージ
         addBotMessage(greeting);
         showQuickReplies();
 
@@ -239,12 +218,10 @@ ${knowledgeText}`;
             if (!text || isProcessing) return;
             inputEl.value = '';
             isProcessing = true;
-            addUserMessage(text);
             hideQuickReplies();
+            addUserMessage(text);
             showTyping();
-
             const answer = await getAnswer(text);
-
             removeTyping();
             addBotMessage(answer);
             showQuickReplies();
@@ -253,45 +230,44 @@ ${knowledgeText}`;
 
         sendBtn.addEventListener('click', handleSend);
         inputEl.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && !e.isComposing) {
-                e.preventDefault();
-                handleSend();
-            }
+            if (e.key === 'Enter' && !e.isComposing) { e.preventDefault(); handleSend(); }
         });
 
-        function addBotMessage(text) {
-            const div = document.createElement('div');
-            div.className = 'saqt-msg saqt-msg-bot';
-            div.innerHTML = `<div class="saqt-msg-bubble">${escapeHtml(text)}</div>`;
-            messagesEl.appendChild(div);
+        function addBotMessage(html) {
+            const row = document.createElement('div');
+            row.className = 'saqt-msg saqt-msg-bot';
+            row.innerHTML = `
+                <div class="saqt-msg-avatar">🏃</div>
+                <div class="saqt-msg-bubble">${nl2br(html)}</div>
+            `;
+            messagesEl.appendChild(row);
             scrollToBottom();
         }
 
         function addUserMessage(text) {
-            const div = document.createElement('div');
-            div.className = 'saqt-msg saqt-msg-user';
-            div.innerHTML = `<div class="saqt-msg-bubble">${escapeHtml(text)}</div>`;
-            messagesEl.appendChild(div);
+            const row = document.createElement('div');
+            row.className = 'saqt-msg saqt-msg-user';
+            row.innerHTML = `<div class="saqt-msg-bubble">${escapeHtml(text)}</div>`;
+            messagesEl.appendChild(row);
             scrollToBottom();
         }
 
         function showTyping() {
-            const div = document.createElement('div');
-            div.className = 'saqt-typing';
-            div.id = 'saqt-typing';
-            div.innerHTML = '<div class="saqt-typing-dot"></div><div class="saqt-typing-dot"></div><div class="saqt-typing-dot"></div>';
-            messagesEl.appendChild(div);
+            const el = document.createElement('div');
+            el.className = 'saqt-typing';
+            el.id = 'saqt-typing';
+            el.innerHTML = '<div class="saqt-typing-dot"></div><div class="saqt-typing-dot"></div><div class="saqt-typing-dot"></div>';
+            messagesEl.appendChild(el);
             scrollToBottom();
         }
 
         function removeTyping() {
-            const el = document.getElementById('saqt-typing');
-            if (el) el.remove();
+            document.getElementById('saqt-typing')?.remove();
         }
 
         function showQuickReplies() {
             const replies = settings.quick_replies || [];
-            if (replies.length === 0) return;
+            if (!replies.length) return;
             quickEl.innerHTML = '';
             for (const text of replies) {
                 const qbtn = document.createElement('button');
@@ -306,13 +282,23 @@ ${knowledgeText}`;
         }
 
         function hideQuickReplies() { quickEl.innerHTML = ''; }
-        function scrollToBottom() { messagesEl.scrollTop = messagesEl.scrollHeight; }
+        function scrollToBottom() {
+            requestAnimationFrame(() => {
+                messagesEl.scrollTop = messagesEl.scrollHeight;
+            });
+        }
     }
 
     function escapeHtml(str) {
-        const div = document.createElement('div');
-        div.textContent = str;
-        return div.innerHTML.replace(/\n/g, '<br>');
+        const d = document.createElement('div');
+        d.textContent = String(str || '');
+        return d.innerHTML;
+    }
+
+    // リンクタグは許可しつつ改行を<br>に変換
+    function nl2br(str) {
+        // すでにHTMLが含まれている場合（リンク等）はそのまま改行だけ変換
+        return str.replace(/\n/g, '<br>');
     }
 
     async function init() {
