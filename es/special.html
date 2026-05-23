@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELEVEN RUN 2026 | GPS RUNNER Naoki Shimizu</title>
+  <meta name="description" content="ELEVEN RUN 2026 — GPS Runner Naoki Shimizu corre por 11 países de América creando GPS Art en vivo desde el terreno. ¡Viene a tu país!">
+  <link rel="alternate" hreflang="ja" href="https://official.gps-run.com/special.html">
+  <link rel="alternate" hreflang="en" href="https://official.gps-run.com/en/special.html">
+  <link rel="alternate" hreflang="es" href="https://official.gps-run.com/es/special.html">
+  <link rel="canonical" href="https://official.gps-run.com/es/special.html">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--blue:#1a4b8c;--red:#c41e3a;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--yellow:#FFE500;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    html{scroll-behavior:smooth;font-size:16px}
+    body{font-family:var(--font-en);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
+    header.scrolled{background:rgba(10,10,10,0.95)}
+    .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
+    .logo-img{height:40px;width:auto;display:block;border-radius:8px}
+    .logo-text{font-family:var(--font-en);font-weight:700;font-size:1.1rem;letter-spacing:.08em}
+    .logo-text span{color:var(--yellow)}
+    nav{display:flex;align-items:center;gap:2rem}
+    nav a{color:var(--gray-400);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
+    nav a:hover,nav a.active{color:var(--yellow)}
+    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:700!important}
+    .lang-toggle{display:inline-flex;align-items:center;gap:.3rem;color:var(--gray-400);border:1px solid var(--gray-700);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;text-decoration:none;font-family:var(--font-en);transition:all .3s;letter-spacing:.05em}
+    .lang-toggle:hover{border-color:var(--yellow);color:var(--yellow)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+    .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.5rem;font-weight:600}
+    .mobile-nav a:hover{color:var(--yellow)}
+    .container{max-width:900px;margin:0 auto}
+    section{padding:5rem 2rem}
+    .alt-bg{background:var(--dark)}
+    .sl{font-family:var(--font-en);font-size:.85rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem}
+    .st{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:1.25rem;line-height:1.4}
+    .txt{font-size:1.1rem;color:var(--gray-300);line-height:2.2;max-width:800px}
+    .txt p+p{margin-top:1.25rem}
+    .txt strong{color:var(--white);font-weight:700}
+    .txt em{font-style:normal;color:var(--red);font-weight:700}
+    .hbox{background:var(--gray-900);border-left:4px solid var(--red);border-radius:0 12px 12px 0;padding:1.5rem 2rem;margin:1.5rem 0;font-size:1.05rem;color:var(--gray-300);line-height:2.1}
+    .hbox strong{color:var(--white)}
+    .ig{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin:2rem 0}
+    .ig img{width:100%;border-radius:12px;border:1px solid var(--gray-800);display:block}
+    .ig-full{grid-column:1/-1}
+    .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
+    .fade-in.visible{opacity:1;transform:translateY(0)}
+    .hero{padding:100px 2rem 4rem;text-align:center;position:relative}
+    .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,75,140,0.08),rgba(196,30,58,0.04));pointer-events:none}
+    .hero-inner{max-width:850px;margin:0 auto;position:relative;z-index:2}
+    .hero-tag{font-family:var(--font-en);font-size:.85rem;font-weight:700;letter-spacing:.2em;color:var(--red);margin-bottom:1rem}
+    .hero h1{font-size:clamp(2.2rem,5.5vw,4rem);font-weight:900;line-height:1.15;margin-bottom:.75rem}
+    .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--blue),var(--red));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero-sub{font-size:1.2rem;color:var(--gray-300);margin-bottom:.5rem}
+    .hero-sub2{font-size:1.4rem;font-weight:700;color:var(--yellow);margin-bottom:2rem}
+    .hero-cta{display:inline-flex;align-items:center;gap:.7rem;background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;padding:1rem 2.5rem;border-radius:100px;font-size:1.1rem;font-weight:800;text-decoration:none;transition:all .3s;box-shadow:0 8px 30px rgba(196,30,58,0.3)}
+    .hero-cta:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(196,30,58,0.4)}
+    .hero-img{margin-top:2rem;border-radius:16px;overflow:hidden;border:1px solid var(--gray-800)}
+    .hero-img img{width:100%;display:block}
+    .countries-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem;margin:1.5rem 0}
+    .country-chip{display:inline-flex;align-items:center;gap:.4rem;background:var(--gray-900);border:1px solid var(--gray-800);border-radius:100px;padding:.4rem 1rem;font-size:.85rem;font-weight:600;color:var(--white)}
+    .plans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem}
+    .plan-card{background:var(--gray-900);border-radius:20px;border:2px solid var(--gray-800);transition:all .4s;overflow:hidden;display:flex;flex-direction:column}
+    .plan-card:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
+    .plan-card.pop{border-color:var(--red)}
+    .plan-card.pop .pop-badge{display:block}
+    .pop-badge{display:none;background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;text-align:center;padding:.5rem;font-family:var(--font-en);font-size:.8rem;font-weight:800;letter-spacing:.1em}
+    .plan-image{width:100%;aspect-ratio:1;overflow:hidden;background:var(--gray-800)}
+    .plan-image img{width:100%;height:100%;object-fit:cover}
+    .plan-body{padding:1.5rem;flex:1;display:flex;flex-direction:column}
+    .plan-price{font-family:var(--font-en);font-size:2rem;font-weight:900;color:var(--white)}
+    .plan-price small{font-size:.5em;color:var(--gray-400);font-weight:500}
+    .plan-name{font-size:1.1rem;font-weight:700;margin:.4rem 0}
+    .plan-desc{font-size:.9rem;color:var(--gray-400);line-height:1.8;margin-bottom:1rem}
+    .plan-returns{list-style:none;margin-bottom:1.5rem;flex:1}
+    .plan-returns li{font-size:.85rem;color:var(--gray-300);padding:.4rem 0;border-bottom:1px solid var(--gray-800);display:flex;align-items:start;gap:.4rem;line-height:1.6}
+    .plan-returns li::before{content:'✓';color:var(--red);font-weight:700;flex-shrink:0}
+    .plan-btn{display:block;text-align:center;padding:.9rem;border-radius:12px;font-size:1rem;font-weight:700;text-decoration:none;transition:all .3s}
+    .plan-btn-primary{background:linear-gradient(135deg,var(--blue),var(--red));color:#fff}
+    .plan-btn-primary:hover{box-shadow:0 8px 24px rgba(196,30,58,0.3)}
+    .plan-btn-outline{background:transparent;color:var(--white);border:1px solid var(--gray-700)}
+    .plan-btn-outline:hover{border-color:var(--red);color:var(--red)}
+    .budget-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem;margin:1.5rem 0}
+    .budget-item{background:var(--gray-900);border:1px solid var(--gray-800);border-radius:12px;padding:1.25rem;text-align:center}
+    .budget-item h4{font-size:1rem;font-weight:700;margin-bottom:.25rem}
+    .budget-item p{font-size:.9rem;color:var(--gray-400)}
+    .budget-total{background:var(--red);color:#fff;border-radius:12px;padding:1.25rem;text-align:center;font-size:1.3rem;font-weight:800;margin:1rem 0}
+    .video-wrapper{max-width:900px;margin:2rem auto 0;aspect-ratio:16/9;border-radius:16px;overflow:hidden;border:1px solid var(--gray-800)}
+    .video-wrapper iframe{width:100%;height:100%;border:none}
+    .msg-box{max-width:750px;margin:0 auto;background:var(--gray-900);border-radius:20px;padding:3rem;border:1px solid var(--gray-800);position:relative}
+    .msg-box .q{font-size:4rem;color:var(--red);opacity:.3;position:absolute;top:.5rem;left:2rem;font-family:Georgia,serif;line-height:1}
+    .msg-box>p{font-size:1.1rem;line-height:2.2;color:var(--gray-300);position:relative;z-index:1}
+    .msg-author{margin-top:2rem;display:flex;align-items:center;justify-content:center;gap:1rem}
+    .msg-author-img{width:56px;height:56px;border-radius:50%;overflow:hidden;border:2px solid var(--red)}
+    .msg-author-img img{width:100%;height:100%;object-fit:cover}
+    .final-cta{text-align:center;padding:8rem 2rem;position:relative}
+    .final-cta::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(26,75,140,0.06),rgba(196,30,58,0.04));pointer-events:none}
+    .final-cta h2{font-size:clamp(1.8rem,4vw,3rem);font-weight:900;margin-bottom:1rem;position:relative}
+    .final-cta h2 em{font-style:normal;color:var(--red)}
+    .final-cta p{font-size:1.1rem;color:var(--gray-300);max-width:550px;margin:0 auto 2.5rem;position:relative;line-height:2}
+    .final-cta-btn{display:inline-flex;align-items:center;gap:.7rem;background:linear-gradient(135deg,var(--blue),var(--red));color:#fff;padding:1.2rem 3.5rem;border-radius:100px;font-size:1.2rem;font-weight:800;text-decoration:none;transition:all .3s;position:relative;box-shadow:0 8px 30px rgba(196,30,58,0.3)}
+    .final-cta-btn:hover{transform:translateY(-3px);box-shadow:0 16px 50px rgba(196,30,58,0.4)}
+    footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
+    footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
+    footer a{color:var(--gray-400);text-decoration:none}
+    @media(max-width:980px){nav{display:none}.hamburger{display:flex}.plans-grid{grid-template-columns:repeat(2,1fr)}.ig{grid-template-columns:1fr}.budget-grid{grid-template-columns:1fr}}
+    @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.msg-box{padding:2rem 1.5rem}.plan-price{font-size:1.6rem}}
+    @media(max-width:400px){.plans-grid{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}.hero h1{font-size:2rem}.budget-grid{grid-template-columns:1fr}section{padding:2.5rem 1rem}}
+  </style>
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://official.gps-run.com/es/special.html">
+  <meta property="og:title" content="ELEVEN RUN 2026 | GPS RUNNER Naoki Shimizu — ¡Viene a tu país!">
+  <meta property="og:description" content="ELEVEN RUN 2026 — GPS Art por 11 países de América. Un boleto de ida hacia el Mundial y más allá. ¡El miembro número 11 eres tú!">
+  <meta property="og:image" content="https://official.gps-run.com/images/ogp.jpg">
+  <meta property="og:locale" content="es_419">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+  <header id="header">
+    <a href="/es/index.html" class="logo"><img src="/3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"><div class="logo-text">GPS <span>RUNNER</span></div></a>
+    <nav>
+      <a href="/es/index.html">HOME</a>
+      <a href="/es/works.html">WORKS</a>
+      <a href="/es/profile.html">PROFILE</a>
+      <a href="/es/global.html">GLOBAL</a>
+      <a href="/es/offer.html">OFFER</a>
+      <a href="/es/special.html" class="active">PROJECT</a>
+      <a href="/es/contact.html">CONTACT</a>
+      <a href="/es/support.html" class="nav-cta">SUPPORT</a>
+      <a href="/special.html" class="lang-toggle">日本語</a>
+      <a href="/en/special.html" class="lang-toggle">EN</a>
+    </nav>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/es/index.html">HOME</a>
+    <a href="/es/works.html">WORKS</a>
+    <a href="/es/profile.html">PROFILE</a>
+    <a href="/es/global.html">GLOBAL</a>
+    <a href="/es/offer.html">OFFER</a>
+    <a href="/es/special.html">PROJECT</a>
+    <a href="/es/contact.html">CONTACT</a>
+    <a href="/es/support.html">SUPPORT</a>
+    <a href="/special.html" style="font-size:1rem;color:var(--gray-400)">🌐 日本語</a>
+    <a href="/en/special.html" style="font-size:1rem;color:var(--gray-400)">🌐 EN</a>
+  </div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">PROYECTO ESPECIAL 2026</div>
+      <h1><em>ELEVEN RUN</em> 2026</h1>
+      <p class="hero-sub">── RUN FOR SMILE! Año 11 — Llevando sonrisas por 11 países ──</p>
+      <p class="hero-sub2">¡Viene a tu país!</p>
+      <div class="countries-strip">
+        <span class="country-chip"><img src="https://flagcdn.com/w20/us.png" width="16" alt="USA"> EE.UU.</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/ca.png" width="16" alt="Canadá"> Canadá</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/mx.png" width="16" alt="México"> México</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/co.png" width="16" alt="Colombia"> Colombia</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/ec.png" width="16" alt="Ecuador"> Ecuador</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/pe.png" width="16" alt="Perú"> Perú</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/bo.png" width="16" alt="Bolivia"> Bolivia</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/cl.png" width="16" alt="Chile"> Chile</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/ar.png" width="16" alt="Argentina"> Argentina</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/uy.png" width="16" alt="Uruguay"> Uruguay</span>
+        <span class="country-chip"><img src="https://flagcdn.com/w20/br.png" width="16" alt="Brasil"> Brasil</span>
+      </div>
+      <a href="#plans" class="hero-cta">Ver planes de apoyo ↓</a>
+      <div class="hero-img"><img src="/images/cf-p1-2.png" alt="Rumbo a América" loading="eager"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container fade-in">
+      <p class="sl">01 — El Proyecto</p>
+      <h2 class="st">El Proyecto</h2>
+      <div class="txt">
+        <p>En 2026, los ojos del mundo se vuelven hacia América.</p>
+        <p>Por primera vez en la historia, el Mundial de Fútbol FIFA será co-organizado por tres naciones: Estados Unidos, Canadá y México.</p>
+        <p>Con una audiencia de 3,500 a 5,000 millones de espectadores, Naoki aprovechará esta ola de atención global para <em>correr por 11 países y crear GPS Art que lleve emoción y sonrisas al mundo</em>.</p>
+      </div>
+      <div class="ig">
+        <img src="/images/cf-p2-1.png" alt="Mascotas y ciudades sede del Mundial" class="ig-full" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>La primera etapa abarca los tres países sede: EE.UU., México y Canadá. Naoki dibujará <em>las tres mascotas oficiales del Mundial FIFA 2026 a escala Guinness</em>, fusionando deporte y arte para celebrar el torneo.</p>
+        <p>La <em>meta es Manhattan, Nueva York</em>. El objetivo es llegar el día anterior a la Ceremonia de Apertura del Mundial — y desde allí virar al sur para la segunda etapa por 8 países de Sudamérica.</p>
+      </div>
+      <div class="ig">
+        <img src="/images/cf-p3-1.png" alt="Mapa de ruta por 11 países" class="ig-full" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>Tras llegar a EE.UU., Naoki pasará aproximadamente 5 meses avanzando hacia Brasil.</p>
+        <div class="hbox">
+          <strong>▶ Primera etapa — Norteamérica y Centroamérica</strong><br>¡GPS Art en <strong>3 países para celebrar el Mundial</strong>!<br><br>
+          <strong>▶ Segunda etapa — Sudamérica</strong><br>Con la Ceremonia de Apertura del Mundial como señal de salida, parte hacia el sur, hacia la Sudamérica futbolera. Colombia, Ecuador, Perú, Bolivia, Chile, Argentina, Uruguay, Brasil — <strong>8 países de GPS Art y aventura pura</strong>.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg">
+    <div class="container fade-in">
+      <p class="sl">02 — Una Aventura al Límite</p>
+      <h2 class="st">Una Aventura al Límite</h2>
+      <div class="ig">
+        <img src="/images/danger-desert.jpg" alt="Carretera por el desierto" loading="lazy">
+        <img src="/images/danger-dogs.jpg" alt="Perros salvajes" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>Naoki ya ha recorrido más de 30 países. En Perú, le robaron $3,000 en efectivo. Una jauría de perros salvajes estuvo a punto de matarlo. Un taxista lo abandonó a 4,000 metros de altura en los Andes, solo y sin nada.</p>
+        <p>Y aun así — <strong>completó la obra de 4,600km</strong>. Un geoglifo de alpaca que se puede ver desde el espacio.</p>
+      </div>
+      <div class="ig">
+        <img src="/images/danger-city.jpg" alt="Calles peligrosas de la ciudad" loading="lazy">
+        <img src="/images/danger-nail.jpg" alt="Uña perdida por las condiciones extremas" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>Esta vez va más lejos todavía — <em>11 países por Centroamérica y Sudamérica</em>, posiblemente la ruta más desafiante de su carrera. La seguridad es la prioridad número uno de este proyecto. (Hasta contar con un lugar seguro donde dormir marca una gran diferencia.)</p>
+        <p>Esta es América Latina — tierra de pasión, fútbol, cultura y también peligros reales. Naoki no viene como turista. Viene a <em>dejar su huella en el mapa de cada país</em>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container fade-in">
+      <p class="sl">03 — ¿Por Qué Sigue Adelante?</p>
+      <h2 class="st">¿Por Qué Sigue Adelante?</h2>
+      <div class="ig">
+        <img src="/images/challenge-reason2.jpeg" alt="Por qué sigue adelante" class="ig-full" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>Sigue adelante porque ningún ser humano ha hecho esto antes — y porque hay emociones esperando del otro lado que nadie ha sentido jamás.</p>
+        <p><em>Callejones guiados por el arte, rutas trazadas a través de calles desconocidas.</em></p>
+        <p>Correr y dibujar allí, ¿qué sonrisas y qué paisajes encontrará? Compartirá cada alegría y cada descubrimiento en <em>Instagram y YouTube</em> — invitando al mundo entero a vivir la aventura con él.</p>
+        <p>Este proyecto ya tiene 10 miembros en el equipo. <strong>El miembro número 11 eres tú.</strong></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg">
+    <div class="container fade-in">
+      <p class="sl">04 — Para las Futuras Generaciones</p>
+      <h2 class="st">Para las Futuras Generaciones</h2>
+      <div class="ig">
+        <img src="/images/cf-p6-1.png" alt="Con ex alumnos" class="ig-full" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>El viaje de Naoki comenzó cuando era maestro de primaria. Pasar dos años como tutor de un alumno con parálisis cerebral le sembró un sueño: <strong>"Crear una cultura del running donde nadie tenga que competir."</strong></p>
+        <p>Este desafío es también un mensaje para sus queridos ex alumnos y para todos los niños del mundo — que la alegría de atreverse a intentarlo vale la pena, y que <strong>las conexiones que construimos sin fronteras pertenecen a la próxima generación</strong>.</p>
+        <p>Tu apoyo y tu aliento <em>se convierten en el combustible para los desafiantes de la próxima generación</em>.</p>
+        <p>Y para los latinoamericanos: esta aventura es en <em>su tierra</em>. Las historias que Naoki va a vivir en Colombia, en Perú, en Argentina, en Brasil — serán parte de la historia de GPS Art en América Latina para siempre.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container fade-in">
+      <p class="sl">05 — Tu Apoyo Importa</p>
+      <h2 class="st">Tu Apoyo Importa</h2>
+      <div class="ig">
+        <img src="/images/cf-p8-1.jpeg" alt="Pulseras del equipo" loading="lazy">
+        <img src="/images/cf-p7-1.jpeg" alt="Miembros del equipo" loading="lazy">
+      </div>
+      <div class="txt" style="margin-top:1.5rem">
+        <p>¡Cada persona que apoya este proyecto se convierte en el <strong>miembro número 11 del ELEVEN RUN 2026</strong>!</p>
+        <p>Ya sea que quieras contribuir un poco, alentar fuerte o convertirte en un símbolo del proyecto — cada aporte ayuda a que la aventura por 11 países sea más segura, más grande y más audaz.</p>
+        <p>No eres espectador. Eres parte del equipo que corre con él por las calles de tu país.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg">
+    <div class="container fade-in">
+      <p class="sl">06 — En Qué Se Usará el Dinero</p>
+      <h2 class="st">En Qué Se Usará el Dinero</h2>
+      <div class="budget-grid">
+        <div class="budget-item"><h4>Transporte, Alojamiento y Comida</h4></div>
+        <div class="budget-item"><h4>Equipamiento para 11 países</h4></div>
+        <div class="budget-item"><h4>Comunicación, Grabación y Edición</h4></div>
+        <div class="budget-item"><h4>Intercambios con comunidades locales</h4></div>
+      </div>
+      <div class="budget-total">Total: ¥1,100,000 (aprox. ¥100,000 por país)</div>
+      <div class="txt"><p>Cada yen va directo a completar esta misión. Nada de gastos superfluos — todo al terreno.</p></div>
+      <div class="ig">
+        <img src="/images/cf-p9-2.jpeg" alt="Con niños locales" class="ig-full" loading="lazy">
+      </div>
+      <div class="video-wrapper" style="margin-top:2rem">
+        <iframe src="https://www.youtube.com/embed/14Nu6oKfZns" title="ELEVEN RUN 2026" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans">
+    <div class="container">
+      <div class="fade-in" style="text-align:center;margin-bottom:3rem">
+        <p class="sl">SUPPORT PLANS</p>
+        <h2 class="st">Planes de crowdfunding (8 opciones)</h2>
+      </div>
+      <div class="plans-grid">
+        <div class="plan-card fade-in">
+          <div class="plan-image"><img src="/images/eleven-plan1.png" alt="Plan 3 comidas" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;3,900 <small>incl. imp.</small></div>
+            <div class="plan-name">39 Gracias — Plan 3 Comidas</div>
+            <p class="plan-desc">Cubre el costo de 3 comidas en el camino</p>
+            <ul class="plan-returns"><li>Certificado de agradecimiento (ID Supporter)</li><li>Tu nombre en la Lista de Supporters</li></ul>
+            <a href="https://perudegps.official.ec/items/85402049" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">Apoyar ahora</a>
+          </div>
+        </div>
+        <div class="plan-card pop fade-in">
+          <div class="pop-badge">POPULAR</div>
+          <div class="plan-image"><img src="/images/eleven-plan2.png" alt="Plan aliento total" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;10,000 <small>incl. imp.</small></div>
+            <div class="plan-name">Plan Aliento Total</div>
+            <p class="plan-desc">Ayuda a cubrir comida y transporte</p>
+            <ul class="plan-returns"><li>Certificado de agradecimiento (ID Supporter)</li><li>Tu nombre en la Lista de Supporters</li><li>Video de agradecimiento personal desde uno de los 11 países</li></ul>
+            <a href="https://perudegps.official.ec/items/86712736" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">Apoyar ahora</a>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-image"><img src="/images/eleven-plan3.png" alt="Patrocinador de 1 día" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;15,000 <small>incl. imp.</small></div>
+            <div class="plan-name">Patrocinador de 1 Día + Carpeta Edición Limitada</div>
+            <p class="plan-desc">Cubre un día de comidas y alojamiento</p>
+            <ul class="plan-returns"><li>Todos los beneficios del plan ¥10,000</li><li>Mención de tu nombre en transmisión en vivo por redes</li><li>Carpeta transparente edición limitada</li></ul>
+            <a href="https://perudegps.official.ec/items/79747462" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">Apoyar ahora</a>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-image"><img src="/images/eleven-plan4.png" alt="Plan alojamiento seguro" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;20,000 <small>incl. imp.</small></div>
+            <div class="plan-name">Plan Alojamiento Seguro</div>
+            <p class="plan-desc">Asegura un lugar seguro donde dormir</p>
+            <ul class="plan-returns"><li>Todos los beneficios del plan ¥15,000</li><li>Video especial desde un hostal latinoamericano</li></ul>
+            <a href="https://perudegps.official.ec/items/79748113" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">Apoyar ahora</a>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-image"><img src="/images/eleven-plan5.png" alt="Plan brindis" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;20,000 <small>incl. imp.</small></div>
+            <div class="plan-name">Plan "¡Salud!" — Brindis Local</div>
+            <p class="plan-desc">Patrocina un brindis intercultural</p>
+            <ul class="plan-returns"><li>Todos los beneficios del plan ¥15,000</li><li>Video de brindis con locales del país de destino</li></ul>
+            <a href="https://perudegps.official.ec/items/79748584" target="_blank" rel="noopener" class="plan-btn plan-btn-outline">Apoyar ahora</a>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-image"><img src="/images/eleven-plan6.png" alt="Plan equipamiento" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;30,000 <small>incl. imp.</small></div>
+            <div class="plan-name">¡Dale Naoki! — Plan Equipamiento</div>
+            <p class="plan-desc">Financia el equipo que lo mantiene vivo</p>
+            <ul class="plan-returns"><li>Todos los beneficios del plan ¥15,000</li><li>Video de agradecimiento desde un tramo extremo de la ruta</li></ul>
+            <a href="https://perudegps.official.ec/items/77053530" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">Apoyar ahora</a>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-image"><img src="/images/eleven-plan7.png" alt="Plan co-creación" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;50,000 <small>incl. imp.</small></div>
+            <div class="plan-name">Plan Co-creación de Conexiones</div>
+            <p class="plan-desc">Patrocina amistades forjadas alrededor del mundo</p>
+            <ul class="plan-returns"><li>Certificado + inclusión en la Lista de Supporters</li><li>Video especial con locales del destino</li><li>Kit de regalo (carpeta, toalla, etc.)</li></ul>
+            <a href="https://perudegps.official.ec/items/79749449" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">Apoyar ahora</a>
+          </div>
+        </div>
+        <div class="plan-card fade-in">
+          <div class="plan-image"><img src="/images/eleven-plan8.png" alt="Mega Supporter" loading="lazy"></div>
+          <div class="plan-body">
+            <div class="plan-price">&yen;100,000 <small>incl. imp.</small></div>
+            <div class="plan-name">¡Vamos Naoki! — Plan Mega Supporter</div>
+            <p class="plan-desc">Apoyo total para el primer desafío de este tipo en la historia</p>
+            <ul class="plan-returns"><li>Certificado + inclusión en la Lista de Supporters</li><li>Video de agradecimiento en lugares icónicos (Cataratas del Iguazú, etc.)</li><li>Kit de regalo (carpeta, toalla)</li><li>Recuerdos de los 11 países</li></ul>
+            <a href="https://perudegps.official.ec/items/79748810" target="_blank" rel="noopener" class="plan-btn plan-btn-primary">Apoyar ahora</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt-bg">
+    <div class="container fade-in">
+      <p class="sl" style="text-align:center">MENSAJE</p>
+      <h2 class="st" style="text-align:center">De Naoki Shimizu</h2>
+      <div class="msg-box">
+        <div class="q">&ldquo;</div>
+        <p>Año 11 del desafío — ELEVEN RUN 2026.<br><br>¡Cada supporter es un compañero de carrera!<br>¡Corramos juntos por 11 países!<br><br>Para todos en América Latina — vengo a su tierra,<br>a dibujar en sus calles, a conocer su gente, a dejar<br>una obra de GPS Art que sea de todos.<br><br>Gracias de corazón por su apoyo.<br><br><strong>RUN FOR SMILE.</strong></p>
+        <div class="msg-author">
+          <div class="msg-author-img"><img src="/images/hero.jpg" alt="Naoki Shimizu"></div>
+          <div>
+            <div style="font-weight:700;font-size:1.05rem">Naoki Shimizu</div>
+            <div style="font-size:.85rem;color:var(--gray-400)">GPS Runner / GPS Artist</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="container fade-in">
+      <h2>Únete a la <em>Aventura por 11 Países</em>.</h2>
+      <p>Tu apoyo impulsa el primer desafío de este tipo en la historia de la humanidad.<br>Conviértete en el miembro número 11 del equipo.</p>
+      <a href="#plans" class="final-cta-btn">Elegir un plan de apoyo</a>
+      <p style="margin-top:1.5rem;font-size:.9rem;color:var(--gray-400);position:relative">Pago: Tarjeta de crédito / PayPay / Transferencia bancaria / Tiendas de conveniencia</p>
+    </div>
+  </section>
+
+  <footer><p><a href="/es/index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu. &middot; <a href="/es/privacy.html">Política de privacidad</a></p></footer>
+
+  <script>
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)});
+    document.getElementById('hamburger').addEventListener('click',function(){this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('active')});
+    var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1});
+    document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
+  </script>
+  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="¡Hola! Pregúntame lo que quieras sobre GPS RUNNER Naoki Shimizu 😊"></script>
+</body>
+</html>
