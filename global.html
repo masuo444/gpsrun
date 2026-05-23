@@ -106,6 +106,8 @@
     @media(max-width:900px){nav{display:none}.hamburger{display:flex}.highlights{flex-direction:column}}
     @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.page-hero{padding:110px 1.25rem 2rem}.gallery-strip{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}}
     @media(max-width:420px){.gallery-strip{grid-template-columns:repeat(2,1fr)!important;gap:.6rem}.country-nav a{padding:.5rem 1rem;font-size:.9rem}}
+    .lang-toggle{display:inline-flex;align-items:center;gap:.3rem;color:var(--gray-400);border:1px solid var(--gray-700);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;text-decoration:none;font-family:var(--font-en);transition:all .3s;letter-spacing:.05em}
+    .lang-toggle:hover{border-color:var(--yellow);color:var(--yellow)}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
@@ -152,19 +154,21 @@
       <a href="special.html">PROJECT</a>
       <a href="contact.html">CONTACT</a>
       <a href="support.html" class="nav-cta">SUPPORT</a>
+      <a href="/en/global.html" class="lang-toggle">EN</a>
     </nav>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </header>
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">HOME</a>
     <a href="works.html">WORKS</a>
-    
+
     <a href="profile.html">PROFILE</a>
     <a href="global.html">GLOBAL</a>
     <a href="offer.html">OFFER</a>
     <a href="special.html">PROJECT</a>
     <a href="contact.html">CONTACT</a>
     <a href="support.html">SUPPORT</a>
+    <a href="/en/global.html" style="font-size:1rem;color:var(--gray-400)">🌐 EN</a>
   </div>
 
   <!-- HERO -->

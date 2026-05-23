@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SUPPORT | GPS RUNNER 志水直樹 - 継続サポーター募集</title>
-  <meta name="description" content="GPSランナー志水直樹の継続サポーターを募集。月額390円から、世界を走り描く挑戦を一緒に支えてください。">
+  <title>Support | GPS RUNNER Naoki Shimizu</title>
+  <meta name="description" content="Become a monthly supporter of GPS Runner Naoki Shimizu. From ¥390/month, help fuel a world-running art adventure.">
+  <link rel="alternate" hreflang="ja" href="https://official.gps-run.com/support.html">
+  <link rel="alternate" hreflang="en" href="https://official.gps-run.com/en/support.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -12,9 +14,7 @@
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
     :root{--yellow:#FFE500;--yellow-light:#FFF176;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
     html{scroll-behavior:smooth;font-size:18px}
-    body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.8;overflow-x:hidden}
-
-    /* HEADER */
+    body{font-family:var(--font-en);background:var(--black);color:var(--white);line-height:1.8;overflow-x:hidden}
     header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1);transition:all .3s}
     header.scrolled{background:rgba(10,10,10,0.95);border-bottom-color:rgba(255,229,0,0.3)}
     .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
@@ -24,8 +24,10 @@
     nav{display:flex;align-items:center;gap:2rem}
     nav a{color:var(--gray-400);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
     nav a:hover,nav a.active{color:var(--yellow)}
-    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:600!important;transition:transform .3s,box-shadow .3s!important}
+    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:700!important;transition:transform .3s,box-shadow .3s!important}
     .nav-cta:hover{transform:translateY(-1px);box-shadow:0 4px 20px rgba(255,229,0,0.3)}
+    .lang-toggle{display:inline-flex;align-items:center;gap:.3rem;color:var(--gray-400);border:1px solid var(--gray-700);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;text-decoration:none;font-family:var(--font-en);transition:all .3s;letter-spacing:.05em}
+    .lang-toggle:hover{border-color:var(--yellow);color:var(--yellow)}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
     .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
     .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -34,8 +36,7 @@
     .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
     .mobile-nav.active{display:flex}
     .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.5rem;font-weight:600}
-
-    /* HERO */
+    .mobile-nav a:hover{color:var(--yellow)}
     .hero{padding:120px 2rem 4rem;text-align:center;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,229,0,0.06) 0%,transparent 70%);pointer-events:none}
     .hero-inner{max-width:800px;margin:0 auto;position:relative;z-index:2}
@@ -45,92 +46,21 @@
     .hero-desc{font-size:1.05rem;color:var(--gray-300);max-width:600px;margin:0 auto 2rem;line-height:2}
     .hero-cta{display:inline-flex;align-items:center;gap:.5rem;background:var(--yellow);color:var(--black);padding:.9rem 2.5rem;border-radius:100px;font-size:1.05rem;font-weight:700;text-decoration:none;transition:all .3s}
     .hero-cta:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(255,229,0,0.3)}
-
-    /* SECTION */
     .container{max-width:1000px;margin:0 auto}
     section{padding:5rem 2rem}
     .alt-bg{background:var(--dark)}
     .sl{font-family:var(--font-en);font-size:.8rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.5rem}
     .st{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;margin-bottom:1rem;line-height:1.4}
     .sub{font-size:1rem;color:var(--gray-400);max-width:600px;margin:0 auto 2.5rem;line-height:1.9}
-
-    /* WHY SUPPORT */
     .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;max-width:980px;margin:0 auto}
-    .why-card{
-      position:relative;
-      min-height:280px;
-      background:
-        radial-gradient(circle at top right, rgba(255,229,0,0.09), transparent 32%),
-        linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.01)),
-        var(--gray-900);
-      border:1px solid rgba(255,255,255,0.08);
-      border-radius:26px;
-      padding:1.8rem 1.8rem 2rem;
-      overflow:hidden;
-      transition:transform .35s,border-color .35s,box-shadow .35s;
-      display:flex;
-      flex-direction:column;
-      justify-content:flex-end;
-    }
-    .why-card::before{
-      content:'';
-      position:absolute;
-      top:0;
-      left:0;
-      right:0;
-      height:1px;
-      background:linear-gradient(90deg, transparent, rgba(255,229,0,0.9), transparent);
-      opacity:.7;
-    }
-    .why-card::after{
-      content:'';
-      position:absolute;
-      inset:0;
-      border-radius:26px;
-      box-shadow:inset 0 0 0 1px rgba(255,255,255,0.02);
-      pointer-events:none;
-    }
-    .why-card:hover{
-      transform:translateY(-6px);
-      border-color:rgba(255,229,0,0.28);
-      box-shadow:0 20px 50px rgba(0,0,0,0.35);
-    }
-    .why-card-top{
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      margin-bottom:auto;
-      gap:1rem;
-    }
-    .why-label{
-      font-family:var(--font-en);
-      font-size:.72rem;
-      letter-spacing:.18em;
-      text-transform:uppercase;
-      color:var(--yellow);
-    }
-    .why-num{
-      font-family:var(--font-en);
-      font-size:2.5rem;
-      line-height:1;
-      font-weight:900;
-      color:rgba(255,255,255,0.08);
-    }
-    .why-card h3{
-      font-size:1.55rem;
-      font-weight:800;
-      line-height:1.35;
-      margin:1.25rem 0 .85rem;
-      letter-spacing:-.01em;
-    }
-    .why-card p{
-      font-size:1rem;
-      color:var(--gray-300);
-      line-height:1.95;
-      max-width:28ch;
-    }
-
-    /* PLANS */
+    .why-card{position:relative;min-height:280px;background:radial-gradient(circle at top right,rgba(255,229,0,0.09),transparent 32%),linear-gradient(180deg,rgba(255,255,255,0.025),rgba(255,255,255,0.01)),var(--gray-900);border:1px solid rgba(255,255,255,0.08);border-radius:26px;padding:1.8rem 1.8rem 2rem;overflow:hidden;transition:transform .35s,border-color .35s,box-shadow .35s;display:flex;flex-direction:column;justify-content:flex-end}
+    .why-card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(255,229,0,0.9),transparent);opacity:.7}
+    .why-card:hover{transform:translateY(-6px);border-color:rgba(255,229,0,0.28);box-shadow:0 20px 50px rgba(0,0,0,0.35)}
+    .why-card-top{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:auto;gap:1rem}
+    .why-label{font-family:var(--font-en);font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--yellow)}
+    .why-num{font-family:var(--font-en);font-size:2.5rem;line-height:1;font-weight:900;color:rgba(255,255,255,0.08)}
+    .why-card h3{font-size:1.55rem;font-weight:800;line-height:1.35;margin:1.25rem 0 .85rem;letter-spacing:-.01em}
+    .why-card p{font-size:1rem;color:var(--gray-300);line-height:1.95;max-width:28ch}
     .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:960px;margin:0 auto}
     .plan-card{background:var(--gray-900);border:2px solid var(--gray-800);border-radius:20px;padding:2.5rem 2rem;text-align:center;transition:all .4s;position:relative;display:flex;flex-direction:column}
     .plan-card:hover{border-color:rgba(255,229,0,0.5);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.4)}
@@ -143,21 +73,17 @@
     .plan-features{list-style:none;text-align:left;margin-bottom:2rem;flex:1}
     .plan-features li{font-size:.88rem;color:var(--gray-300);padding:.5rem 0;border-bottom:1px solid var(--gray-800);display:flex;align-items:start;gap:.5rem;line-height:1.6}
     .plan-features li::before{content:'✓';color:var(--yellow);font-weight:700;flex-shrink:0;margin-top:.1rem}
-    .plan-btn{display:block;text-align:center;padding:.85rem;border-radius:12px;font-size:.95rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-ja)}
+    .plan-btn{display:block;text-align:center;padding:.85rem;border-radius:12px;font-size:.95rem;font-weight:700;text-decoration:none;transition:all .3s;font-family:var(--font-en)}
     .plan-btn-primary{background:var(--yellow);color:var(--black)}
     .plan-btn-primary:hover{box-shadow:0 8px 24px rgba(255,229,0,0.3);transform:translateY(-1px)}
     .plan-btn-outline{background:transparent;color:var(--white);border:1px solid var(--gray-700)}
     .plan-btn-outline:hover{border-color:var(--yellow);color:var(--yellow)}
     .plan-note{font-size:.75rem;color:var(--gray-400);margin-top:.75rem;text-align:center}
-
-    /* HOW IT WORKS */
     .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:800px;margin:0 auto}
     .step{text-align:center}
     .step-num{font-family:var(--font-en);font-size:2.5rem;font-weight:900;color:var(--yellow);opacity:.3;margin-bottom:.5rem}
     .step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem}
     .step p{font-size:.85rem;color:var(--gray-400);line-height:1.8}
-
-    /* MESSAGE */
     .msg-box{max-width:700px;margin:0 auto;background:var(--gray-900);border-radius:20px;padding:3rem;border:1px solid var(--gray-800);position:relative}
     .msg-box .q{font-size:4rem;color:var(--yellow);opacity:.3;position:absolute;top:.5rem;left:2rem;font-family:Georgia,serif;line-height:1}
     .msg-box>p{font-size:1rem;line-height:2.2;color:var(--gray-300);position:relative;z-index:1}
@@ -167,131 +93,84 @@
     .msg-author-info{text-align:left}
     .msg-author-info div:first-child{font-weight:700;font-size:1rem}
     .msg-author-info div:last-child{font-size:.8rem;color:var(--gray-400)}
-
-    /* FAQ */
     .faq-list{max-width:700px;margin:0 auto}
     .faq-item{border-bottom:1px solid var(--gray-800)}
-    .faq-q{width:100%;background:none;border:none;color:var(--white);font-size:.95rem;font-weight:600;padding:1.25rem 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-ja)}
+    .faq-q{width:100%;background:none;border:none;color:var(--white);font-size:.95rem;font-weight:600;padding:1.25rem 0;text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:var(--font-en)}
     .faq-icon{color:var(--yellow);font-size:1.3rem;transition:transform .3s;font-weight:300}
     .faq-a{max-height:0;overflow:hidden;transition:max-height .3s;padding:0}
     .faq-a.open{max-height:200px;padding:0 0 1.25rem}
     .faq-a p{font-size:.9rem;color:var(--gray-400);line-height:1.9}
-
-    /* SUPPORTERS */
-    .supporters-wall{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center;max-width:700px;margin:0 auto}
-    .supporter-tag{font-size:.8rem;color:var(--gray-300);background:var(--gray-900);border:1px solid var(--gray-800);padding:.35rem .9rem;border-radius:100px}
-    .supporter-tag.gold{color:var(--yellow);border-color:rgba(255,229,0,0.3);background:rgba(255,229,0,0.05)}
-
-    /* PROJECT CTA */
     .project-cta{text-align:center;padding:4rem 2rem;background:var(--gray-900);border-top:1px solid var(--gray-800);border-bottom:1px solid var(--gray-800)}
     .project-cta p{font-size:1rem;color:var(--gray-300);margin-bottom:1.5rem;line-height:1.9}
     .project-cta a{display:inline-flex;align-items:center;gap:.5rem;color:var(--yellow);text-decoration:none;font-weight:700;font-size:1rem;border:1px solid var(--yellow);padding:.7rem 2rem;border-radius:100px;transition:all .3s}
     .project-cta a:hover{background:var(--yellow);color:var(--black)}
-
-    /* FINAL CTA */
     .final-cta{text-align:center;padding:6rem 2rem;position:relative}
     .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(255,229,0,0.05) 0%,transparent 70%);pointer-events:none}
     .final-cta h2{font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:900;margin-bottom:1rem;position:relative}
     .final-cta h2 em{font-style:normal;color:var(--yellow)}
     .final-cta p{font-size:1rem;color:var(--gray-300);max-width:500px;margin:0 auto 2rem;position:relative;line-height:2}
-
-    /* FADE IN */
     .fade-in{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s ease}
     .fade-in.visible{opacity:1;transform:translateY(0)}
-
-    /* FOOTER */
     footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
     footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
     footer a{color:var(--gray-400);text-decoration:none}
-
-    @media(max-width:900px){
-      nav{display:none}.hamburger{display:flex}
-      .plans-grid{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}
-      .why-grid{grid-template-columns:1fr}
-      .steps{grid-template-columns:1fr;gap:1.5rem}
-    }
-    @media(max-width:600px){
-      header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}
-      .msg-box{padding:2rem 1.5rem}
-    }
-    .lang-toggle{display:inline-flex;align-items:center;gap:.3rem;color:var(--gray-400);border:1px solid var(--gray-700);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;text-decoration:none;font-family:var(--font-en);transition:all .3s;letter-spacing:.05em}
-    .lang-toggle:hover{border-color:var(--yellow);color:var(--yellow)}
+    @media(max-width:980px){nav{display:none}.hamburger{display:flex}.plans-grid{grid-template-columns:1fr;max-width:340px;margin-left:auto;margin-right:auto}.why-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr;gap:1.5rem}}
+    @media(max-width:600px){header{padding:0 1.25rem}section{padding:3.5rem 1.25rem}.msg-box{padding:2rem 1.5rem}}
   </style>
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GPS RUNNER 志水直樹">
-  <meta property="og:title" content="サポート SUPPORT | GPS RUNNER 志水直樹">
-  <meta property="og:description" content="GPSランナー志水直樹の活動をサポートしてください。月500円から参加できる応援コミュニティ。">
-  <meta property="og:url" content="https://official.gps-run.com/support.html">
+  <meta property="og:url" content="https://official.gps-run.com/en/support.html">
+  <meta property="og:title" content="Support | GPS RUNNER Naoki Shimizu">
+  <meta property="og:description" content="Become a monthly supporter of GPS Runner Naoki Shimizu. Help fuel a world-running art adventure.">
   <meta property="og:image" content="https://official.gps-run.com/images/ogp.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="ja_JP">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="サポート SUPPORT | GPS RUNNER 志水直樹">
-  <meta name="twitter:description" content="GPSランナー志水直樹の活動をサポートしてください。月500円から参加できる応援コミュニティ。">
-  <meta name="twitter:image" content="https://official.gps-run.com/images/ogp.jpg">
-  <meta name="keywords" content="GPSランナー,サポーター,応援,志水直樹,月額支援,クラウドファンディング,継続サポート">
-  <meta name="author" content="志水直樹 Naoki Shimizu">
-  <link rel="canonical" href="https://official.gps-run.com/support.html">
+  <meta property="og:locale" content="en_US">
+  <link rel="canonical" href="https://official.gps-run.com/en/support.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "url": "https://official.gps-run.com/support.html",
-    "name": "サポート SUPPORT | GPS RUNNER 志水直樹",
-    "description": "GPSランナー志水直樹の継続サポーターを募集。月額390円から、世界を走り描く挑戦を一緒に支えてください。",
-    "inLanguage": "ja"
-  }
-  </script>
 </head>
 <body>
   <header id="header">
-    <a href="index.html" class="logo">
-      <img src="3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img">
+    <a href="/en/index.html" class="logo">
+      <img src="/3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img">
       <div class="logo-text">GPS <span>RUNNER</span></div>
     </a>
     <nav>
-      <a href="index.html">HOME</a>
-      <a href="works.html">WORKS</a>
-      <a href="profile.html">PROFILE</a>
-      <a href="global.html">GLOBAL</a>
-      <a href="offer.html">OFFER</a>
-      <a href="special.html">PROJECT</a>
-      <a href="contact.html">CONTACT</a>
-      <a href="support.html" class="nav-cta active">SUPPORT</a>
-      <a href="/en/support.html" class="lang-toggle">EN</a>
+      <a href="/en/index.html">HOME</a>
+      <a href="/en/works.html">WORKS</a>
+      <a href="/en/profile.html">PROFILE</a>
+      <a href="/en/global.html">GLOBAL</a>
+      <a href="/en/offer.html">OFFER</a>
+      <a href="/en/special.html">PROJECT</a>
+      <a href="/en/contact.html">CONTACT</a>
+      <a href="/en/support.html" class="nav-cta active">SUPPORT</a>
+      <a href="/support.html" class="lang-toggle">日本語</a>
     </nav>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </header>
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">HOME</a>
-    <a href="works.html">WORKS</a>
-    <a href="profile.html">PROFILE</a>
-    <a href="global.html">GLOBAL</a>
-    <a href="offer.html">OFFER</a>
-    <a href="special.html">PROJECT</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="support.html">SUPPORT</a>
-    <a href="/en/support.html" style="font-size:1rem;color:var(--gray-400)">🌐 EN</a>
+    <a href="/en/index.html">HOME</a>
+    <a href="/en/works.html">WORKS</a>
+    <a href="/en/profile.html">PROFILE</a>
+    <a href="/en/global.html">GLOBAL</a>
+    <a href="/en/offer.html">OFFER</a>
+    <a href="/en/special.html">PROJECT</a>
+    <a href="/en/contact.html">CONTACT</a>
+    <a href="/en/support.html">SUPPORT</a>
+    <a href="/support.html" style="font-size:1rem;color:var(--gray-400)">🌐 日本語</a>
   </div>
 
-  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner fade-in">
       <div class="hero-badge">MONTHLY SUPPORTER</div>
-      <h1>GPSランナーの<em>継続サポーター</em>になろう</h1>
-      <p class="hero-desc">月額390円から、世界を走り描く挑戦をあなたの力で支える。<br>サポーターには毎月、活動レポートをお届けします。</p>
-      <a href="#plans" class="hero-cta">サポートプランを見る ↓</a>
+      <h1>Become a <em>Monthly Supporter</em><br>of the GPS Runner</h1>
+      <p class="hero-desc">From just ¥390/month, your support fuels Naoki's world-running GPS art adventure.<br>Supporters receive monthly activity reports from the road.</p>
+      <a href="#plans" class="hero-cta">View Support Plans ↓</a>
     </div>
   </section>
 
-  <!-- WHY SUPPORT -->
   <section class="alt-bg">
     <div class="container">
       <div class="fade-in" style="text-align:center">
         <p class="sl">WHY SUPPORT?</p>
-        <h2 class="st">なぜ、継続的な支援が必要なのか</h2>
+        <h2 class="st">Why Ongoing Support Matters</h2>
       </div>
       <div class="why-grid">
         <div class="why-card fade-in">
@@ -299,232 +178,210 @@
             <div class="why-label">Global Scope</div>
             <div class="why-num">01</div>
           </div>
-          <h3>活動は世界規模</h3>
-          <p>11ヵ国を駆け巡る渡航費・宿泊費・装備費。一つひとつのプロジェクトに大きなコストがかかります。</p>
+          <h3>A World-Scale Mission</h3>
+          <p>Flights, accommodation, and gear across 12+ countries add up. Every project requires significant investment.</p>
         </div>
         <div class="why-card fade-in">
           <div class="why-card-top">
             <div class="why-label">Keep Creating</div>
             <div class="why-num">02</div>
           </div>
-          <h3>アートは止められない</h3>
-          <p>スポンサー料やイベント出演料だけでは賄いきれない。継続的な支援が、創作を止めない力になります。</p>
+          <h3>Art Must Not Stop</h3>
+          <p>Sponsorships and event fees alone aren't enough. Recurring support is what keeps the creativity flowing.</p>
         </div>
         <div class="why-card fade-in">
           <div class="why-card-top">
             <div class="why-label">Run Together</div>
             <div class="why-num">03</div>
           </div>
-          <h3>一緒に走る仲間</h3>
-          <p>サポーターは「支援者」ではなく「チームメンバー」。活動レポートで旅を共有し、一緒に世界を走ります。</p>
+          <h3>Run the World Together</h3>
+          <p>Supporters aren't donors — they're team members. Monthly reports bring you along for every mile.</p>
         </div>
         <div class="why-card fade-in">
           <div class="why-card-top">
             <div class="why-label">Next Generation</div>
             <div class="why-num">04</div>
           </div>
-          <h3>次世代につなぐ</h3>
-          <p>教え子や世界中の子どもたちに挑戦する楽しさを伝え、"競わない"ランニング文化を次の世代へ。</p>
+          <h3>Inspiring the Next Gen</h3>
+          <p>Spreading the joy of challenge to kids around the world — passing on a "run for fun, not to compete" culture.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- PLANS -->
   <section id="plans">
     <div class="container">
       <div class="fade-in" style="text-align:center">
         <p class="sl">SUPPORT PLANS</p>
-        <h2 class="st">月額サポートプラン</h2>
-        <p class="sub">いつでも解約OK。あなたのペースで応援できます。</p>
+        <h2 class="st">Monthly Support Plans</h2>
+        <p class="sub">Cancel anytime. Support at your own pace.</p>
       </div>
       <div class="plans-grid">
-        <!-- Plan 1 -->
         <div class="plan-card fade-in">
-          <div class="plan-price">&yen;390<small>/月</small></div>
+          <div class="plan-price">&yen;390<small>/mo</small></div>
           <div class="plan-name">THANK YOU</div>
-          <div class="plan-tagline">サンキュー応援プラン</div>
+          <div class="plan-tagline">The Thank-You Plan</div>
           <ul class="plan-features">
-            <li>毎月の活動レポート記事</li>
-            <li>サポーターズウォールにお名前掲載</li>
-            <li>プロジェクト中はレポート増刊も</li>
+            <li>Monthly activity report</li>
+            <li>Name on the Supporters Wall</li>
+            <li>Extra reports during live projects</li>
           </ul>
-          <a href="#" class="plan-btn plan-btn-outline" data-plan="thank-you">このプランで応援する</a>
-          <p class="plan-note">1日たった13円で応援</p>
+          <a href="#" class="plan-btn plan-btn-outline" data-plan="thank-you">Support with This Plan</a>
+          <p class="plan-note">Just ¥13 a day</p>
         </div>
-        <!-- Plan 2 -->
         <div class="plan-card featured fade-in">
           <div class="plan-badge">RECOMMENDED</div>
-          <div class="plan-price">&yen;780<small>/月</small></div>
+          <div class="plan-price">&yen;780<small>/mo</small></div>
           <div class="plan-name">DOUBLE THANKS</div>
-          <div class="plan-tagline">ダブルサンキュープラン</div>
+          <div class="plan-tagline">The Double Thank-You Plan</div>
           <ul class="plan-features">
-            <li>毎月の活動レポート記事</li>
-            <li>サポーターズウォールにお名前掲載</li>
-            <li>限定写真・動画コンテンツ</li>
-            <li>プロジェクト中はレポート増刊も</li>
+            <li>Monthly activity report</li>
+            <li>Name on the Supporters Wall</li>
+            <li>Exclusive photos &amp; videos</li>
+            <li>Extra reports during live projects</li>
           </ul>
-          <a href="#" class="plan-btn plan-btn-primary" data-plan="double-thanks">このプランで応援する</a>
-          <p class="plan-note">一番人気のプラン</p>
+          <a href="#" class="plan-btn plan-btn-primary" data-plan="double-thanks">Support with This Plan</a>
+          <p class="plan-note">Most popular plan</p>
         </div>
-        <!-- Plan 3 -->
         <div class="plan-card fade-in">
-          <div class="plan-price">&yen;3,900<small>/月</small></div>
+          <div class="plan-price">&yen;3,900<small>/mo</small></div>
           <div class="plan-name">PERSONAL SPONSOR</div>
-          <div class="plan-tagline">個人スポンサープラン</div>
+          <div class="plan-tagline">Personal Sponsor Plan</div>
           <ul class="plan-features">
-            <li>毎月の活動レポート記事</li>
-            <li>サポーターズウォールにお名前掲載（GOLD）</li>
-            <li>限定写真・動画コンテンツ</li>
-            <li>年1回、限定応援グッズ詰め合わせ</li>
-            <li>プロジェクト中はレポート増刊も</li>
+            <li>Monthly activity report</li>
+            <li>GOLD name on Supporters Wall</li>
+            <li>Exclusive photos &amp; videos</li>
+            <li>Annual limited supporter gift set</li>
+            <li>Extra reports during live projects</li>
           </ul>
-          <a href="#" class="plan-btn plan-btn-outline" data-plan="personal-sponsor">このプランで応援する</a>
-          <p class="plan-note">最大の応援を送る</p>
+          <a href="#" class="plan-btn plan-btn-outline" data-plan="personal-sponsor">Support with This Plan</a>
+          <p class="plan-note">Maximum support</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- HOW IT WORKS -->
   <section class="alt-bg">
     <div class="container">
       <div class="fade-in" style="text-align:center">
         <p class="sl">HOW IT WORKS</p>
-        <h2 class="st">サポートの流れ</h2>
+        <h2 class="st">How It Works</h2>
       </div>
       <div class="steps">
         <div class="step fade-in">
           <div class="step-num">01</div>
-          <h3>プランを選ぶ</h3>
-          <p>3つのプランからあなたに合ったものを選択。</p>
+          <h3>Choose a Plan</h3>
+          <p>Pick the plan that fits you best.</p>
         </div>
         <div class="step fade-in">
           <div class="step-num">02</div>
-          <h3>決済する</h3>
-          <p>クレジットカードで簡単・安全にお手続き。</p>
+          <h3>Pay Securely</h3>
+          <p>Easy, secure credit card payment. Monthly automatic billing.</p>
         </div>
         <div class="step fade-in">
           <div class="step-num">03</div>
-          <h3>レポートが届く</h3>
-          <p>毎月、世界各地からの活動レポートをお届け。</p>
+          <h3>Get Reports</h3>
+          <p>Monthly activity reports delivered straight from around the world.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- MESSAGE -->
   <section>
     <div class="container">
       <div class="fade-in" style="text-align:center">
         <p class="sl">MESSAGE</p>
-        <h2 class="st">志水直樹より</h2>
+        <h2 class="st">From Naoki Shimizu</h2>
       </div>
       <div class="msg-box fade-in">
         <div class="q">&ldquo;</div>
         <p>
-          僕は「走ること」を通じて、世界中の人に笑顔を届けたいと思っています。<br><br>
-          GPSアートは、競争ではなく、創造のために走るという新しい文化。<br>
-          この活動を続けられているのは、応援してくださる皆さんのおかげです。<br><br>
-          継続的にサポートしてくださる方がいるだけで、<br>
-          「次はどんな作品を描こう」と新しい挑戦に踏み出せます。<br><br>
+          I run to bring smiles to people all around the world.<br><br>
+          GPS art is a new culture — running not to compete, but to create.<br>
+          Everything I've been able to do has been possible because of your support.<br><br>
+          Knowing that someone out there has my back every month<br>
+          gives me the courage to ask, "What shall I draw next?"<br><br>
           <strong>RUN FOR SMILE.</strong>
         </p>
         <div class="msg-author">
-          <div class="msg-author-img"><img src="images/hero.jpg" alt="志水直樹"></div>
+          <div class="msg-author-img"><img src="/images/hero.jpg" alt="Naoki Shimizu"></div>
           <div class="msg-author-info">
-            <div>志水 直樹</div>
-            <div>GPSランナー / GPS RUNNER</div>
+            <div>Naoki Shimizu</div>
+            <div>GPS Runner / GPS Artist</div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- FAQ -->
   <section class="alt-bg">
     <div class="container">
       <div class="fade-in" style="text-align:center">
         <p class="sl">FAQ</p>
-        <h2 class="st">よくある質問</h2>
+        <h2 class="st">Frequently Asked Questions</h2>
       </div>
       <div class="faq-list fade-in">
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">支払い方法は？<span class="faq-icon">+</span></button>
-          <div class="faq-a"><p>クレジットカード（VISA / Mastercard / JCB / AMEX）に対応しています。毎月自動引き落としで手間なく継続できます。</p></div>
+          <button class="faq-q" onclick="toggleFaq(this)">What payment methods are accepted?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>We accept major credit cards (VISA, Mastercard, JCB, AMEX). Monthly billing is automatic — no hassle.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">いつでも解約できますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a"><p>はい、いつでもワンクリックで解約できます。解約手数料もかかりません。再開もいつでも可能です。</p></div>
+          <button class="faq-q" onclick="toggleFaq(this)">Can I cancel anytime?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Yes, cancel with one click at any time. No cancellation fee. You can restart anytime too.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">活動レポートはどこに届きますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a"><p>ご登録いただいたメールアドレスにお届けします。プロジェクト進行中は臨時レポートが届くこともあります。</p></div>
+          <button class="faq-q" onclick="toggleFaq(this)">Where do the activity reports get delivered?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Reports are sent to the email address you register. During active projects, you may also receive special interim reports.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">グッズ（PERSONAL SPONSORプラン）はいつ届きますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a"><p>年に1回、限定応援グッズの詰め合わせをお届けします。時期は活動状況に合わせてお知らせいたします。</p></div>
+          <button class="faq-q" onclick="toggleFaq(this)">When does the PERSONAL SPONSOR gift arrive?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>A limited supporter gift set is sent once per year. The timing will be announced based on Naoki's activity schedule.</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">企業・団体としてスポンサーしたいのですが？<span class="faq-icon">+</span></button>
-          <div class="faq-a"><p>ありがとうございます！個別のスポンサーシップも承っております。<a href="offer.html" style="color:var(--yellow)">OFFERページ</a>よりお問い合せください。</p></div>
+          <button class="faq-q" onclick="toggleFaq(this)">I'd like to sponsor as a company or organization. Is that possible?<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>Absolutely! Corporate sponsorships are welcome. Please reach out via the <a href="/en/offer.html" style="color:var(--yellow)">OFFER page</a>.</p></div>
         </div>
       </div>
     </div>
   </section>
 
-
-  <!-- PROJECT CTA -->
   <div class="project-cta fade-in">
     <p class="sl">SPECIAL PROJECT</p>
-    <p>ELEVEN RUN 2026（アメリカ大陸11ヵ国GPSアート）への<br>単発の応援はこちらから。</p>
-    <a href="special.html">PROJECTページを見る →</a>
+    <p>Looking to support ELEVEN RUN 2026<br>(GPS Art across 11 countries in the Americas) with a one-time contribution?</p>
+    <a href="/en/special.html">View the PROJECT page →</a>
   </div>
 
-  <!-- FINAL CTA -->
   <section class="final-cta">
     <div class="container fade-in">
-      <h2>RUN FOR SMILE.<br>あなたの<em>一歩</em>が、世界を変える。</h2>
-      <p>月額390円から始められます。<br>GPSランナーの挑戦を、一緒に走りませんか。</p>
-      <a href="#plans" class="hero-cta">サポートプランを選ぶ</a>
+      <h2>RUN FOR SMILE.<br>Your <em>support</em> changes the world.</h2>
+      <p>Starting from just ¥390/month.<br>Will you run the world with the GPS Runner?</p>
+      <a href="#plans" class="hero-cta">Choose a Support Plan</a>
     </div>
   </section>
 
-  <footer><p><a href="index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu. &middot; <a href="tokushoho.html">特定商取引法に基づく表記</a> &middot; <a href="privacy.html">プライバシーポリシー</a></p></footer>
+  <footer><p><a href="/en/index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu. &middot; <a href="/en/privacy.html">Privacy Policy</a></p></footer>
 
   <script>
-    // Header scroll
     window.addEventListener('scroll', function() {
       document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
     });
-
-    // Mobile menu
     document.getElementById('hamburger').addEventListener('click', function() {
       this.classList.toggle('active');
       document.getElementById('mobileNav').classList.toggle('active');
     });
-
-    // Fade in
     var obs = new IntersectionObserver(function(e) {
       e.forEach(function(en) { if (en.isIntersecting) en.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
-
-    // FAQ
     function toggleFaq(btn) {
       var answer = btn.nextElementSibling;
       var icon = btn.querySelector('.faq-icon');
       var isOpen = answer.classList.contains('open');
-      // Close all
       document.querySelectorAll('.faq-a').forEach(function(a) { a.classList.remove('open'); });
       document.querySelectorAll('.faq-icon').forEach(function(i) { i.textContent = '+'; i.style.transform = ''; });
-      if (!isOpen) {
-        answer.classList.add('open');
-        icon.textContent = '-';
-        icon.style.transform = 'rotate(180deg)';
-      }
+      if (!isOpen) { answer.classList.add('open'); icon.textContent = '-'; icon.style.transform = 'rotate(180deg)'; }
     }
   </script>
-  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ😊"></script>
+  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="Hi! Feel free to ask me anything about GPS RUNNER Naoki Shimizu 😊"></script>
 </body>
 </html>
