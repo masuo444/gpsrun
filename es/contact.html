@@ -99,8 +99,14 @@
       <a href="/es/special.html">PROJECT</a>
       <a href="/es/contact.html" class="active">CONTACT</a>
       <a href="/es/support.html" class="nav-cta">SUPPORT</a>
-      <a href="/contact.html" class="lang-toggle">日本語</a>
-      <a href="/en/contact.html" class="lang-toggle">EN</a>
+      <div class="lang-switcher">
+        <button class="lang-btn">🌐 ES ▾</button>
+        <div class="lang-menu">
+          <a href="/contact.html">日本語</a>
+          <a href="/en/contact.html">English</a>
+          <a href="/es/contact.html" class="lang-active">Español</a>
+        </div>
+      </div>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Menú">
       <span></span><span></span><span></span>
@@ -116,8 +122,11 @@
     <a href="/es/special.html">PROJECT</a>
     <a href="/es/support.html">SUPPORT</a>
     <a href="/es/contact.html">CONTACT</a>
-    <a href="/contact.html" style="font-size:1rem;color:var(--gray-400)">🌐 日本語</a>
-    <a href="/en/contact.html" style="font-size:1rem;color:var(--gray-400)">🌐 EN</a>
+    <div style="display:flex;gap:1.5rem">
+      <a href="/contact.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">日本語</a>
+      <a href="/en/contact.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">English</a>
+      <a href="/es/contact.html" style="font-size:.9rem;font-weight:700;color:var(--yellow)">Español</a>
+    </div>
   </div>
 
   <main>
@@ -224,6 +233,14 @@
         submitBtn.disabled = false;
         submitBtn.textContent = 'Enviar mensaje';
       }
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.lang-switcher').forEach(function(s){
+      s.querySelector('.lang-btn').addEventListener('click',function(e){e.stopPropagation();s.classList.toggle('open')});
+    });
+    document.addEventListener('click',function(){
+      document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')});
     });
   </script>
   <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="¡Hola! Pregúntame lo que quieras sobre GPS RUNNER Naoki Shimizu 😊"></script>

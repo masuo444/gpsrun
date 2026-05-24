@@ -25,8 +25,14 @@
     nav a{color:var(--gray-400);text-decoration:none;font-size:.95rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
     nav a:hover{color:var(--yellow)}
     .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:700!important}
-    .lang-toggle{display:inline-flex;align-items:center;gap:.3rem;color:var(--gray-400);border:1px solid var(--gray-700);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;text-decoration:none;font-family:var(--font-en);transition:all .3s;letter-spacing:.05em}
-    .lang-toggle:hover{border-color:var(--yellow);color:var(--yellow)}
+    .lang-switcher{position:relative;display:inline-block}
+    .lang-btn{background:none;border:1px solid var(--gray-700);color:var(--gray-400);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;cursor:pointer;font-family:var(--font-en);letter-spacing:.05em;transition:all .3s;display:inline-flex;align-items:center;gap:.3rem}
+    .lang-btn:hover,.lang-switcher.open .lang-btn{border-color:var(--yellow);color:var(--yellow)}
+    .lang-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--gray-900);border:1px solid var(--gray-800);border-radius:12px;padding:.5rem;min-width:110px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+    .lang-switcher.open .lang-menu{display:block}
+    .lang-menu a{display:block;padding:.4rem .75rem;color:var(--gray-400);text-decoration:none;font-size:.82rem;font-weight:600;border-radius:8px;transition:all .2s;font-family:var(--font-en)}
+    .lang-menu a:hover{background:var(--gray-800);color:var(--yellow)}
+    .lang-menu a.lang-active{color:var(--yellow);pointer-events:none}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
     .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
     .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -76,8 +82,14 @@
       <a href="/en/special.html">PROJECT</a>
       <a href="/en/contact.html">CONTACT</a>
       <a href="/en/support.html" class="nav-cta">SUPPORT</a>
-      <a href="/privacy.html" class="lang-toggle">日本語</a>
-      <a href="/es/privacy.html" class="lang-toggle">ES</a>
+      <div class="lang-switcher">
+        <button class="lang-btn">🌐 EN ▾</button>
+        <div class="lang-menu">
+          <a href="/privacy.html">日本語</a>
+          <a href="/en/privacy.html" class="lang-active">English</a>
+          <a href="/es/privacy.html">Español</a>
+        </div>
+      </div>
     </nav>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </header>
@@ -90,8 +102,11 @@
     <a href="/en/special.html">PROJECT</a>
     <a href="/en/contact.html">CONTACT</a>
     <a href="/en/support.html">SUPPORT</a>
-    <a href="/privacy.html" style="font-size:1rem;color:var(--gray-400)">🌐 日本語</a>
-    <a href="/es/privacy.html" style="font-size:1rem;color:var(--gray-400)">🌐 ES</a>
+    <div style="display:flex;gap:1.5rem">
+      <a href="/privacy.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">日本語</a>
+      <a href="/en/privacy.html" style="font-size:.9rem;font-weight:700;color:var(--yellow)">English</a>
+      <a href="/es/privacy.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">Español</a>
+    </div>
   </div>
 
   <div class="page-hero">
@@ -187,6 +202,14 @@
     document.getElementById('hamburger').addEventListener('click', function() {
       this.classList.toggle('active');
       document.getElementById('mobileNav').classList.toggle('active');
+    });
+  </script>
+  <script>
+    document.querySelectorAll('.lang-switcher').forEach(function(s){
+      s.querySelector('.lang-btn').addEventListener('click',function(e){e.stopPropagation();s.classList.toggle('open')});
+    });
+    document.addEventListener('click',function(){
+      document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')});
     });
   </script>
   <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="Hi! Feel free to ask me anything about GPS RUNNER Naoki Shimizu 😊"></script>

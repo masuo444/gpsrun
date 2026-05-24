@@ -158,8 +158,14 @@
       <a href="/en/special.html">PROJECT</a>
       <a href="/en/contact.html">CONTACT</a>
       <a href="/en/support.html" class="nav-cta">SUPPORT</a>
-      <a href="/index.html" class="lang-toggle">日本語</a>
-      <a href="/es/index.html" class="lang-toggle">ES</a>
+      <div class="lang-switcher">
+        <button class="lang-btn">🌐 EN ▾</button>
+        <div class="lang-menu">
+          <a href="/index.html">日本語</a>
+          <a href="/en/index.html" class="lang-active">English</a>
+          <a href="/es/index.html">Español</a>
+        </div>
+      </div>
     </nav>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -175,8 +181,11 @@
     <a href="/en/special.html">PROJECT</a>
     <a href="/en/contact.html">CONTACT</a>
     <a href="/en/support.html">SUPPORT</a>
-    <a href="/index.html" style="font-size:1rem;color:var(--gray-400)">🌐 日本語</a>
-    <a href="/es/index.html" style="font-size:1rem;color:var(--gray-400)">🌐 ES</a>
+    <div style="display:flex;gap:1.5rem">
+      <a href="/index.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">日本語</a>
+      <a href="/en/index.html" style="font-size:.9rem;font-weight:700;color:var(--yellow)">English</a>
+      <a href="/es/index.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">Español</a>
+    </div>
   </div>
 
   <!-- HERO -->
@@ -366,6 +375,14 @@
       entries.forEach((entry) => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
     }, { threshold: 0.1 });
     document.querySelectorAll('.fade-in').forEach((el) => observer.observe(el));
+  </script>
+  <script>
+    document.querySelectorAll('.lang-switcher').forEach(function(s){
+      s.querySelector('.lang-btn').addEventListener('click',function(e){e.stopPropagation();s.classList.toggle('open')});
+    });
+    document.addEventListener('click',function(){
+      document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')});
+    });
   </script>
   <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="Hi! Feel free to ask me anything about GPS RUNNER Naoki Shimizu 😊"></script>
 </body>
