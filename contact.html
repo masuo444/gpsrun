@@ -129,7 +129,7 @@
     .mobile-nav a {
       color: var(--white);
       text-decoration: none;
-      font-size: 1.4rem;
+      font-size:1.2rem;
       font-weight: 600;
     }
     .mobile-nav a:hover { color: var(--yellow); }
@@ -306,6 +306,9 @@
     .lang-menu a{display:block;padding:.4rem .75rem;color:var(--gray-400);text-decoration:none;font-size:.82rem;font-weight:600;border-radius:8px;transition:all .2s;font-family:var(--font-en)}
     .lang-menu a:hover{background:var(--gray-800);color:var(--yellow)}
     .lang-menu a.lang-active{color:var(--yellow);pointer-events:none}
+    .header-actions{display:flex;align-items:center;gap:.5rem}
+    .mobile-lang{display:none}
+    @media(max-width:960px){.mobile-lang{display:inline-block}}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
@@ -374,11 +377,6 @@
     <a href="special.html">PROJECT</a>
     <a href="support.html">SUPPORT</a>
     <a href="contact.html">CONTACT</a>
-    <div style="display:flex;gap:1.5rem">
-      <a href="/contact.html" style="font-size:.9rem;font-weight:700;color:var(--yellow)">日本語</a>
-      <a href="/en/contact.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">English</a>
-      <a href="/es/contact.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">Español</a>
-    </div>
   </div>
 
   <main>

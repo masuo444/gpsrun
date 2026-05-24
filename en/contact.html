@@ -39,7 +39,7 @@
     .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
     .mobile-nav { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(10,10,10,0.98); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
     .mobile-nav.active { display: flex; }
-    .mobile-nav a { color: var(--white); text-decoration: none; font-size: 1.4rem; font-weight: 600; }
+    .mobile-nav a { color: var(--white); text-decoration: none; font-size:1.2rem; font-weight: 600; }
     .mobile-nav a:hover { color: var(--yellow); }
     main { padding: 120px 2rem 4rem; }
     .hero { max-width: 760px; margin: 0 auto; }
@@ -73,6 +73,9 @@
     footer a { color: var(--gray-400); text-decoration: none; }
     @media (max-width: 980px) { nav { display: none; } .hamburger { display: flex; } }
     @media (max-width: 680px) { header { padding: 0 1.25rem; } main { padding: 104px 1.25rem 3rem; } .contact-card { padding: 1.5rem; border-radius: 22px; } .field-group { grid-template-columns: 1fr; } .actions { flex-direction: column; align-items: stretch; } .btn { width: 100%; } }
+    .header-actions{display:flex;align-items:center;gap:.5rem}
+    .mobile-lang{display:none}
+    @media(max-width:960px){.mobile-lang{display:inline-block}}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://official.gps-run.com/en/contact.html">
@@ -121,11 +124,6 @@
     <a href="/en/special.html">PROJECT</a>
     <a href="/en/support.html">SUPPORT</a>
     <a href="/en/contact.html">CONTACT</a>
-    <div style="display:flex;gap:1.5rem">
-      <a href="/contact.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">日本語</a>
-      <a href="/en/contact.html" style="font-size:.9rem;font-weight:700;color:var(--yellow)">English</a>
-      <a href="/es/contact.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">Español</a>
-    </div>
   </div>
 
   <main>

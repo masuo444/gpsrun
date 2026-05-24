@@ -33,7 +33,7 @@
     .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
     .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
     .mobile-nav.active{display:flex}
-    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.5rem;font-weight:600}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.2rem;font-weight:600}
 
     /* HERO */
     .hero{padding:120px 2rem 4rem;text-align:center;position:relative;overflow:hidden}
@@ -222,6 +222,9 @@
     .lang-menu a{display:block;padding:.4rem .75rem;color:var(--gray-400);text-decoration:none;font-size:.82rem;font-weight:600;border-radius:8px;transition:all .2s;font-family:var(--font-en)}
     .lang-menu a:hover{background:var(--gray-800);color:var(--yellow)}
     .lang-menu a.lang-active{color:var(--yellow);pointer-events:none}
+    .header-actions{display:flex;align-items:center;gap:.5rem}
+    .mobile-lang{display:none}
+    @media(max-width:960px){.mobile-lang{display:inline-block}}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
@@ -275,7 +278,17 @@
         </div>
       </div>
     </nav>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <div class="header-actions">
+      <div class="lang-switcher mobile-lang">
+        <button class="lang-btn">🌐 JA ▾</button>
+        <div class="lang-menu">
+          <a href="/support.html" class="lang-active">日本語</a>
+          <a href="/en/support.html">English</a>
+          <a href="/es/support.html">Español</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </div>
   </header>
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">HOME</a>
@@ -286,11 +299,6 @@
     <a href="special.html">PROJECT</a>
     <a href="contact.html">CONTACT</a>
     <a href="support.html">SUPPORT</a>
-    <div style="display:flex;gap:1.5rem">
-      <a href="/support.html" style="font-size:.9rem;font-weight:700;color:var(--yellow)">日本語</a>
-      <a href="/en/support.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">English</a>
-      <a href="/es/support.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">Español</a>
-    </div>
   </div>
 
   <!-- HERO -->

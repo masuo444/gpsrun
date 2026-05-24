@@ -106,7 +106,7 @@
     .fade-in.visible { opacity: 1; transform: translateY(0); }
     .mobile-nav { display: none; position: fixed; inset: 0; z-index: 999; background: rgba(10,10,10,0.98); backdrop-filter: blur(20px); flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
     .mobile-nav.active { display: flex; }
-    .mobile-nav a { color: var(--white); text-decoration: none; font-size: 1.5rem; font-weight: 600; transition: color .3s; }
+    .mobile-nav a { color: var(--white); text-decoration: none; font-size:1.2rem; font-weight: 600; transition: color .3s; }
     .mobile-nav a:hover { color: var(--yellow); }
     @media (max-width: 900px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
@@ -126,6 +126,9 @@
       .hero { padding: 72px 1.25rem 0; }
       header { padding: 0 1.25rem; }
     }
+    .header-actions{display:flex;align-items:center;gap:.5rem}
+    .mobile-lang{display:none}
+    @media(max-width:960px){.mobile-lang{display:inline-block}}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER Naoki Shimizu">
@@ -182,11 +185,6 @@
     <a href="/es/special.html">PROJECT</a>
     <a href="/es/contact.html">CONTACT</a>
     <a href="/es/support.html">SUPPORT</a>
-    <div style="display:flex;gap:1.5rem">
-      <a href="/index.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">日本語</a>
-      <a href="/en/index.html" style="font-size:.9rem;font-weight:700;color:var(--gray-400)">English</a>
-      <a href="/es/index.html" style="font-size:.9rem;font-weight:700;color:var(--yellow)">Español</a>
-    </div>
   </div>
 
   <!-- HERO -->
