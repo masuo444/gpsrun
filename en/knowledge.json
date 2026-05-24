@@ -1,0 +1,82 @@
+{
+  "settings": {
+    "bot_name": "GPS RUNNER Support",
+    "greeting": "Hi! Feel free to ask me anything about GPS RUNNER Naoki Shimizu 😊",
+    "fallback": "Sorry, I couldn't find an answer to that. Please contact us via the form below and Naoki will get back to you!",
+    "quick_replies": ["Request a talk", "Pricing", "Become a supporter", "What is GPS art?"],
+    "fallback_url": "/en/contact.html",
+    "fallback_url_label": "Go to Contact Form"
+  },
+  "entries": [
+    {
+      "id": "1",
+      "category": "GPS Art",
+      "keywords": ["gps art", "gps", "art", "drawing", "map", "run", "running", "what is"],
+      "questions": ["What is GPS art?", "What does a GPS runner do?", "How does GPS art work?"],
+      "answer": "GPS art is the practice of running specific routes using a smartphone GPS app to draw pictures or letters on a map.\n\nNaoki Shimizu established this as the 'world's first profession.' He has created ~1,600 artworks across 12 countries, covering over 19,000km."
+    },
+    {
+      "id": "2",
+      "category": "Profile",
+      "keywords": ["naoki", "shimizu", "profile", "who", "biography", "about"],
+      "questions": ["Who is Naoki Shimizu?", "Tell me about GPS RUNNER"],
+      "answer": "Naoki Shimizu (born 1987, Hyogo, Japan) is the world's first professional GPS Runner.\n\nHe was a primary school teacher before becoming a full-time GPS artist in 2019.\n\nHis mission: to create a 'non-competitive' running culture. Motto: RUN FOR SMILE.\n\nFeatured in 160+ media outlets, active in 12 countries."
+    },
+    {
+      "id": "3",
+      "category": "Bookings",
+      "keywords": ["book", "booking", "invite", "request", "talk", "speech", "event", "hire", "workshop"],
+      "questions": ["How do I book a talk?", "Can I invite Naoki to my event?"],
+      "answer": "Thank you for your interest!\n\nServices available:\n・Motivational talks (schools, companies, local governments)\n・GPS Plogging Art Walk\n・GPS Walk & Run event\n\nAvailable nationwide, overseas, and online. Please contact us 1–2 months in advance.\n\nUse the contact form to get in touch!"
+    },
+    {
+      "id": "4",
+      "category": "Pricing",
+      "keywords": ["price", "pricing", "cost", "fee", "how much", "rate", "charge"],
+      "questions": ["How much does a talk cost?", "What are your fees?"],
+      "answer": "Pricing varies depending on the content, scale, and location.\n\nWe're happy to discuss options within your budget — just let us know what you have in mind.\n\n👉 Reach out via the contact form and mention your budget for a faster response!"
+    },
+    {
+      "id": "5",
+      "category": "Support Plan",
+      "keywords": ["support", "supporter", "sponsor", "donate", "monthly", "membership", "back"],
+      "questions": ["How can I support Naoki?", "Tell me about the support plan"],
+      "answer": "Thank you for wanting to support the journey!\n\n【Monthly Support Plans】\n■ THANK YOU: ¥390/month\n  Monthly activity report + Supporters Wall listing\n\n■ DOUBLE THANKS: ¥780/month (Most popular)\n  Above + exclusive photos & videos\n\n■ PERSONAL SPONSOR: ¥3,900/month\n  Above + annual limited goods + GOLD badge\n\nAll plans can be cancelled anytime. See the SUPPORT page for details!"
+    },
+    {
+      "id": "6",
+      "category": "Media",
+      "keywords": ["tv", "television", "media", "news", "magazine", "press", "coverage", "featured"],
+      "questions": ["Has Naoki been on TV?", "What media coverage has he had?"],
+      "answer": "Yes! Featured in 160+ media outlets.\n\nHighlights:\n・Kansai TV 'Yoi Don!' — designated as a Living National Treasure (2025)\n・Guest at Expo 2025 Osaka\n・Various TV, newspapers, and web media\n\nVisit the WORKS page to see more!"
+    },
+    {
+      "id": "7",
+      "category": "Global Activities",
+      "keywords": ["country", "countries", "overseas", "abroad", "global", "international", "world", "travel", "where"],
+      "questions": ["Which countries has he visited?", "Does Naoki work internationally?"],
+      "answer": "Yes! Naoki has been active in 12 countries.\n\nHighlights:\n・Taiwan: circumnavigation 1,135km (24 consecutive marathon days)\n・Peru: alpaca land art (4,600km)\n・Europe & Asia: various artworks\n\nSee the GLOBAL page for the full story!"
+    },
+    {
+      "id": "8",
+      "category": "Contact",
+      "keywords": ["contact", "email", "reach", "message", "get in touch", "inquiry"],
+      "questions": ["How do I contact Naoki?", "What's the best way to reach out?"],
+      "answer": "You can reach us through:\n\n・Contact form: official.gps-run.com/en/contact.html\n・Email: gpsrunnaoki@gmail.com\n・Instagram: @gps_naoki\n・YouTube: @gpsrunnertv\n\nWe look forward to hearing from you!"
+    },
+    {
+      "id": "9",
+      "category": "Social Media",
+      "keywords": ["instagram", "youtube", "social", "follow", "sns", "facebook", "channel"],
+      "questions": ["Is Naoki on social media?", "What's his YouTube channel?"],
+      "answer": "Yes! Follow along on:\n\n📸 Instagram: @gps_naoki\n▶️ YouTube: @gpsrunnertv\n👍 Facebook: naoki.shimizu.526\n\nFollow for the latest runs, artworks, and adventures!"
+    },
+    {
+      "id": "10",
+      "category": "Events",
+      "keywords": ["join", "participate", "event", "run with", "plogging", "walk", "together"],
+      "questions": ["Can I join an event?", "How do I run with Naoki?"],
+      "answer": "We'd love to have you!\n\nNaoki hosts GPS Walk & Run events and Plogging (running + litter-picking) events open to everyone.\n\nEvent info is posted on Instagram (@gps_naoki) and the website.\n\nCompanies and groups are welcome to organize a private event too — just ask!"
+    }
+  ]
+}
