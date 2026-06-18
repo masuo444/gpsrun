@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <script>try{if(localStorage.getItem("gpsrun-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+  <link rel="stylesheet" href="/theme.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 Not Found | GPS RUNNER 志水直樹</title>
@@ -8,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{--yellow:#FFE500;--black:#0A0A0A;--gray-400:#999;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--gray-400:#B4B4B4;--white:#FFFFFF;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
     body{font-family:var(--font-ja);background:var(--black);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center}
     .code{font-family:var(--font-en);font-size:clamp(5rem,20vw,10rem);font-weight:900;color:var(--yellow);line-height:1;letter-spacing:-.04em;opacity:.15;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;user-select:none;white-space:nowrap}
     .inner{position:relative;z-index:1}
@@ -34,6 +37,7 @@
       <a href="works.html" class="btn btn-outline">作品集を見る</a>
     </div>
   </div>
-  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ😊"></script>
+  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ"></script>
+  <script src="/theme.js"></script>
 </body>
 </html>

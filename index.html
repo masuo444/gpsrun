@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <script>try{if(localStorage.getItem("gpsrun-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+  <link rel="stylesheet" href="/theme.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GPS RUNNER | 志水直樹 Naoki Shimizu - GPSランナー</title>
@@ -23,9 +26,9 @@
       --gray-900: #1A1A1A;
       --gray-800: #2A2A2A;
       --gray-700: #3A3A3A;
-      --gray-400: #999;
-      --gray-300: #BBB;
-      --white: #FAFAFA;
+      --gray-400: #B4B4B4;
+      --gray-300: #DCDCDC;
+      --white: #FFFFFF;
       --font-en: 'Inter', sans-serif;
       --font-ja: 'Noto Sans JP', sans-serif;
     }
@@ -827,6 +830,20 @@
       font-family: var(--font-en);
     }
 
+    footer a {
+      color: var(--gray-400);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: var(--yellow);
+    }
+
+    a.event-item{cursor:pointer;text-decoration:none;color:inherit;position:relative}
+    a.event-item:hover h3{color:var(--yellow)}
+    a.event-item:hover{background:rgba(255,229,0,0.03)}
+    a.event-item::after{content:'\2192';position:absolute;right:0;top:1.2rem;color:var(--gray-700);opacity:0;transition:all .3s}
+    a.event-item:hover::after{opacity:1;color:var(--yellow);right:-.3rem}
     /* ===== SCROLL ANIMATIONS ===== */
     .fade-in {
       opacity: 0;
@@ -1002,23 +1019,45 @@
     .header-actions{display:flex;align-items:center;gap:.5rem}
     .mobile-lang{display:none}
     @media(max-width:960px){.mobile-lang{display:inline-block}}
+
+    /* ===== HOME CASE / NEWS ===== */
+    .hc-section{padding:5rem 2rem;background:var(--dark)}
+    .hc-section.alt{background:var(--black)}
+    .hc-grid{max-width:1200px;margin:2.5rem auto 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:1.25rem}
+    .hc-card{display:flex;flex-direction:column;background:var(--gray-900);border:1px solid var(--gray-800);border-radius:14px;overflow:hidden;text-decoration:none;color:var(--white);transition:transform .3s,border-color .3s}
+    .hc-card:hover{transform:translateY(-4px);border-color:var(--yellow)}
+    .hc-img{aspect-ratio:16/10;overflow:hidden;background:linear-gradient(135deg,#242424,#171717)}
+    .hc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+    .hc-card:hover .hc-img img{transform:scale(1.05)}
+    .hc-body{padding:1rem 1.2rem 1.3rem}
+    .hc-meta{display:flex;gap:.5rem;align-items:center;margin-bottom:.5rem;flex-wrap:wrap}
+    .hc-tag{font-size:.78rem;font-weight:700;color:var(--black);background:var(--yellow);padding:.12rem .6rem;border-radius:100px}
+    .hc-date{font-family:var(--font-en);font-size:.85rem;color:var(--gray-400);font-weight:600}
+    .hc-card h3{font-size:1.05rem;font-weight:700;line-height:1.5}
+    .hc-more{text-align:center;margin-top:2.5rem}
+    .hc-more a{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2.2rem;border-radius:100px;font-size:1rem;font-weight:600;text-decoration:none;border:1px solid var(--gray-700);color:var(--white);transition:all .3s}
+    .hc-more a:hover{border-color:var(--yellow);color:var(--yellow)}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
   <meta property="og:title" content="GPS RUNNER | 志水直樹 Naoki Shimizu">
   <meta property="og:description" content="GPSランナー志水直樹。世界初の職業『GPSランナー』として世界12ヵ国を駆け巡り、約1,600作品・総距離19,000kmのGPSアートを制作。">
-  <meta property="og:url" content="https://official.gps-run.com/">
-  <meta property="og:image" content="https://official.gps-run.com/images/ogp.jpg">
+  <meta property="og:url" content="https://www.gps-run.com/">
+  <meta property="og:image" content="https://www.gps-run.com/images/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="GPS RUNNER | 志水直樹 Naoki Shimizu">
   <meta name="twitter:description" content="GPSランナー志水直樹。世界初の職業『GPSランナー』として世界12ヵ国を駆け巡り、約1,600作品・総距離19,000kmのGPSアートを制作。">
-  <meta name="twitter:image" content="https://official.gps-run.com/images/ogp.jpg">
+  <meta name="twitter:image" content="https://www.gps-run.com/images/ogp.jpg">
   <meta name="keywords" content="GPSランナー,志水直樹,GPSアート,Naoki Shimizu,GPS RUNNER,GPS art,世界初,ランニングアート,地図アート,講演会,SDGs,プロギング">
   <meta name="author" content="志水直樹 Naoki Shimizu">
-  <link rel="canonical" href="https://official.gps-run.com/">
+  <link rel="canonical" href="https://www.gps-run.com/">
+  <link rel="alternate" hreflang="ja" href="https://www.gps-run.com/">
+  <link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/">
+  <link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/">
+  <link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
@@ -1026,42 +1065,55 @@
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://official.gps-run.com/#website",
-        "url": "https://official.gps-run.com/",
+        "@id": "https://www.gps-run.com/#website",
+        "url": "https://www.gps-run.com/",
         "name": "GPS RUNNER 志水直樹",
         "description": "世界初の職業GPSランナー・志水直樹の公式サイト",
         "inLanguage": "ja",
         "publisher": {
-          "@id": "https://official.gps-run.com/#person"
+          "@id": "https://www.gps-run.com/#person"
         }
       },
       {
         "@type": "Person",
-        "@id": "https://official.gps-run.com/#person",
+        "@id": "https://www.gps-run.com/#person",
         "name": "志水直樹",
         "alternateName": ["Naoki Shimizu", "GPSランナー志水直樹"],
         "description": "世界初の職業『GPSランナー』。世界12ヵ国を走り巡り、約1,600作品・総距離19,000kmのGPSアートを制作。元小学校教師。",
-        "url": "https://official.gps-run.com/",
-        "image": "https://official.gps-run.com/images/ogp.jpg",
+        "url": "https://www.gps-run.com/",
+        "image": "https://www.gps-run.com/images/ogp.jpg",
         "jobTitle": "GPSランナー / GPSアーティスト",
         "birthPlace": {
           "@type": "Place",
           "name": "兵庫県西宮市"
         },
         "nationality": "Japanese",
+        "knowsAbout": ["GPSアート", "GPS art", "ランニング", "SDGs", "プロギング", "講演活動"],
         "sameAs": [
           "https://www.instagram.com/gps_naoki/",
           "https://www.facebook.com/naoki.shimizu.526",
-          "https://www.youtube.com/@gpsrunnertv"
+          "https://www.youtube.com/@gpsrunnertv",
+          "https://gpsrunner.official.ec/",
+          "https://sugoist.pref.hyogo.lg.jp/sugoist/shimizunaoki/",
+          "https://jinzukan.myjcom.jp/kobe/post/1154",
+          "https://sports-for-social.com/our-story/gpsrunner/"
+        ],
+        "subjectOf": [
+          {
+            "@type": "NewsArticle",
+            "headline": "3000キロ走って「アルパカの地上絵」描く GPSランナー志水さん、ペルーで人類初の挑戦",
+            "url": "https://www.kobe-np.co.jp/news/hanshin/202403/0017453139.shtml",
+            "publisher": { "@type": "Organization", "name": "神戸新聞NEXT" }
+          }
         ]
       },
       {
         "@type": "WebPage",
-        "@id": "https://official.gps-run.com/#webpage",
-        "url": "https://official.gps-run.com/",
+        "@id": "https://www.gps-run.com/#webpage",
+        "url": "https://www.gps-run.com/",
         "name": "GPS RUNNER | 志水直樹 Naoki Shimizu",
-        "isPartOf": { "@id": "https://official.gps-run.com/#website" },
-        "about": { "@id": "https://official.gps-run.com/#person" },
+        "isPartOf": { "@id": "https://www.gps-run.com/#website" },
+        "about": { "@id": "https://www.gps-run.com/#person" },
         "description": "GPSランナー志水直樹。世界初の職業『GPSランナー』として世界12ヵ国を駆け巡り、約1,600作品・総距離19,000kmのGPSアートを制作。",
         "inLanguage": "ja"
       }
@@ -1105,21 +1157,21 @@
 
   <!-- HEADER -->
   <header id="header">
-    <a href="https://gps-run.com/" class="logo">
+    <a href="/" class="logo">
       <img src="3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img">
       <div class="logo-text">GPS <span>RUNNER</span></div>
     </a>
     <nav>
       <a href="index.html">HOME</a>
       <a href="works.html">WORKS</a>
+      <a href="cases.html">CASE</a>
+      <a href="news.html">NEWS</a>
       <a href="profile.html">PROFILE</a>
-      <a href="global.html">GLOBAL</a>
       <a href="offer.html">OFFER</a>
-      <a href="special.html">PROJECT</a>
       <a href="contact.html">CONTACT</a>
       <a href="support.html" class="nav-cta">SUPPORT</a>
       <div class="lang-switcher">
-        <button class="lang-btn">🌐 JA ▾</button>
+        <button class="lang-btn">JA ▾</button>
         <div class="lang-menu">
           <a href="/index.html" class="lang-active">日本語</a>
           <a href="/en/index.html">English</a>
@@ -1138,6 +1190,8 @@
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">HOME</a>
     <a href="works.html">WORKS</a>
+      <a href="cases.html">CASE</a>
+      <a href="news.html">NEWS</a>
 
     <a href="profile.html">PROFILE</a>
     <a href="global.html">GLOBAL</a>
@@ -1207,7 +1261,6 @@
             <iframe src="https://www.youtube.com/embed/jK6p2JYDEEY" title="講演会" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="activity-card-body">
-            <div class="activity-card-icon">&#x1F3A4;</div>
             <h3>講演会</h3>
             <p class="activity-card-desc">学校・企業・自治体・各種団体向けに、挑戦と夢をテーマにした講演を実施しています。</p>
             <span class="activity-card-btn">詳しく見る &rarr;</span>
@@ -1218,7 +1271,6 @@
             <iframe src="https://www.youtube.com/embed/TPtlcEISZC4" title="GPSゴミ拾い × アートウォーク" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="activity-card-body">
-            <div class="activity-card-icon">&#x267B;&#xFE0F;</div>
             <h3>GPSゴミ拾い &times; アートウォーク</h3>
             <p class="activity-card-desc">ゴミ拾いしながら地図にアートを描く、SDGs型社会貢献イベント。</p>
             <span class="activity-card-btn">詳しく見る &rarr;</span>
@@ -1229,13 +1281,51 @@
             <iframe src="https://www.youtube.com/embed/7D5wPEcxtgQ" title="GPSウォーク＆ラン" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
           <div class="activity-card-body">
-            <div class="activity-card-icon">&#x1F3C3;</div>
             <h3>GPSウォーク &amp; ラン</h3>
             <p class="activity-card-desc">歩いて・走って地図にアートを描く。誰でも参加できるイベント。</p>
             <span class="activity-card-btn">詳しく見る &rarr;</span>
           </div>
         </a>
       </div>
+    </div>
+  </section>
+
+
+  <!-- HOME: CASE -->
+  <section class="hc-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">CASE STUDIES</p>
+        <h2 class="section-title">実績・事例</h2>
+        <p class="section-subtitle">企業・自治体・海外での代表的なプロジェクト。クリックで詳細をご覧いただけます。</p>
+      </div>
+      <div class="hc-grid fade-in">
+        <a class="hc-card" href="jirei-peru.html"><div class="hc-img"><img src="images/jirei/peru/peru-alpaca.jpg" alt="ペルー4600kmアルパカの地上絵" loading="lazy"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">海外プロジェクト</span><span class="hc-date">2024</span></div><h3>ペルー4600km「アルパカの地上絵」</h3></div></a>
+        <a class="hc-card" href="jirei-coop.html"><div class="hc-img"><img src="images/jirei/coop/coop-group.jpg" alt="コープこうべ100周年" loading="lazy"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">企業コラボ</span><span class="hc-date">2021</span></div><h3>コープこうべ100周年「2021 COOP NEXT 100」</h3></div></a>
+        <a class="hc-card" href="jirei-hankyu.html"><div class="hc-img" style="display:flex;align-items:center;justify-content:center"><span style="font-weight:800;font-size:1.2rem;color:var(--yellow);text-align:center;padding:1rem">阪急阪神不動産<br><span style="color:var(--gray-400);font-size:.85rem">× GPSウォーク</span></span></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">企業コラボ</span><span class="hc-date">2024-</span></div><h3>阪急阪神不動産 × GPSウォーク</h3></div></a>
+        <a class="hc-card" href="media.html"><div class="hc-img"><img src="images/jirei/coop/coop-01.jpg" alt="メディア出演・掲載" loading="lazy"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">メディア</span><span class="hc-date">160+</span></div><h3>メディア出演・掲載実績</h3></div></a>
+      </div>
+      <div class="hc-more fade-in"><a href="cases.html">実績・事例をすべて見る &rarr;</a></div>
+    </div>
+  </section>
+
+  <!-- HOME: NEWS -->
+  <section class="hc-section alt">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-label">NEWS / ACTIVITIES</p>
+        <h2 class="section-title">最新の活動</h2>
+        <p class="section-subtitle">2019年からの全活動を年・カテゴリで絞り込んで閲覧できます。</p>
+      </div>
+      <div class="hc-grid fade-in">
+        <a class="hc-card" href="news/act-20260103-1.html"><div class="hc-img"><img src="images/uploads/2026/01/IMG_E9081-scaled.jpg" alt="【コラボ企画】フィンランドのスポーツシューズ『KARHU』と静岡でゴミ拾いアートウォーク（12月19日）" loading="lazy" onerror="this.parentNode.style.display='none'"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">企業コラボ</span><span class="hc-date">2026.01.03</span></div><h3>【コラボ企画】フィンランドのスポーツシューズ『KARHU』と静岡でゴミ拾いアートウォーク（12月19日）</h3></div></a>
+        <a class="hc-card" href="news/act-20260103-2.html"><div class="hc-img"><img src="images/uploads/2026/01/IMG_E9259-scaled.jpg" alt="【年末企画】能登ツアー with ソルマーレ高等学院（12月27日~29日）" loading="lazy" onerror="this.parentNode.style.display='none'"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">講演・教育</span><span class="hc-date">2026.01.03</span></div><h3>【年末企画】能登ツアー with ソルマーレ高等学院（12月27日~29日）</h3></div></a>
+        <a class="hc-card" href="news/act-20260102-3.html"><div class="hc-img"><img src="images/uploads/2026/01/c2918322-2e54-4640-a751-9818dcbd774e.jpeg" alt="【イベント】阪急阪神不動産とコラボ企画「アートウォーク」（11月24日）" loading="lazy" onerror="this.parentNode.style.display='none'"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">企業コラボ</span><span class="hc-date">2026.01.02</span></div><h3>【イベント】阪急阪神不動産とコラボ企画「アートウォーク」（11月24日）</h3></div></a>
+        <a class="hc-card" href="news/act-20260102-4.html"><div class="hc-img"><img src="images/uploads/2026/01/IMG_E9003-scaled.jpg" alt="【イベント】WheeLog三田(車椅子利用者支援団体)とコラボ企画を実施（12月14日）" loading="lazy" onerror="this.parentNode.style.display='none'"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">企業コラボ</span><span class="hc-date">2026.01.02</span></div><h3>【イベント】WheeLog三田(車椅子利用者支援団体)とコラボ企画を実施（12月14日）</h3></div></a>
+        <a class="hc-card" href="news/act-20251117-5.html"><div class="hc-img"><img src="images/uploads/2025/11/IMG_E8467-scaled.jpg" alt="【イベント】パナホーム兵庫と5度目のコラボ！「妖怪アートウォーク」in 福崎町（11月15日実施）" loading="lazy" onerror="this.parentNode.style.display='none'"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">企業コラボ</span><span class="hc-date">2025.11.17</span></div><h3>【イベント】パナホーム兵庫と5度目のコラボ！「妖怪アートウォーク」in 福崎町（11月15日実施）</h3></div></a>
+        <a class="hc-card" href="news/act-20251101-6.html"><div class="hc-img"><img src="images/uploads/2025/11/IMG_E8239-scaled.jpg" alt="【イベント】創業98年！神戸の老舗『萩原珈琲』とコラボゴミ拾いアートウォーク（10月25日）" loading="lazy" onerror="this.parentNode.style.display='none'"></div><div class="hc-body"><div class="hc-meta"><span class="hc-tag">企業コラボ</span><span class="hc-date">2025.11.01</span></div><h3>【イベント】創業98年！神戸の老舗『萩原珈琲』とコラボゴミ拾いアートウォーク（10月25日）</h3></div></a>
+      </div>
+      <div class="hc-more fade-in"><a href="news.html">活動アーカイブをすべて見る &rarr;</a></div>
     </div>
   </section>
 
@@ -1248,76 +1338,76 @@
         <p class="section-subtitle">自治体・企業・団体との多数のコラボレーション実績。</p>
       </div>
       <div class="events-list fade-in">
-        <div class="event-item">
+        <a class="event-item" href="news/act-20251031-11.html">
           <span class="event-date">2025.10</span>
           <div class="event-content">
             <h3>関西・大阪万博にゲスト出演</h3>
             <p>「世界で活躍するアーティスト」として紹介。ミャクミャクの地上絵を大阪に描く。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="news/act-20250919-16.html">
           <span class="event-date">2025.7</span>
           <div class="event-content">
             <h3>つながれJAPAN！3,700kmで能登復興の地上絵完走</h3>
             <p>21都道府県を113日間で駆け抜け、「ランナー」の地上絵を制作。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="news/act-20250201-22.html">
           <span class="event-date">2025.2</span>
           <div class="event-content">
             <h3>関西テレビ「よ～いドン！」出演</h3>
             <p>「となりの人間国宝さん」に認定。「人間国宝」の地上絵を制作。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="news/act-20251117-5.html">
           <span class="event-date">2024.11</span>
           <div class="event-content">
             <h3>パナホーム兵庫とGPSプロギング実施</h3>
             <p>社員と顧客家族みんなで交流しながら、清掃した軌跡で干支を描く。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="jirei-peru.html">
           <span class="event-date">2024.6</span>
           <div class="event-content">
             <h3>総距離4,600kmのアルパカ！ペループロジェクト</h3>
             <p>3,000ドル詐欺、野犬の襲撃、アンデスで遭難。過酷な90日間の冒険の記録。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="news/act-20231126-58.html">
           <span class="event-date">2023.8</span>
           <div class="event-content">
             <h3>東大阪市 高齢者の健康推進事業「スマホを使ったウォーキング」講師</h3>
             <p>全3回、花園ラグビー場を拠点にみんなでGPSウォーク体験・交流。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="news/act-60.html">
           <span class="event-date">2023.6</span>
           <div class="event-content">
             <h3>24日連続フルマラソン！台湾1周1,135km</h3>
             <p>日本と台湾の友情を次世代につなぐ壮大なプロジェクトを実施。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="news/act-20220722-83.html">
           <span class="event-date">2022.7</span>
           <div class="event-content">
             <h3>GPSアートで47都道府県走破</h3>
             <p>7年間かけて日本全県で作品を制作。北海道15日間14作品を含む全国制覇プロジェクト。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="jirei-coop.html">
           <span class="event-date">2021.7</span>
           <div class="event-content">
             <h3>コープこうべ100周年記念 SDGs事業「GPSプロギング」</h3>
             <p>16店舗同時開催、約250名参加。地域密着型のSDGsイベントとして大きな反響。</p>
           </div>
-        </div>
-        <div class="event-item">
+        </a>
+        <a class="event-item" href="works.html">
           <span class="event-date">2016.2</span>
           <div class="event-content">
             <h3>初GPSラン「西宮LOVE」</h3>
             <p>すべてはここから始まった。バレンタインデーに西宮の街に「LOVE」を描く。</p>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -1392,6 +1482,7 @@
       document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')});
     });
   </script>
-  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ😊"></script>
+  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ"></script>
+  <script src="/theme.js"></script>
 </body>
 </html>

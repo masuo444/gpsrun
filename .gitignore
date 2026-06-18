@@ -9,3 +9,8 @@ gps_art_works_complete.json
 !3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg
 *.pdf
 .vercel
+
+# 移行画像（サブフォルダ含む）を追跡
+!images/**/*.jpeg
+!images/**/*.jpg
+!images/**/*.png

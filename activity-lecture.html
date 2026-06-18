@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+  <script>try{if(localStorage.getItem("gpsrun-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+  <link rel="stylesheet" href="/theme.css">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>講演会 | GPS RUNNER 志水直樹</title>
@@ -10,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#B4B4B4;--gray-300:#DCDCDC;--white:#FFFFFF;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
     html{scroll-behavior:smooth}
     body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
     header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
@@ -102,24 +105,24 @@
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
   <meta property="og:title" content="講演会 | GPS RUNNER 志水直樹">
   <meta property="og:description" content="GPSランナー志水直樹の講演会。学校・企業・自治体向けに、挑戦と夢をテーマにした講演を実施しています。">
-  <meta property="og:url" content="https://official.gps-run.com/activity-lecture.html">
-  <meta property="og:image" content="https://official.gps-run.com/images/ogp.jpg">
+  <meta property="og:url" content="https://www.gps-run.com/activity-lecture.html">
+  <meta property="og:image" content="https://www.gps-run.com/images/ogp.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:locale" content="ja_JP">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="講演会 | GPS RUNNER 志水直樹">
   <meta name="twitter:description" content="GPSランナー志水直樹の講演会。学校・企業・自治体向けに、挑戦と夢をテーマにした講演を実施しています。">
-  <meta name="twitter:image" content="https://official.gps-run.com/images/ogp.jpg">
+  <meta name="twitter:image" content="https://www.gps-run.com/images/ogp.jpg">
   <meta name="keywords" content="講演会,GPSランナー,志水直樹,学校講演,企業講演,自治体,挑戦,夢,モチベーション講演">
   <meta name="author" content="志水直樹 Naoki Shimizu">
-  <link rel="canonical" href="https://official.gps-run.com/activity-lecture.html">
+  <link rel="canonical" href="https://www.gps-run.com/activity-lecture.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "url": "https://official.gps-run.com/activity-lecture.html",
+    "url": "https://www.gps-run.com/activity-lecture.html",
     "name": "講演会 | GPS RUNNER 志水直樹",
     "description": "GPSランナー志水直樹による講演会。学校・企業・自治体向けに、挑戦・夢・GPSアートをテーマにした講演を実施。",
     "inLanguage": "ja",
@@ -129,7 +132,7 @@
       "description": "挑戦と夢をテーマにした講演。学校・企業・自治体向け。",
       "provider": {
         "@type": "Person",
-        "@id": "https://official.gps-run.com/#person",
+        "@id": "https://www.gps-run.com/#person",
         "name": "志水直樹"
       },
       "areaServed": "JP",
@@ -155,10 +158,10 @@
     <nav>
       <a href="index.html">HOME</a>
       <a href="works.html">WORKS</a>
+      <a href="cases.html">CASE</a>
+      <a href="news.html">NEWS</a>
       <a href="profile.html">PROFILE</a>
-      <a href="global.html">GLOBAL</a>
       <a href="offer.html">OFFER</a>
-      <a href="special.html">PROJECT</a>
       <a href="contact.html">CONTACT</a>
       <a href="support.html" class="nav-cta">SUPPORT</a>
     </nav>
@@ -167,6 +170,8 @@
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">HOME</a>
     <a href="works.html">WORKS</a>
+      <a href="cases.html">CASE</a>
+      <a href="news.html">NEWS</a>
     
     <a href="profile.html">PROFILE</a>
     <a href="global.html">GLOBAL</a>
@@ -256,17 +261,14 @@
       <h2 class="section-title">こんな方におすすめ</h2>
       <div class="features">
         <div class="feature">
-          <div class="feature-icon">&#x1F3EB;</div>
           <h3>学校・教育機関</h3>
           <p>キャリア教育、道徳、総合的な学習の時間に。小学校～大学まで対応。実際のGPSアート体験とセットも可能。</p>
         </div>
         <div class="feature">
-          <div class="feature-icon">&#x1F3E2;</div>
           <h3>企業・団体</h3>
           <p>社員研修、チームビルディング、イノベーション促進のきっかけに。新しい発想と挑戦のマインドセットを共有。</p>
         </div>
         <div class="feature">
-          <div class="feature-icon">&#x1F3DB;&#xFE0F;</div>
           <h3>自治体・地域イベント</h3>
           <p>まちづくり、健康推進、観光振興との連携。講演＋GPSアートウォーク体験会のセット企画も好評。</p>
         </div>
@@ -325,6 +327,7 @@
     var obs=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting)en.target.classList.add('visible')})},{threshold:0.1});
     document.querySelectorAll('.fade-in').forEach(function(el){obs.observe(el)});
   </script>
-  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ😊"></script>
+  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ"></script>
+  <script src="/theme.js"></script>
 </body>
 </html>
