@@ -3827,6 +3827,31 @@
       "source": "/sitemap-misc.xml",
       "destination": "/sitemap.xml",
       "permanent": true
+    },
+    {
+      "source": "/3",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/7",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/en/news",
+      "destination": "/news.html",
+      "permanent": true
+    },
+    {
+      "source": "/type/quote",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/type/quote",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
