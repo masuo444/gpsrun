@@ -1,6 +1,9 @@
-/* ===== スクロールバー幅を常時確保：ページ間の横ズレ（ナビが動く）防止 ===== */
-html{scrollbar-gutter:stable}
-@supports not (scrollbar-gutter:stable){body{overflow-y:scroll}}
+/* ===== ページ間でヘッダーが横ズレする問題の根治 =====
+   各ページの body{overflow-x:hidden} が body を縦スクロール要素にし、
+   ページの長短でスクロールバーの有無が変わって fixed ヘッダーが横にズレる。
+   スクロール要素を html に一本化し、スクロールバー幅を常時確保する。 */
+html{overflow-x:hidden;overflow-y:scroll;scrollbar-gutter:stable}
+body{overflow-x:visible!important}
 
 /* ===== テーマ切替（ダーク既定 / ライト上書き）＋ トグルボタン ===== */
 
