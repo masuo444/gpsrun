@@ -1,3 +1,7 @@
+/* ===== スクロールバー幅を常時確保：ページ間の横ズレ（ナビが動く）防止 ===== */
+html{scrollbar-gutter:stable}
+@supports not (scrollbar-gutter:stable){body{overflow-y:scroll}}
+
 /* ===== テーマ切替（ダーク既定 / ライト上書き）＋ トグルボタン ===== */
 
 /* トグルボタン（両テーマ共通・変数で追従） */
