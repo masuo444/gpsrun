@@ -32,64 +32,34 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/"/>
   </url>
   <url>
-    <loc>https://www.gps-run.com/works.html</loc>
+    <loc>https://www.gps-run.com/arts.html</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/works.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/works.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/works.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/arts.html"/>
   </url>
   <url>
-    <loc>https://www.gps-run.com/en/works.html</loc>
+    <loc>https://www.gps-run.com/en/arts.html</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/works.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/works.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/works.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/works.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/arts.html"/>
   </url>
   <url>
-    <loc>https://www.gps-run.com/es/works.html</loc>
+    <loc>https://www.gps-run.com/es/arts.html</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/works.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/works.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/works.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/works.html"/>
-  </url>
-  <url>
-    <loc>https://www.gps-run.com/cases.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/cases.html"/>
-  </url>
-  <url>
-    <loc>https://www.gps-run.com/en/cases.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/cases.html"/>
-  </url>
-  <url>
-    <loc>https://www.gps-run.com/es/cases.html</loc>
-    <lastmod>2026-06-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/cases.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/cases.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://www.gps-run.com/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/arts.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/arts.html"/>
   </url>
   <url>
     <loc>https://www.gps-run.com/special.html</loc>

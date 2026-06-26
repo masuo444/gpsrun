@@ -1,0 +1,12 @@
+_*.py
+_*.sh
+_*.json
+*.bak
+data.js.bak
+activities.json
+*.pdf
+まっすーに渡す資料/
+screenshots/
+それでも挑戦し続ける理由.png
+それでも挑戦し続ける理由2.HEIC
+.git

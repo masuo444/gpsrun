@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="es">
 <head>
-  <script>try{if(localStorage.getItem("gpsrun-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
-  <link rel="stylesheet" href="/theme.css">
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>作品集 WORKS | GPS RUNNER 志水直樹</title>
-  <meta name="description" content="GPSランナー志水直樹のGPSアート作品集。世界12ヵ国、約1,600作品のGPSアートをご覧いただけます。">
+  <title>WORKS | GPS RUNNER Naoki Shimizu</title>
+  <meta name="description" content="Galería de GPS Art de Naoki Shimizu. Más de 1,600 obras creadas en 12 países de todo el mundo.">
+  <link rel="alternate" hreflang="ja" href="https://www.gps-run.com/arts.html">
+  <link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/arts.html">
+  <link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/arts.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/arts.html">
+  <link rel="canonical" href="https://www.gps-run.com/es/arts.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <style>
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#B4B4B4;--gray-300:#DCDCDC;--white:#FFFFFF;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#999;--gray-300:#BBB;--white:#FAFAFA;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
     html{scroll-behavior:smooth}
-    body{font-family:var(--font-ja);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
+    body{font-family:var(--font-en);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
     header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
     header.scrolled{background:rgba(10,10,10,0.95);border-bottom-color:rgba(255,229,0,0.3)}
     .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
@@ -23,9 +25,17 @@
     .logo-text{font-family:var(--font-en);font-weight:700;font-size:1.1rem;letter-spacing:.08em}
     .logo-text span{color:var(--yellow)}
     nav{display:flex;align-items:center;gap:2rem}
-    nav a{color:var(--gray-400);text-decoration:none;font-size:1.25rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
+    nav a{color:var(--gray-400);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
     nav a:hover,nav a.active{color:var(--yellow)}
-    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:600!important}
+    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:700!important}
+    .lang-switcher{position:relative;display:inline-block}
+    .lang-btn{background:none;border:1px solid var(--gray-700);color:var(--gray-400);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;cursor:pointer;font-family:var(--font-en);letter-spacing:.05em;transition:all .3s;display:inline-flex;align-items:center;gap:.3rem}
+    .lang-btn:hover,.lang-switcher.open .lang-btn{border-color:var(--yellow);color:var(--yellow)}
+    .lang-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--gray-900);border:1px solid var(--gray-800);border-radius:12px;padding:.5rem;min-width:110px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+    .lang-switcher.open .lang-menu{display:block}
+    .lang-menu a{display:block;padding:.4rem .75rem;color:var(--gray-400);text-decoration:none;font-size:.82rem;font-weight:600;border-radius:8px;transition:all .2s;font-family:var(--font-en)}
+    .lang-menu a:hover{background:var(--gray-800);color:var(--yellow)}
+    .lang-menu a.lang-active{color:var(--yellow);pointer-events:none}
     .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
     .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
     .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
@@ -36,59 +46,55 @@
     .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.2rem;font-weight:600}
     .mobile-nav a:hover{color:var(--yellow)}
     .page-hero{padding:120px 2rem 3rem;text-align:center;position:relative}
-    .section-label{font-family:var(--font-en);font-size:1.25rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
+    .section-label{font-family:var(--font-en);font-size:.85rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--yellow);margin-bottom:.75rem}
     .page-hero h1{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin-bottom:.75rem}
-    .page-hero>p{font-size:1.3rem;color:var(--gray-400);max-width:550px;margin:0 auto}
+    .page-hero>p{font-size:1rem;color:var(--gray-400);max-width:550px;margin:0 auto}
     .stats-bar{display:flex;justify-content:center;gap:3rem;padding:1.5rem 2rem;margin:1.5rem auto 0;max-width:600px}
     .stat{text-align:center}
     .stat-number{font-family:var(--font-en);font-size:1.6rem;font-weight:800;color:var(--yellow);line-height:1.2}
     .stat-number small{font-size:.5em;font-weight:500}
-    .stat-label{font-size:1.25rem;color:var(--gray-400)}
+    .stat-label{font-size:.85rem;color:var(--gray-400)}
     .toolbar{position:sticky;top:72px;z-index:100;background:rgba(10,10,10,0.9);backdrop-filter:blur(16px);border-bottom:1px solid var(--gray-800);padding:1rem 2rem}
     .toolbar-inner{max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
     .filters{display:flex;gap:.5rem;flex-wrap:wrap}
-    .filter-btn{background:transparent;border:1px solid var(--gray-800);color:var(--gray-400);padding:.45rem 1.1rem;border-radius:100px;font-size:1.25rem;font-weight:500;cursor:pointer;transition:all .3s;font-family:var(--font-ja);white-space:nowrap}
+    .filter-btn{background:transparent;border:1px solid var(--gray-800);color:var(--gray-400);padding:.45rem 1.1rem;border-radius:100px;font-size:.82rem;font-weight:500;cursor:pointer;transition:all .3s;font-family:var(--font-en);white-space:nowrap}
     .filter-btn:hover{border-color:var(--gray-700);color:var(--white)}
     .filter-btn.active{background:var(--yellow);border-color:var(--yellow);color:var(--black);font-weight:600}
     .toolbar-right{display:flex;align-items:center;gap:1rem}
     .search-box{position:relative}
-    .search-box input{background:var(--gray-900);border:1px solid var(--gray-800);border-radius:10px;padding:.5rem .75rem .5rem 2.25rem;color:var(--white);font-size:1.25rem;width:220px;font-family:var(--font-ja);outline:none}
+    .search-box input{background:var(--gray-900);border:1px solid var(--gray-800);border-radius:10px;padding:.5rem .75rem .5rem 2.25rem;color:var(--white);font-size:.85rem;width:220px;font-family:var(--font-en);outline:none}
     .search-box input::placeholder{color:var(--gray-700)}
     .search-box input:focus{border-color:var(--yellow)}
     .search-icon{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:var(--gray-700);pointer-events:none}
     .year-filters{display:flex;gap:.35rem;flex-wrap:wrap}
-    .year-btn{background:transparent;border:none;color:var(--gray-400);padding:.3rem .6rem;border-radius:6px;font-size:1.25rem;font-weight:600;cursor:pointer;font-family:var(--font-en)}
+    .year-btn{background:transparent;border:none;color:var(--gray-400);padding:.3rem .6rem;border-radius:6px;font-size:.82rem;font-weight:600;cursor:pointer;font-family:var(--font-en)}
     .year-btn:hover{color:var(--white);background:var(--gray-800)}
     .year-btn.active{color:var(--yellow);background:rgba(255,229,0,0.1)}
-    .count-badge{font-family:var(--font-en);font-size:1.25rem;color:var(--gray-400);white-space:nowrap}
+    .count-badge{font-family:var(--font-en);font-size:.82rem;color:var(--gray-400);white-space:nowrap}
     .count-badge strong{color:var(--yellow);font-weight:700}
     .gallery{max-width:1400px;margin:0 auto;padding:2rem}
     .gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1.25rem}
     .work-card{background:var(--gray-900);border-radius:14px;overflow:hidden;border:1px solid var(--gray-800);transition:all .3s;cursor:pointer;display:block}
     .work-card:hover{border-color:rgba(255,229,0,0.6);transform:translateY(-4px);box-shadow:0 12px 40px rgba(255,229,0,0.3)}
     .work-card-image{aspect-ratio:1;overflow:hidden;position:relative;background:var(--gray-800)}
-    .work-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block;image-rendering:auto}
+    .work-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .5s;display:block}
     .work-card:hover .work-card-image img{transform:scale(1.05)}
     .work-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,10,0.8) 0%,transparent 50%);opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:1rem}
     .work-card:hover .work-card-overlay{opacity:1}
-    .work-card-overlay span{font-size:1.25rem;background:rgba(255,229,0,0.95);color:var(--black);padding:.2rem .6rem;border-radius:4px;font-weight:600;font-family:var(--font-en)}
+    .work-card-overlay span{font-size:.8rem;background:rgba(255,229,0,0.95);color:var(--black);padding:.2rem .6rem;border-radius:4px;font-weight:600;font-family:var(--font-en)}
     .work-card-body{padding:1rem 1.25rem 1.25rem}
     .work-card-meta{display:flex;align-items:center;gap:.75rem;margin-bottom:.4rem}
-    .work-card-date{font-family:var(--font-en);font-size:1.25rem;font-weight:600;color:var(--yellow)}
+    .work-card-date{font-family:var(--font-en);font-size:.78rem;font-weight:600;color:var(--yellow)}
     .work-card-category{font-size:.75rem;color:var(--gray-400);background:var(--gray-800);padding:.15rem .5rem;border-radius:4px}
-    .work-card h3{font-size:1.3rem;font-weight:600;line-height:1.9;color:var(--white);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-    .work-card-excerpt{font-size:1.25rem;color:var(--gray-400);margin-top:.35rem;line-height:1.9;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .work-card h3{font-size:.88rem;font-weight:600;line-height:1.5;color:var(--white);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .load-more-area{text-align:center;padding:3rem 2rem 5rem}
-    .load-more-btn{background:transparent;border:1px solid var(--gray-700);color:var(--white);padding:.9rem 2.5rem;border-radius:100px;font-size:1.3rem;font-weight:600;cursor:pointer;font-family:var(--font-ja)}
+    .load-more-btn{background:transparent;border:1px solid var(--gray-700);color:var(--white);padding:.9rem 2.5rem;border-radius:100px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:var(--font-en)}
     .load-more-btn:hover{border-color:var(--yellow);color:var(--yellow)}
-    .load-more-count{font-size:1.25rem;color:var(--gray-700);margin-top:.75rem;font-family:var(--font-en)}
-    /* ===== LIGHTBOX ===== */
+    .load-more-count{font-size:.82rem;color:var(--gray-700);margin-top:.75rem;font-family:var(--font-en)}
     .lightbox{display:none;position:fixed;inset:0;z-index:2000;background:rgba(0,0,0,0.96);align-items:center;justify-content:center;padding:2rem}
     .lightbox.active{display:flex}
     .lightbox-close{position:absolute;top:1.25rem;right:1.25rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:var(--white);font-size:1.4rem;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:background .2s,border-color .2s,transform .2s;z-index:10}
     .lightbox-close:hover{background:rgba(255,229,0,0.15);border-color:rgba(255,229,0,0.5);color:var(--yellow);transform:rotate(90deg)}
-
-    /* Nav arrows */
     .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.12);color:var(--white);cursor:pointer;width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s,transform .2s,opacity .2s;z-index:10;outline:none}
     .lb-nav:hover{background:rgba(255,229,0,0.18);border-color:rgba(255,229,0,0.6);color:var(--yellow)}
     .lb-nav:active{transform:translateY(-50%) scale(.92)}
@@ -96,202 +102,130 @@
     .lb-nav-prev{left:1.25rem}
     .lb-nav-next{right:1.25rem}
     .lb-nav svg{width:22px;height:22px;flex-shrink:0}
-
-    /* Counter */
     .lb-counter{position:absolute;bottom:1.25rem;left:50%;transform:translateX(-50%);font-family:var(--font-en);font-size:.8rem;font-weight:600;color:rgba(255,255,255,0.35);letter-spacing:.12em;white-space:nowrap;pointer-events:none}
-
-    /* Content */
     .lightbox-content{max-width:1060px;width:100%;display:flex;gap:2.5rem;align-items:center}
     .lightbox-info{width:300px;flex-shrink:0;order:1}
     .lightbox-image{flex:1;min-width:0;order:2;position:relative}
-
-    /* Image crossfade */
     .lb-img-wrap{position:relative;width:100%;border-radius:14px;overflow:hidden;background:var(--gray-900)}
     .lb-img-wrap img{display:block;width:100%;max-height:78vh;object-fit:contain;border-radius:14px;transition:opacity .25s ease;opacity:1}
     .lb-img-wrap img.lb-fade{opacity:0}
-
     .lightbox-date{font-family:var(--font-en);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:.6rem}
     .lightbox-title{font-size:1.05rem;font-weight:700;margin-bottom:.9rem;line-height:1.7;color:var(--white)}
     .lightbox-excerpt{font-size:.9rem;color:var(--gray-400);line-height:1.85;margin-bottom:1.25rem}
     .lightbox-youtube{display:inline-flex;align-items:center;gap:.5rem;background:#FF0000;color:#fff;text-decoration:none;padding:.55rem 1.1rem;border-radius:8px;font-size:.85rem;font-weight:700;transition:opacity .2s,transform .2s}
     .lightbox-youtube:hover{opacity:.88;transform:translateY(-1px)}
     .lightbox-youtube svg{flex-shrink:0}
-    .lightbox-loc{font-size:.85rem;color:var(--gray-300);margin-bottom:.9rem}
-    .lightbox-loc::before{content:'\1F4CD';margin-right:.35rem}
-    .lb-video{position:relative;width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--gray-800);margin-top:.5rem}
-    .lb-video iframe{width:100%;height:100%;border:0}
-
-    /* Info fade on navigate */
-    .lightbox-info.lb-info-fade{opacity:0;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease}
-    .lightbox-info{transition:opacity .18s ease,transform .18s ease}
-
-    @media(max-width:900px){
-      .lightbox{padding:1rem .5rem 3.5rem}
-      .lightbox-content{flex-direction:column;max-height:92vh;overflow-y:auto;gap:1.25rem}
-      .lightbox-info{width:100%;order:2}
-      .lightbox-image{order:1;width:100%}
-      .lb-nav{width:44px;height:44px;top:auto;bottom:1rem;transform:none}
-      .lb-nav:active{transform:scale(.92)}
-      .lb-nav-prev{left:1.25rem}
-      .lb-nav-next{right:1.25rem}
-      .lb-counter{bottom:.35rem}
-    }
     .no-results{text-align:center;padding:4rem 2rem;color:var(--gray-400);display:none}
     footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
-    footer p{font-size:1.25rem;color:var(--gray-700);font-family:var(--font-en)}
+    footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
     footer a{color:var(--gray-400);text-decoration:none}
-    @media(max-width:900px){nav{display:none}.hamburger{display:flex}.toolbar-inner{flex-direction:column;align-items:stretch}.toolbar-right{justify-content:space-between}.search-box{flex:1}.search-box input{width:100%}.lightbox-content{flex-direction:column;max-height:90vh;overflow-y:auto}.lightbox-info{width:100%;order:2}.lightbox-image{order:1}}
-    @media(max-width:600px){header{padding:0 1.25rem}.page-hero{padding:110px 1.25rem 2rem}.toolbar{padding:.75rem 1.25rem}.gallery{padding:1.25rem}.gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}.work-card-body{padding:.75rem}.work-card h3{font-size:1.25rem}.work-card-excerpt{display:none}}
-
-    @media(max-width:400px){
-      .gallery-grid{grid-template-columns:repeat(2,1fr);gap:.5rem}
-      .work-card h3{font-size:1.1rem}
-      .stats-bar{gap:1.5rem}
-      .stat-number{font-size:1.3rem}
-      .filters{gap:.35rem}
-      .filter-btn{padding:.35rem .75rem;font-size:1.1rem}
-      .lb-nav-prev{left:.5rem}
-      .lb-nav-next{right:.5rem}
-    }
-    .lang-switcher{position:relative;display:inline-block}
-    .lang-btn{background:none;border:1px solid var(--gray-700);color:var(--gray-400);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;cursor:pointer;font-family:var(--font-en);letter-spacing:.05em;transition:all .3s;display:inline-flex;align-items:center;gap:.3rem}
-    .lang-btn:hover,.lang-switcher.open .lang-btn{border-color:var(--yellow);color:var(--yellow)}
-    .lang-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--gray-900);border:1px solid var(--gray-800);border-radius:12px;padding:.5rem;min-width:110px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.4)}
-    .lang-switcher.open .lang-menu{display:block}
-    .lang-menu a{display:block;padding:.4rem .75rem;color:var(--gray-400);text-decoration:none;font-size:.82rem;font-weight:600;border-radius:8px;transition:all .2s;font-family:var(--font-en)}
-    .lang-menu a:hover{background:var(--gray-800);color:var(--yellow)}
-    .lang-menu a.lang-active{color:var(--yellow);pointer-events:none}
+    @media(max-width:980px){nav{display:none}.hamburger{display:flex}.toolbar-inner{flex-direction:column;align-items:stretch}.toolbar-right{justify-content:space-between}.search-box{flex:1}.search-box input{width:100%}.lightbox-content{flex-direction:column;max-height:90vh;overflow-y:auto}.lightbox-info{width:100%;order:2}.lightbox-image{order:1}}
+    @media(max-width:600px){header{padding:0 1.25rem}.page-hero{padding:110px 1.25rem 2rem}.toolbar{padding:.75rem 1.25rem}.gallery{padding:1.25rem}.gallery-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}.work-card-body{padding:.75rem}.work-card h3{font-size:.82rem}}
+    @media(max-width:900px){.lb-nav{width:44px;height:44px;top:auto;bottom:1rem;transform:none}.lb-nav:active{transform:scale(.92)}.lb-nav-prev{left:1.25rem}.lb-nav-next{right:1.25rem}.lb-counter{bottom:.35rem}}
     .header-actions{display:flex;align-items:center;gap:.5rem}
     .mobile-lang{display:none}
     @media(max-width:960px){.mobile-lang{display:inline-block}}
   </style>
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="GPS RUNNER 志水直樹">
-  <meta property="og:title" content="作品集 WORKS | GPS RUNNER 志水直樹">
-  <meta property="og:description" content="GPSランナー志水直樹のGPSアート作品集。世界12ヵ国、約1,600作品のGPSアートをご覧いただけます。">
-  <meta property="og:url" content="https://www.gps-run.com/works.html">
-  <meta property="og:image" content="https://www.gps-run.com/images/9759.jpg">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:locale" content="ja_JP">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="作品集 WORKS | GPS RUNNER 志水直樹">
-  <meta name="twitter:description" content="GPSランナー志水直樹のGPSアート作品集。世界12ヵ国、約1,600作品のGPSアートをご覧いただけます。">
-  <meta name="twitter:image" content="https://www.gps-run.com/images/9759.jpg">
-  <meta name="keywords" content="GPSアート,GPS art,作品集,志水直樹,GPSランナー,地図アート,ランニングアート,世界12ヵ国,1600作品">
-  <meta name="author" content="志水直樹 Naoki Shimizu">
-  <link rel="canonical" href="https://www.gps-run.com/works.html">
-  <link rel="alternate" hreflang="ja" href="https://www.gps-run.com/works.html">
-  <link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/works.html">
-  <link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/works.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/works.html">
+  <meta property="og:url" content="https://www.gps-run.com/es/arts.html">
+  <meta property="og:title" content="WORKS | GPS RUNNER Naoki Shimizu">
+  <meta property="og:description" content="Galería de GPS Art de Naoki Shimizu — más de 1,600 obras en 12 países.">
+  <meta property="og:image" content="https://www.gps-run.com/images/ogp.jpg">
+  <meta property="og:locale" content="es_419">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "url": "https://www.gps-run.com/works.html",
-    "name": "作品集 WORKS | GPS RUNNER 志水直樹",
-    "description": "GPSランナー志水直樹のGPSアート作品集。世界12ヵ国、約1,600作品のGPSアートをご覧いただけます。",
-    "inLanguage": "ja",
-    "creator": {
-      "@type": "Person",
-      "@id": "https://www.gps-run.com/#person",
-      "name": "志水直樹"
-    }
-  }
-  </script>
 </head>
 <body>
   <header id="header">
-    <a href="index.html" class="logo"><img src="3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"><div class="logo-text">GPS <span>RUNNER</span></div></a>
+    <a href="/es/index.html" class="logo"><img src="/3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"><div class="logo-text">GPS <span>RUNNER</span></div></a>
     <nav>
-      <a href="index.html">HOME</a>
-      <a href="works.html">WORKS</a>
-      <a href="cases.html">CASE</a>
-      <a href="news.html">NEWS</a>
-      <a href="profile.html">PROFILE</a>
-      <a href="offer.html">OFFER</a>
-      <a href="contact.html">CONTACT</a>
-      <a href="support.html" class="nav-cta">SUPPORT</a>
+      <a href="/es/index.html">HOME</a>
+      <a href="/es/arts.html" class="active">ARTS</a>
+      <a href="/es/profile.html">PROFILE</a>
+      <a href="/es/global.html">GLOBAL</a>
+      <a href="/es/offer.html">OFFER</a>
+      <a href="/es/special.html">PROJECT</a>
+      <a href="/es/contact.html">CONTACT</a>
+      <a href="/es/support.html" class="nav-cta">SUPPORT</a>
       <div class="lang-switcher">
-        <button class="lang-btn">JA ▾</button>
+        <button class="lang-btn">🌐 ES ▾</button>
         <div class="lang-menu">
-          <a href="/works.html" class="lang-active">日本語</a>
-          <a href="/en/works.html">English</a>
-          <a href="/es/works.html">Español</a>
+          <a href="/arts.html">日本語</a>
+          <a href="/en/arts.html">English</a>
+          <a href="/es/arts.html" class="lang-active">Español</a>
         </div>
       </div>
     </nav>
     <div class="header-actions">
       <div class="lang-switcher mobile-lang">
-        <button class="lang-btn">JA ▾</button>
+        <button class="lang-btn">🌐 ES ▾</button>
         <div class="lang-menu">
-          <a href="/works.html" class="lang-active">日本語</a>
-          <a href="/en/works.html">English</a>
-          <a href="/es/works.html">Español</a>
+          <a href="/arts.html">日本語</a>
+          <a href="/en/arts.html">English</a>
+          <a href="/es/arts.html" class="lang-active">Español</a>
         </div>
       </div>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </div>
   </header>
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">HOME</a>
-    <a href="works.html">WORKS</a>
-      <a href="cases.html">CASE</a>
-      <a href="news.html">NEWS</a>
-
-    <a href="profile.html">PROFILE</a>
-    <a href="global.html">GLOBAL</a>
-    <a href="offer.html">OFFER</a>
-    <a href="contact.html">CONTACT</a>
-    <a href="support.html">SUPPORT</a>
+    <a href="/es/index.html">HOME</a>
+    <a href="/es/arts.html">ARTS</a>
+    <a href="/es/profile.html">PROFILE</a>
+    <a href="/es/global.html">GLOBAL</a>
+    <a href="/es/offer.html">OFFER</a>
+    <a href="/es/special.html">PROJECT</a>
+    <a href="/es/contact.html">CONTACT</a>
+    <a href="/es/support.html">SUPPORT</a>
   </div>
+
   <div class="page-hero">
     <p class="section-label">GPS ART GALLERY</p>
-    <h1>作品集</h1>
-    <p>地球をキャンバスに、走って想いを描く。世界12ヵ国で制作したGPSアート代表作品を厳選。</p>
+    <h1>WORKS</h1>
+    <p>La Tierra es mi lienzo — correr para dibujar. Una selección de obras de GPS Art creadas en 12 países.</p>
     <div class="stats-bar">
-      <div class="stat"><div class="stat-number" id="totalCount">--</div><div class="stat-label">作品数</div></div>
-      <div class="stat"><div class="stat-number">12<small> ヵ国</small></div><div class="stat-label">制作国</div></div>
-      <div class="stat"><div class="stat-number">19,000<small>km</small></div><div class="stat-label">総走行距離</div></div>
+      <div class="stat"><div class="stat-number" id="totalCount">--</div><div class="stat-label">obras</div></div>
+      <div class="stat"><div class="stat-number">12<small> países</small></div><div class="stat-label">creadas en</div></div>
+      <div class="stat"><div class="stat-number">19,000<small>km</small></div><div class="stat-label">distancia total</div></div>
     </div>
   </div>
+
   <div class="toolbar">
     <div class="toolbar-inner">
       <div style="display:flex;gap:1rem;align-items:center;flex-wrap:wrap">
         <div class="filters" id="catFilters">
-          <button class="filter-btn active" data-filter="all">ALL</button>
-          <button class="filter-btn" data-filter="illustration">ILLUSTRATION</button>
-          <button class="filter-btn" data-filter="calligraphy">CALLIGRAPHY</button>
+          <button class="filter-btn active" data-filter="all">TODAS</button>
+          <button class="filter-btn" data-filter="illustration">ILUSTRACIÓN</button>
+          <button class="filter-btn" data-filter="calligraphy">CALIGRAFÍA</button>
         </div>
         <div class="year-filters" id="yearFilters"></div>
       </div>
       <div class="toolbar-right">
         <div class="search-box">
           <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="searchInput" placeholder="作品名で検索...">
+          <input type="text" id="searchInput" placeholder="Buscar obras...">
         </div>
-        <span class="count-badge"><strong id="filteredCount">0</strong> works</span>
+        <span class="count-badge"><strong id="filteredCount">0</strong> obras</span>
       </div>
     </div>
   </div>
+
   <div class="gallery">
     <div class="gallery-grid" id="grid"></div>
-    <div class="no-results" id="noResults"><p>該当する作品が見つかりませんでした</p></div>
+    <div class="no-results" id="noResults"><p>Sin resultados.</p></div>
   </div>
   <div class="load-more-area">
-    <button class="load-more-btn" id="loadMoreBtn">もっと見る</button>
+    <button class="load-more-btn" id="loadMoreBtn">Ver más</button>
     <p class="load-more-count" id="loadMoreCount"></p>
   </div>
-  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="作品詳細">
-    <button class="lightbox-close" id="lightboxClose" aria-label="閉じる">
+
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Detalle de obra">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Cerrar">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
     </button>
-    <button class="lb-nav lb-nav-prev" id="lbPrev" aria-label="前の作品">
+    <button class="lb-nav lb-nav-prev" id="lbPrev" aria-label="Anterior">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
     </button>
-    <button class="lb-nav lb-nav-next" id="lbNext" aria-label="次の作品">
+    <button class="lb-nav lb-nav-next" id="lbNext" aria-label="Siguiente">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
     </button>
     <div class="lightbox-content">
@@ -301,16 +235,16 @@
       <div class="lightbox-info" id="lbInfo">
         <p class="lightbox-date" id="lbDate"></p>
         <h2 class="lightbox-title" id="lbTitle"></h2>
-        <p class="lightbox-loc" id="lbLoc" style="display:none"></p>
         <p class="lightbox-excerpt" id="lbExcerpt"></p>
         <div id="lbYoutube"></div>
       </div>
     </div>
     <p class="lb-counter" id="lbCounter"></p>
   </div>
-  <footer><p><a href="index.html">GPS RUNNER</a> · © 2026 Naoki Shimizu. · <a href="tokushoho.html">特定商取引法に基づく表記</a> &middot; <a href="privacy.html">プライバシーポリシー</a></p></footer>
 
-  <script src="data.js"></script>
+  <footer><p><a href="/es/index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu. &middot; <a href="/es/privacy.html">Política de privacidad</a></p></footer>
+
+  <script src="/data.js"></script>
   <script>
     (function() {
       var works = WORKS_DATA;
@@ -322,18 +256,15 @@
       var searchQuery = '';
       var grid = document.getElementById('grid');
 
-      console.log('GPS Runner Works: loaded ' + works.length + ' items');
       document.getElementById('totalCount').textContent = works.length;
 
-      // Build year buttons
       var yearSet = {};
       for (var i = 0; i < works.length; i++) yearSet[works[i].date.substring(0,4)] = true;
       var years = Object.keys(yearSet).sort().reverse();
-      var yh = '<button class="year-btn active" data-year="all">ALL</button>';
+      var yh = '<button class="year-btn active" data-year="all">TODOS</button>';
       for (var j = 0; j < years.length; j++) yh += '<button class="year-btn" data-year="'+years[j]+'">'+years[j]+'</button>';
       document.getElementById('yearFilters').innerHTML = yh;
 
-      // Filter clicks
       document.getElementById('catFilters').onclick = function(e) {
         if (!e.target.classList.contains('filter-btn')) return;
         [].forEach.call(document.querySelectorAll('.filter-btn'), function(b){b.classList.remove('active')});
@@ -389,17 +320,15 @@
         grid.appendChild(frag);
         shown = end;
         document.getElementById('loadMoreBtn').style.display = (shown >= filtered.length) ? 'none' : 'inline-block';
-        document.getElementById('loadMoreCount').textContent = shown + ' / ' + filtered.length + ' works';
+        document.getElementById('loadMoreCount').textContent = shown + ' / ' + filtered.length + ' obras';
       }
       document.getElementById('loadMoreBtn').onclick = showMore;
 
       function makeCard(w, idx) {
         var el = document.createElement('div');
         el.className = 'work-card';
-        // Use closure over idx — but idx may shift after doFilter, so store work id and look up
         el.setAttribute('data-work-id', w.id);
         el.onclick = function() {
-          // Find current index in filtered (handles re-filter)
           var wid = parseInt(this.getAttribute('data-work-id'), 10);
           for (var fi = 0; fi < filtered.length; fi++) {
             if (filtered[fi].id === wid) { openLB(fi); return; }
@@ -408,12 +337,12 @@
         var d = new Date(w.date);
         var ds = d.getFullYear() + '.' + String(d.getMonth()+1).padStart(2,'0');
         var ct = w.categories.join(' ');
-        var cl = ct.indexOf('ILLUSTRATION')>=0?'ILLUSTRATION':(ct.indexOf('CALLIGRAPHY')>=0?'CALLIGRAPHY':'');
+        var cl = ct.indexOf('ILLUSTRATION')>=0?'ILUSTRACIÓN':(ct.indexOf('CALLIGRAPHY')>=0?'CALIGRAFÍA':'');
         var src = w.medium_url || w.thumbnail_url || '';
         el.innerHTML =
           '<div class="work-card-image">' +
-            '<img src="'+src+'" alt="志水直樹 GPSアート作品" loading="lazy">' +
-            '<div class="work-card-overlay"><span>VIEW</span></div>' +
+            '<img src="'+src+'" alt="GPS Art de Naoki Shimizu" loading="lazy">' +
+            '<div class="work-card-overlay"><span>VER</span></div>' +
           '</div>' +
           '<div class="work-card-body">' +
             '<div class="work-card-meta">' +
@@ -426,7 +355,6 @@
         return el;
       }
 
-      /* ===== LIGHTBOX NAV ===== */
       var lbIndex = 0;
       var lbImg   = document.getElementById('lbImg');
       var lbInfo  = document.getElementById('lbInfo');
@@ -444,21 +372,13 @@
       function renderLB(animate) {
         var w = filtered[lbIndex];
         if (!w) return;
-
-        // Counter
         lbCtr.textContent = (lbIndex + 1) + ' / ' + filtered.length;
-
-        // Arrow state
         lbPrev.classList.toggle('disabled', lbIndex === 0);
         lbNext.classList.toggle('disabled', lbIndex === filtered.length - 1);
-
         if (animate) {
-          // Crossfade image
           lbImg.classList.add('lb-fade');
-          // Fade info out
           lbInfo.style.opacity = '0';
           lbInfo.style.transform = 'translateY(8px)';
-
           setTimeout(function() {
             setContent(w);
             lbImg.classList.remove('lb-fade');
@@ -468,13 +388,8 @@
         } else {
           setContent(w);
         }
-
-        // Preload adjacent images
         [lbIndex - 1, lbIndex + 1].forEach(function(i) {
-          if (filtered[i]) {
-            var pre = new Image();
-            pre.src = filtered[i].medium_url || filtered[i].full_image_url || '';
-          }
+          if (filtered[i]) { var pre = new Image(); pre.src = filtered[i].medium_url || filtered[i].full_image_url || ''; }
         });
       }
 
@@ -483,20 +398,13 @@
         lbImg.alt = w.title;
         document.getElementById('lbDate').textContent = w.date;
         document.getElementById('lbTitle').textContent = w.title;
-        var loc = document.getElementById('lbLoc');
-        if (w.location) { loc.textContent = w.location; loc.style.display = ''; } else { loc.style.display = 'none'; }
-        document.getElementById('lbExcerpt').textContent = w.desc || w.excerpt || '';
+        document.getElementById('lbExcerpt').textContent = w.excerpt || '';
         var yt = document.getElementById('lbYoutube');
-        var vid = w.youtube || '';
-        if (vid) {
-          yt.innerHTML = '<div class="lb-video"><iframe src="https://www.youtube.com/embed/' + vid + '" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>';
-        } else if (w.youtube_url) {
+        if (w.youtube_url) {
           yt.innerHTML = '<a class="lightbox-youtube" href="' + w.youtube_url + '" target="_blank" rel="noopener noreferrer">' +
             '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.38.55A3.02 3.02 0 00.5 6.19C0 8.08 0 12 0 12s0 3.92.5 5.81a3.02 3.02 0 002.12 2.14C4.5 20.5 12 20.5 12 20.5s7.5 0 9.38-.55a3.02 3.02 0 002.12-2.14C24 15.92 24 12 24 12s0-3.92-.5-5.81zM9.75 15.5v-7l6.5 3.5-6.5 3.5z"/></svg>' +
-            'YouTube で見る</a>';
-        } else {
-          yt.innerHTML = '';
-        }
+            'Ver en YouTube</a>';
+        } else { yt.innerHTML = ''; }
       }
 
       function navigate(delta) {
@@ -508,31 +416,24 @@
 
       lbPrev.onclick = function(e) { e.stopPropagation(); navigate(-1); };
       lbNext.onclick = function(e) { e.stopPropagation(); navigate(1); };
-
       document.getElementById('lightboxClose').onclick = closeLB;
       document.getElementById('lightbox').onclick = function(e) { if (e.target === this) closeLB(); };
 
-      // Keyboard
       document.addEventListener('keydown', function(e) {
         if (!document.getElementById('lightbox').classList.contains('active')) return;
-        if (e.key === 'Escape')       { closeLB(); }
+        if (e.key === 'Escape') { closeLB(); }
         else if (e.key === 'ArrowLeft')  { navigate(-1); }
         else if (e.key === 'ArrowRight') { navigate(1); }
       });
 
-      // Touch swipe
-      var touchStartX = 0;
-      var touchStartY = 0;
+      var touchStartX = 0, touchStartY = 0;
       document.getElementById('lightbox').addEventListener('touchstart', function(e) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
+        touchStartX = e.touches[0].clientX; touchStartY = e.touches[0].clientY;
       }, { passive: true });
       document.getElementById('lightbox').addEventListener('touchend', function(e) {
         var dx = e.changedTouches[0].clientX - touchStartX;
         var dy = e.changedTouches[0].clientY - touchStartY;
-        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
-          navigate(dx < 0 ? 1 : -1);
-        }
+        if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) navigate(dx < 0 ? 1 : -1);
       }, { passive: true });
 
       function closeLB() {
@@ -540,15 +441,13 @@
         document.body.style.overflow = '';
       }
 
-      window.onscroll = function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)};
-      document.getElementById('hamburger').onclick = function(){
+      window.onscroll = function(){ document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50); };
+      document.getElementById('hamburger').onclick = function() {
         this.classList.toggle('active');
         document.getElementById('mobileNav').classList.toggle('active');
       };
 
-      // Start
       doFilter();
-      console.log('GPS Runner Works: init complete');
     })();
   </script>
   <script>
@@ -559,7 +458,6 @@
       document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')});
     });
   </script>
-  <script src="/chatbot.js" data-knowledge="/knowledge.json" data-primary-color="#FFE500" data-greeting="こんにちは！GPS RUNNER 志水直樹へのご質問はお気軽にどうぞ"></script>
-  <script src="/theme.js"></script>
+  <script src="/chatbot.js" data-knowledge="/es/knowledge.json" data-primary-color="#FFE500" data-greeting="¡Hola! Pregúntame lo que quieras sobre GPS RUNNER Naoki Shimizu 😊"></script>
 </body>
 </html>
