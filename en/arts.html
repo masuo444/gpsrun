@@ -301,7 +301,7 @@
             if (catFilter === 'calligraphy' && c.indexOf('calligraphy') < 0) continue;
           }
           if (yearFilter !== 'all' && w.date.substring(0,4) !== yearFilter) continue;
-          if (searchQuery && (w.title+' '+(w.excerpt||'')).toLowerCase().indexOf(searchQuery) < 0) continue;
+          if (searchQuery && ((w.title_en||w.title)+' '+(w.excerpt_en||w.excerpt||'')).toLowerCase().indexOf(searchQuery) < 0) continue;
           filtered.push(w);
         }
         document.getElementById('filteredCount').textContent = filtered.length;
@@ -355,7 +355,7 @@
             '</div>' +
             '<h3></h3>' +
           '</div>';
-        el.querySelector('h3').textContent = w.title;
+        el.querySelector('h3').textContent = w.title_en||w.title;
         return el;
       }
 
@@ -399,10 +399,10 @@
 
       function setContent(w) {
         lbImg.src = w.medium_url || w.full_image_url || '';
-        lbImg.alt = w.title;
+        lbImg.alt = w.title_en||w.title;
         document.getElementById('lbDate').textContent = w.date;
-        document.getElementById('lbTitle').textContent = w.title;
-        document.getElementById('lbExcerpt').textContent = w.excerpt || '';
+        document.getElementById('lbTitle').textContent = w.title_en||w.title;
+        document.getElementById('lbExcerpt').textContent = w.excerpt_en||w.excerpt||'';
         var yt = document.getElementById('lbYoutube');
         if (w.youtube_url) {
           yt.innerHTML = '<a class="lightbox-youtube" href="' + w.youtube_url + '" target="_blank" rel="noopener noreferrer">' +
