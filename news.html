@@ -33,13 +33,27 @@
       <a href="offer.html">OFFER</a>
       <a href="contact.html">CONTACT</a>
       <a href="support.html" class="nav-cta">SUPPORT</a>
+      <div class="lang-switcher">
+        <button class="lang-btn">JA ▾</button>
+        <div class="lang-menu">
+          <a href="/news.html" class="lang-active">日本語</a>
+          <a href="/en/index.html">English</a>
+          <a href="/es/index.html">Español</a>
+        </div>
+      </div>
     </nav>
     <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </header>
   <div class="mobile-nav" id="mobileNav">
-    <a href="index.html">HOME</a><a href="arts.html">ARTS</a><a href="news.html">CASE</a>
-    <a href="news.html">NEWS</a><a href="profile.html">PROFILE</a><a href="global.html">GLOBAL</a>
-    <a href="offer.html">OFFER</a><a href="special.html">PROJECT</a><a href="contact.html">CONTACT</a><a href="support.html">SUPPORT</a>
+    <a href="index.html">HOME</a>
+    <a href="arts.html">ARTS</a>
+    <a href="news.html">NEWS</a>
+    <a href="profile.html">PROFILE</a>
+    <a href="global.html">GLOBAL</a>
+    <a href="offer.html">OFFER</a>
+    <a href="special.html">PROJECT</a>
+    <a href="contact.html">CONTACT</a>
+    <a href="support.html">SUPPORT</a>
   </div>
   <div class="page-hero">
     <div class="breadcrumb"><a href="index.html">HOME</a> / NEWS・活動</div>
@@ -83,7 +97,14 @@
     document.getElementById('catRow').onclick=e=>{if(e.target.dataset.c){fc=e.target.dataset.c;document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('active',b===e.target));apply();}};
     document.getElementById('yrRow').onclick=e=>{if(e.target.dataset.y){fy=e.target.dataset.y;document.querySelectorAll('.yr').forEach(b=>b.classList.toggle('active',b===e.target));apply();}};
     document.getElementById('q').oninput=e=>{fq=e.target.value.toLowerCase().trim();apply();};
-    more.onclick=render;apply();
+    more.onclick=render;
+    const urlCat=new URLSearchParams(location.search).get('cat');
+    if(urlCat){fc=urlCat;document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('active',b.dataset.c===urlCat));}
+    apply();
+    document.querySelectorAll('.lang-switcher').forEach(function(s){
+      s.querySelector('.lang-btn').addEventListener('click',function(e){e.stopPropagation();s.classList.toggle('open')});
+    });
+    document.addEventListener('click',function(){document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')})});
   </script>
   <script src="/theme.js"></script>
 </body>
