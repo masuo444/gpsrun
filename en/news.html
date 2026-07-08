@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>try{if(localStorage.getItem("gpsrun-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+  <link rel="stylesheet" href="/theme.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News &amp; Activities Archive | GPS RUNNER Naoki Shimizu</title>
+  <meta name="description" content="Activity archive of GPS Runner Naoki Shimizu — corporate collaborations, talks, events, media features and international projects since 2019.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/archive.css">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="GPS RUNNER 志水直樹">
+  <meta property="og:title" content="News &amp; Activities Archive | GPS RUNNER Naoki Shimizu">
+  <meta property="og:description" content="Browse all activities since 2019 by year and category.">
+  <meta property="og:url" content="https://www.gps-run.com/en/news.html">
+  <meta property="og:image" content="https://www.gps-run.com/images/ogp.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="canonical" href="https://www.gps-run.com/en/news.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="alternate" hreflang="ja" href="https://www.gps-run.com/news.html">
+  <link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/news.html">
+  <link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/news.html">
+</head>
+<body>
+  <header id="header">
+    <a href="/en/index.html" class="logo"><img src="/3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"><div class="logo-text">GPS <span>RUNNER</span></div></a>
+    <nav>
+      <a href="/en/index.html">HOME</a>
+      <a href="/en/arts.html">ARTS</a>
+      <a href="/en/news.html" class="active">NEWS</a>
+      <a href="/en/profile.html">PROFILE</a>
+      <a href="/en/offer.html">OFFER</a>
+      <a href="/en/contact.html">CONTACT</a>
+      <a href="/en/support.html" class="nav-cta">SUPPORT</a>
+      <div class="lang-switcher">
+        <button class="lang-btn">🌐 EN ▾</button>
+        <div class="lang-menu">
+          <a href="/news.html">日本語</a>
+          <a href="/en/news.html" class="lang-active">English</a>
+          <a href="/es/news.html">Español</a>
+        </div>
+      </div>
+    </nav>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/en/index.html">HOME</a>
+    <a href="/en/arts.html">ARTS</a>
+    <a href="/en/news.html">NEWS</a>
+    <a href="/en/profile.html">PROFILE</a>
+    <a href="/en/global.html">GLOBAL</a>
+    <a href="/en/offer.html">OFFER</a>
+    <a href="/en/special.html">PROJECT</a>
+    <a href="/en/contact.html">CONTACT</a>
+    <a href="/en/support.html">SUPPORT</a>
+  </div>
+  <div class="page-hero">
+    <div class="breadcrumb"><a href="/en/index.html">HOME</a> / News &amp; Activities</div>
+    <p class="section-label">NEWS / ACTIVITIES</p>
+    <h1>Activity Archive</h1>
+    <p>Browse activities since 2019, filtered by year, category, and keyword.</p>
+  </div>
+  <section>
+    <div class="filters">
+      <div class="filter-row" id="catRow"><button class="chip cat active" data-c="すべて">All</button><button class="chip cat" data-c="自治体コラボ">Municipal</button><button class="chip cat" data-c="各種団体コラボ">Organizations</button><button class="chip cat" data-c="商店街コラボ">Shopping District</button><button class="chip cat" data-c="企業コラボ">Corporate</button><button class="chip cat" data-c="講演・教育">Talks & Education</button><button class="chip cat" data-c="メディア">Media</button><button class="chip cat" data-c="海外プロジェクト">International</button><button class="chip cat" data-c="イベント">Events</button><button class="chip cat" data-c="ゴミ拾い企画">Cleanup</button><button class="chip cat" data-c="震災復興">Disaster Recovery</button><button class="chip cat" data-c="お知らせ">News</button></div>
+      <div class="filter-row" id="yrRow"><button class="chip yr active" data-y="all">All Years</button><button class="chip yr" data-y="2026">2026</button><button class="chip yr" data-y="2025">2025</button><button class="chip yr" data-y="2024">2024</button><button class="chip yr" data-y="2023">2023</button><button class="chip yr" data-y="2022">2022</button><button class="chip yr" data-y="2021">2021</button><button class="chip yr" data-y="2020">2020</button><button class="chip yr" data-y="2019">2019</button></div>
+      <div class="filter-row"><input type="search" class="search-box" id="q" placeholder="Search by keyword (e.g. talk, Co-op, Peru, media…)"></div>
+    </div>
+    <div class="result-count" id="count"></div>
+    <div class="container"><div class="grid" id="grid"></div></div>
+    <button class="loadmore" id="more" style="display:none">Load more</button>
+  </section>
+  <footer><p><a href="/en/index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu. &middot; <a href="/tokushoho.html">Legal Notice</a> &middot; <a href="/en/privacy.html">Privacy Policy</a></p></footer>
+  <script>
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)});
+    document.getElementById('hamburger').addEventListener('click',function(){this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('active')});
+  </script>
+  <script src="/chatbot.js" data-knowledge="/en/knowledge.json" data-primary-color="#FFE500" data-greeting="Hi! Feel free to ask anything about GPS Runner Naoki Shimizu."></script>
+  <script src="/news-data.js"></script>
+  <script>
+
+    let fc="すべて",fy="all",fq="",shown=0,STEP=24,filtered=[];
+    const grid=document.getElementById('grid'),count=document.getElementById('count'),more=document.getElementById('more');
+    const CATLABEL={"すべて": "All", "自治体コラボ": "Municipal", "各種団体コラボ": "Organizations", "商店街コラボ": "Shopping District", "企業コラボ": "Corporate", "講演・教育": "Talks & Education", "メディア": "Media", "海外プロジェクト": "International", "イベント": "Events", "ゴミ拾い企画": "Cleanup", "震災復興": "Disaster Recovery", "お知らせ": "News"};
+    function card(a){
+      const img=a.img?`<img src="/${a.img}" alt="${a.t_en||a.t}" loading="lazy" onerror="this.parentNode.innerHTML='<div class=\'card-noimg\'>GPS RUNNER</div>'">`:`<div class="card-noimg">GPS RUNNER</div>`;
+      return `<a class="card" href="/news/${a.s}.html"><div class="card-img">${img}</div><div class="card-body"><div class="card-meta"><span class="card-tag">${CATLABEL[a.c]||a.c}</span>${a.g?'<span class="card-tag gomi">Cleanup</span>':''}<span class="card-date">${a.d.replace(/-/g,'.')}</span></div><h3>${a.t_en||a.t}</h3><p>${a.e_en||a.e}</p></div></a>`;
+    }
+    function apply(){
+      filtered=ACTS.filter(a=>(fc==="すべて"||a.c===fc||(fc==="ゴミ拾い企画"&&a.g))&&(fy==="all"||a.d.startsWith(fy))&&(!fq||((a.t_en||a.t)+(a.e_en||a.e)+(CATLABEL[a.c]||a.c)+(a.g?"Cleanup":"")).toLowerCase().includes(fq)));
+      shown=0;grid.innerHTML='';count.textContent=`${filtered.length} results`;render();
+    }
+    function render(){
+      const next=filtered.slice(shown,shown+STEP);
+      grid.insertAdjacentHTML('beforeend',next.map(card).join(''));
+      shown+=next.length;more.style.display=shown<filtered.length?'block':'none';
+    }
+    document.getElementById('catRow').onclick=e=>{if(e.target.dataset.c){fc=e.target.dataset.c;document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('active',b===e.target));apply();}};
+    document.getElementById('yrRow').onclick=e=>{if(e.target.dataset.y){fy=e.target.dataset.y;document.querySelectorAll('.yr').forEach(b=>b.classList.toggle('active',b===e.target));apply();}};
+    document.getElementById('q').oninput=e=>{fq=e.target.value.toLowerCase().trim();apply();};
+    more.onclick=render;
+    const urlCat=new URLSearchParams(location.search).get('cat');
+    if(urlCat){fc=urlCat;document.querySelectorAll('.cat').forEach(b=>b.classList.toggle('active',b.dataset.c===urlCat));}
+    apply();
+    document.querySelectorAll('.lang-switcher').forEach(function(s){
+      s.querySelector('.lang-btn').addEventListener('click',function(e){e.stopPropagation();s.classList.toggle('open')});
+    });
+    document.addEventListener('click',function(){document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')})});
+  </script>
+  <script src="/theme.js"></script>
+</body>
+</html>
