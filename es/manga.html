@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <script>try{if(localStorage.getItem("gpsrun-theme")==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}</script>
+  <link rel="stylesheet" href="/theme.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manga: Corredor GPS Naoki Shimizu | GPS RUNNER</title>
+  <meta name="description" content="La historia de Naoki Shimizu, el primer «Corredor GPS» profesional del mundo, en un manga de 32 páginas. De maestro de primaria a correr por 12 países dibujando sobre la Tierra. Lectura gratuita.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    :root{--yellow:#FFE500;--black:#0A0A0A;--dark:#141414;--gray-900:#1A1A1A;--gray-800:#2A2A2A;--gray-700:#3A3A3A;--gray-400:#B4B4B4;--gray-300:#DCDCDC;--white:#FFFFFF;--font-en:'Inter',sans-serif;--font-ja:'Noto Sans JP',sans-serif}
+    html{scroll-behavior:smooth;font-size:18px}
+    body{font-family:var(--font-en);background:var(--black);color:var(--white);line-height:1.9;overflow-x:hidden}
+    header{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 2rem;height:72px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.85);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,229,0,0.1)}
+    header.scrolled{background:rgba(10,10,10,0.95);border-bottom-color:rgba(255,229,0,0.3)}
+    .logo{display:flex;align-items:center;gap:.75rem;text-decoration:none;color:var(--white)}
+    .logo-img{height:40px;width:auto;display:block;border-radius:8px}
+    .logo-text{font-family:var(--font-en);font-weight:700;font-size:1.1rem;letter-spacing:.08em}
+    .logo-text span{color:var(--yellow)}
+    nav{display:flex;align-items:center;gap:2rem}
+    nav a{color:var(--gray-400);text-decoration:none;font-size:.95rem;font-weight:500;letter-spacing:.05em;transition:color .3s;font-family:var(--font-en)}
+    nav a:hover,nav a.active{color:var(--yellow)}
+    .nav-cta{background:var(--yellow);color:var(--black)!important;padding:.5rem 1.25rem;border-radius:100px;font-weight:600!important}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none}
+    .hamburger span{width:24px;height:2px;background:var(--white);transition:all .3s;display:block}
+    .hamburger.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+    .hamburger.active span:nth-child(2){opacity:0}
+    .hamburger.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,0.98);flex-direction:column;align-items:center;justify-content:center;gap:1.6rem}
+    .mobile-nav.active{display:flex}
+    .mobile-nav a{color:var(--white);text-decoration:none;font-size:1.2rem;font-weight:600}
+    .mobile-nav a:hover{color:var(--yellow)}
+    .lang-switcher{position:relative;display:inline-block}
+    .lang-btn{background:none;border:1px solid var(--gray-700);color:var(--gray-400);padding:.28rem .7rem;border-radius:100px;font-size:.75rem;font-weight:700;cursor:pointer;font-family:var(--font-en);letter-spacing:.05em;transition:all .3s;display:inline-flex;align-items:center;gap:.3rem}
+    .lang-btn:hover,.lang-switcher.open .lang-btn{border-color:var(--yellow);color:var(--yellow)}
+    .lang-menu{display:none;position:absolute;top:calc(100% + 8px);right:0;background:var(--gray-900);border:1px solid var(--gray-800);border-radius:12px;padding:.5rem;min-width:110px;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.4)}
+    .lang-switcher.open .lang-menu{display:block}
+    .lang-menu a{display:block;padding:.4rem .75rem;color:var(--gray-400);text-decoration:none;font-size:.82rem;font-weight:600;border-radius:8px;transition:all .2s;font-family:var(--font-en)}
+    .lang-menu a:hover{background:var(--gray-800);color:var(--yellow)}
+    .lang-menu a.lang-active{color:var(--yellow);pointer-events:none}
+    .header-actions{display:flex;align-items:center;gap:.5rem}
+    .mobile-lang{display:none}
+    footer{background:var(--dark);border-top:1px solid var(--gray-800);padding:2rem;text-align:center}
+    footer p{font-size:.85rem;color:var(--gray-700);font-family:var(--font-en)}
+    footer a{color:var(--gray-400);text-decoration:none}
+    footer a:hover{color:var(--yellow)}
+    @media(max-width:960px){.mobile-lang{display:inline-block}}
+    @media(max-width:900px){nav{display:none}.hamburger{display:flex}}
+    @media(max-width:600px){header{padding:0 1.25rem}}
+  </style>
+  <link rel="stylesheet" href="/manga-viewer.css">
+
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="GPS RUNNER Naoki Shimizu">
+  <meta property="og:title" content="Manga: Corredor GPS Naoki Shimizu (32 páginas, gratis)">
+  <meta property="og:description" content="De maestro de primaria al primer «Corredor GPS» profesional del mundo. La historia del hombre que dibuja sobre la Tierra corriendo, en 32 páginas.">
+  <meta property="og:url" content="https://www.gps-run.com/es/manga.html">
+  <meta property="og:image" content="https://www.gps-run.com/manga/cover-es.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Manga: Corredor GPS Naoki Shimizu (32 páginas, gratis)">
+  <meta name="twitter:description" content="De maestro de primaria al primer «Corredor GPS» profesional del mundo. La historia del hombre que dibuja sobre la Tierra corriendo, en 32 páginas.">
+  <meta name="twitter:image" content="https://www.gps-run.com/manga/cover-es.jpg">
+  <meta name="keywords" content="Naoki Shimizu,Corredor GPS,manga,cómic,arte GPS,GPS art,Perú,gratis">
+  <meta name="author" content="Naoki Shimizu">
+  <link rel="canonical" href="https://www.gps-run.com/es/manga.html">
+  <link rel="alternate" hreflang="ja" href="https://www.gps-run.com/manga.html">
+  <link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/manga.html">
+  <link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/manga.html">
+  <link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/manga.html">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="/manga/es/01.webp">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ComicStory",
+    "url": "https://www.gps-run.com/es/manga.html",
+    "name": "Corredor GPS Naoki Shimizu",
+    "alternativeHeadline": "Creando una cultura de carrera «sin competencia»",
+    "description": "Cómic oficial de 32 páginas sobre Naoki Shimizu, el primer «Corredor GPS» profesional del mundo.",
+    "inLanguage": "es",
+    "numberOfPages": 32,
+    "isAccessibleForFree": true,
+    "image": "https://www.gps-run.com/manga/cover-es.jpg",
+    "datePublished": "2026-05-01",
+    "author": {"@type":"Person","name":"Naoki Shimizu"},
+    "publisher": {"@type":"Organization","name":"FOMUS Creative Studio"},
+    "about": {
+      "@type": "Person",
+      "@id": "https://www.gps-run.com/#person",
+      "name": "Naoki Shimizu",
+      "jobTitle": "Corredor GPS / Artista GPS"
+    }
+  }
+  </script>
+</head>
+<body>
+  <header id="header">
+    <a href="/es/index.html" class="logo"><img src="/3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"><div class="logo-text">GPS <span>RUNNER</span></div></a>
+    <nav>
+      <a href="/es/index.html">HOME</a>
+      <a href="/es/manga.html" class="active">MANGA</a>
+      <a href="/es/arts.html">ARTS</a>
+      <a href="/es/news.html">NEWS</a>
+      <a href="/es/profile.html">PROFILE</a>
+      <a href="/es/offer.html">OFFER</a>
+      <a href="/es/contact.html">CONTACT</a>
+      <a href="/es/support.html" class="nav-cta">SUPPORT</a>
+      <div class="lang-switcher">
+        <button class="lang-btn">🌐 ES ▾</button>
+        <div class="lang-menu">
+          <a href="/manga.html" data-mangahref="/manga.html">日本語</a>
+          <a href="/en/manga.html" data-mangahref="/en/manga.html">English</a>
+          <a href="/es/manga.html" class="lang-active">Español</a>
+        </div>
+      </div>
+    </nav>
+    <div class="header-actions">
+      <div class="lang-switcher mobile-lang">
+        <button class="lang-btn">🌐 ES ▾</button>
+        <div class="lang-menu">
+          <a href="/manga.html" data-mangahref="/manga.html">日本語</a>
+          <a href="/en/manga.html" data-mangahref="/en/manga.html">English</a>
+          <a href="/es/manga.html" class="lang-active">Español</a>
+        </div>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="/es/index.html">HOME</a>
+    <a href="/es/manga.html">MANGA</a>
+    <a href="/es/arts.html">ARTS</a>
+    <a href="/es/news.html">NEWS</a>
+    <a href="/es/profile.html">PROFILE</a>
+    <a href="/es/global.html">GLOBAL</a>
+    <a href="/es/offer.html">OFFER</a>
+    <a href="/es/special.html">PROJECT</a>
+    <a href="/es/contact.html">CONTACT</a>
+    <a href="/es/support.html">SUPPORT</a>
+  </div>
+
+  <main class="mv">
+    <!-- HERO -->
+    <section class="mv-hero">
+      <div class="mv-hero-bg" style="background-image:url('/manga/es/01.webp')"></div>
+      <div class="mv-hero-inner">
+        <div>
+          <p class="mv-eyebrow">CÓMIC OFICIAL</p>
+          <h1>Corredor GPS<br>Naoki Shimizu</h1>
+          <p class="mv-tagline">Dejó su puesto de maestro de primaria y creó una profesión que no existía en ningún lugar del mundo: «Corredor GPS».<br>La historia del hombre que dibuja sobre la Tierra corriendo, hasta crear una cultura de carrera «sin competencia».</p>
+          <div class="mv-facts">
+            <span class="mv-fact">32 páginas</span>
+            <span class="mv-fact">Unos 5 minutos</span>
+            <span class="mv-fact">Gratis</span>
+          </div>
+          <div class="mv-cta-row">
+            <a href="#p1" class="mv-btn mv-btn-primary" data-mv-start="1">Leer desde el principio</a>
+            <a href="/es/profile.html" class="mv-btn mv-btn-ghost">Ver el perfil</a>
+          </div>
+        </div>
+        <div class="mv-cover-wrap">
+          <img class="mv-cover" src="/manga/es/01.webp" width="848" height="1264" alt="Portada de «Corredor GPS Naoki Shimizu»" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <!-- Barra -->
+    <div class="mv-bar">
+      <div class="mv-track" id="mvTrack" role="progressbar" aria-label="Progreso de lectura" aria-valuemin="1" aria-valuemax="32" aria-valuenow="1"><span class="mv-track-fill" id="mvFill"></span></div>
+      <div class="mv-bar-inner">
+        <span class="mv-count"><b id="mvCur">1</b> / 32</span>
+        <div class="mv-modes" role="group" aria-label="Modo de lectura">
+          <button type="button" class="mv-mode" data-mode="scroll" aria-pressed="true">Desplazamiento</button>
+          <button type="button" class="mv-mode" data-mode="page" aria-pressed="false">Página a página</button>
+        </div>
+        <div class="mv-tools">
+          <button type="button" class="mv-icon" id="mvFs" aria-label="Pantalla completa" title="Pantalla completa"><svg viewBox="0 0 24 24"><path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3"/></svg></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Lector -->
+    <div class="mv-reader" id="mvReader" data-mode="scroll"></div>
+
+    <div class="mv-pager" id="mvPager">
+      <button type="button" id="mvPrev">← Anterior</button>
+      <span class="mv-jump"><input type="number" id="mvJump" min="1" max="32" value="1" aria-label="Número de página"> / 32</span>
+      <button type="button" id="mvNext">Siguiente →</button>
+    </div>
+
+    <!-- CTA final -->
+    <section class="mv-end">
+      <div class="mv-end-card">
+        <p class="mv-eyebrow">GRACIAS POR LEER</p>
+        <h2>Esta historia todavía continúa.</h2>
+        <p>En 2026, Naoki Shimizu partió con un billete solo de ida para recorrer 11 países de América.<br>Descubre también sus obras de arte GPS y su actividad más reciente.</p>
+        <div class="mv-end-btns">
+          <a href="/es/support.html" class="mv-btn mv-btn-primary">Apoyar su actividad</a>
+          <a href="/es/arts.html" class="mv-btn mv-btn-ghost">Ver las obras</a>
+          <a href="/es/offer.html" class="mv-btn mv-btn-ghost">Conferencias y encargos</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><p><a href="/es/index.html">GPS RUNNER</a> &middot; &copy; 2026 Naoki Shimizu. &middot; <a href="/es/privacy.html">Política de privacidad</a></p></footer>
+
+  <script>
+    window.addEventListener('scroll',function(){document.getElementById('header').classList.toggle('scrolled',window.scrollY>50)});
+    document.getElementById('hamburger').addEventListener('click',function(){this.classList.toggle('active');document.getElementById('mobileNav').classList.toggle('active')});
+    document.querySelectorAll('.lang-switcher').forEach(function(s){
+      s.querySelector('.lang-btn').addEventListener('click',function(e){e.stopPropagation();s.classList.toggle('open')});
+    });
+    document.addEventListener('click',function(){
+      document.querySelectorAll('.lang-switcher').forEach(function(s){s.classList.remove('open')});
+    });
+  </script>
+  <script>
+    window.MANGA_CONFIG={lang:'es',base:'/manga/es/',pages:32,w:848,h:1264,i18n:{alt:'«Corredor GPS Naoki Shimizu», página {n}'}};
+  </script>
+  <script src="/manga-viewer.js"></script>
+  <script src="/chatbot.js" data-knowledge="/es/knowledge.json" data-primary-color="#FFE500" data-greeting="¡Hola! Pregúntame lo que quieras sobre GPS RUNNER Naoki Shimizu 😊"></script>
+  <script src="/theme.js"></script>
+</body>
+</html>

@@ -114,6 +114,17 @@
     .header-actions{display:flex;align-items:center;gap:.5rem}
     .mobile-lang{display:none}
     @media(max-width:960px){.mobile-lang{display:inline-block}}
+
+    /* ===== MANGA STRIP ===== */
+    .mstrip{max-width:900px;margin:1.5rem auto 0;padding:0 2rem}
+    .mstrip a{display:flex;align-items:center;gap:1.1rem;padding:.8rem 1.1rem;border-radius:100px;border:1px solid var(--gray-800);background:linear-gradient(100deg,rgba(255,229,0,.08),transparent 55%),var(--gray-900);text-decoration:none;color:inherit;transition:border-color .3s,transform .3s}
+    .mstrip a:hover{border-color:rgba(255,229,0,.45);transform:translateY(-2px)}
+    .mstrip img{width:42px;height:auto;border-radius:6px;flex-shrink:0;box-shadow:0 4px 14px rgba(0,0,0,.45)}
+    .mstrip .mstrip-txt{flex:1;min-width:0;text-align:left}
+    .mstrip strong{display:block;font-size:.95rem;font-weight:700;line-height:1.5}
+    .mstrip span{display:block;font-size:.78rem;color:var(--gray-400);line-height:1.6}
+    .mstrip em{flex-shrink:0;font-style:normal;font-size:.82rem;font-weight:700;color:var(--yellow)}
+    @media(max-width:600px){.mstrip{padding:0 1.25rem}.mstrip em{display:none}}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
@@ -162,7 +173,7 @@
     <a href="index.html" class="logo"><img src="3131553a-7a69-4460-b31b-8082b39b5b1c.jpeg" alt="NAOKI SHIMIZU" class="logo-img"><div class="logo-text">GPS <span>RUNNER</span></div></a>
     <nav>
       <a href="index.html">HOME</a>
-      <a href="arts.html">ARTS</a>
+      <a href="manga.html">MANGA</a><a href="arts.html">ARTS</a>
       <a href="news.html">NEWS</a>
       <a href="profile.html">PROFILE</a>
       <a href="offer.html">OFFER</a>
@@ -191,7 +202,7 @@
   </header>
   <div class="mobile-nav" id="mobileNav">
     <a href="index.html">HOME</a>
-    <a href="arts.html">ARTS</a>
+    <a href="manga.html">MANGA</a><a href="arts.html">ARTS</a>
       <a href="news.html">NEWS</a>
 
     <a href="profile.html">PROFILE</a>
@@ -209,6 +220,15 @@
     <p>GPSランナー ── 走って地図に絵を描く、世界初の職業。</p>
   </div>
 
+
+  <!-- MANGA STRIP -->
+  <div class="mstrip">
+    <a href="/manga.html">
+      <img src="/manga/ja/01.webp" width="848" height="1264" alt="漫画『GPSランナー 志水直樹』表紙" loading="lazy" decoding="async">
+      <span class="mstrip-txt"><strong>この人物の歩みを、漫画で読む</strong><span>全32ページの公式コミック ・ 約5分 ・ 無料</span></span>
+      <em>読む →</em>
+    </a>
+  </div>
   <!-- PROFILE -->
   <section>
     <div class="container">

@@ -14,3 +14,6 @@ gps_art_works_complete.json
 !images/**/*.jpeg
 !images/**/*.jpg
 !images/**/*.png
+
+# 漫画の元PNG（変換済みの /manga/*.webp のみ配信する）
+english-manga/

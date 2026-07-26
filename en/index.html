@@ -137,6 +137,27 @@
     .lang-menu a{display:block;padding:.4rem .75rem;color:var(--gray-400);text-decoration:none;font-size:.82rem;font-weight:600;border-radius:8px;transition:all .2s;font-family:var(--font-en)}
     .lang-menu a:hover{background:var(--gray-800);color:var(--yellow)}
     .lang-menu a.lang-active{color:var(--yellow);pointer-events:none}
+
+    /* ===== MANGA BANNER ===== */
+    .mbn{padding:3.5rem 2rem 0}
+    .mbn-inner{position:relative;overflow:hidden;max-width:1080px;margin:0 auto;display:grid;grid-template-columns:190px 1fr;gap:2.5rem;align-items:center;padding:2.25rem 2.5rem;border-radius:24px;border:1px solid var(--gray-800);background:linear-gradient(115deg,rgba(255,229,0,.09),transparent 48%),var(--gray-900);text-decoration:none;color:inherit;transition:border-color .3s,transform .3s}
+    .mbn-inner:hover{border-color:rgba(255,229,0,.45);transform:translateY(-3px)}
+    .mbn-inner::before{content:"";position:absolute;left:-70px;top:-90px;width:340px;height:340px;background:radial-gradient(circle,rgba(255,229,0,.14),transparent 70%);pointer-events:none}
+    .mbn-cover{position:relative;display:block;width:190px;max-width:100%;height:auto;border-radius:12px;box-shadow:0 18px 44px rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.08);transition:transform .4s}
+    .mbn-inner:hover .mbn-cover{transform:scale(1.03) rotate(-1deg)}
+    .mbn-body{position:relative}
+    .mbn-eyebrow{font-family:var(--font-en);font-size:.75rem;font-weight:700;letter-spacing:.2em;color:var(--yellow);margin-bottom:.7rem}
+    .mbn-body h2{font-size:clamp(1.3rem,2.8vw,1.9rem);font-weight:800;line-height:1.45;margin-bottom:.6rem}
+    .mbn-body p{font-size:.95rem;color:var(--gray-400);line-height:1.85;margin-bottom:1.3rem}
+    .mbn-meta{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.4rem}
+    .mbn-meta span{font-size:.75rem;font-weight:600;padding:.3rem .8rem;border-radius:100px;border:1px solid var(--gray-700);color:var(--gray-400)}
+    .mbn-go{display:inline-flex;align-items:center;gap:.5rem;background:var(--yellow);color:#0A0A0A;font-weight:700;font-size:.92rem;padding:.75rem 1.7rem;border-radius:100px}
+    @media(max-width:820px){
+      .mbn{padding:2.5rem 1.25rem 0}
+      .mbn-inner{grid-template-columns:1fr;gap:1.5rem;padding:1.75rem 1.5rem;text-align:center;justify-items:center}
+      .mbn-cover{width:150px}
+      .mbn-meta{justify-content:center}
+    }
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER Naoki Shimizu">
@@ -164,7 +185,7 @@
     </a>
     <nav>
       <a href="/en/index.html">HOME</a>
-      <a href="/en/arts.html">ARTS</a>
+      <a href="/en/manga.html">MANGA</a><a href="/en/arts.html">ARTS</a>
       <a href="/en/news.html">NEWS</a>
       <a href="/en/profile.html">PROFILE</a>
       <a href="/en/global.html">GLOBAL</a>
@@ -188,7 +209,7 @@
 
   <div class="mobile-nav" id="mobileNav">
     <a href="/en/index.html">HOME</a>
-    <a href="/en/arts.html">ARTS</a>
+    <a href="/en/manga.html">MANGA</a><a href="/en/arts.html">ARTS</a>
       <a href="/en/news.html">NEWS</a>
     <a href="/en/profile.html">PROFILE</a>
     <a href="/en/global.html">GLOBAL</a>
@@ -236,6 +257,20 @@
     </div>
   </section>
 
+
+  <!-- MANGA BANNER -->
+  <section class="mbn">
+    <a class="mbn-inner" href="/en/manga.html">
+      <img class="mbn-cover" src="/manga/en/01.webp" width="848" height="1264" alt="Cover of the GPS Runner comic" loading="lazy" decoding="async">
+      <div class="mbn-body">
+        <p class="mbn-eyebrow">OFFICIAL COMIC — FREE TO READ</p>
+        <h2>Why he started running,<br>told as a comic.</h2>
+        <p>From elementary school teacher to the world's first professional GPS Runner.<br>His story in a 32-page official comic.</p>
+        <div class="mbn-meta"><span>32 pages</span><span>5-minute read</span><span>Free</span></div>
+        <span class="mbn-go">Read the comic →</span>
+      </div>
+    </a>
+  </section>
   <!-- ACTIVITIES -->
   <section class="activities" id="activities">
     <div class="container">

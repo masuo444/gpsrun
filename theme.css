@@ -5,6 +5,27 @@
 html{overflow-x:hidden;overflow-y:scroll;scrollbar-gutter:stable}
 body{overflow-x:visible!important}
 
+/* ===== ナビ項目が増えた分の詰め（MANGA 追加対応） =====
+   多言語ページは最大10項目あり、標準の gap:2rem だとロゴに接触・溢れする。 */
+@media(min-width:901px){
+  header{gap:1.5rem}
+  nav{gap:1.25rem!important}
+  nav a{font-size:.88rem!important}
+}
+/* ノートPC幅ではさらに詰める（多言語ページは10項目あるため） */
+@media(min-width:901px) and (max-width:1400px){
+  header{padding:0 1.25rem!important;gap:1rem}
+  nav{gap:.85rem!important}
+  nav a{font-size:.8rem!important}
+  nav a.nav-cta{padding:.45rem .9rem!important}
+}
+/* タブレット横向き（〜1150px）はロゴを画像だけにして幅を確保する */
+@media(min-width:901px) and (max-width:1150px){
+  nav{gap:.6rem!important}
+  nav a{font-size:.74rem!important}
+  .logo-text{display:none}
+}
+
 /* ===== テーマ切替（ダーク既定 / ライト上書き）＋ トグルボタン ===== */
 
 /* トグルボタン（両テーマ共通・変数で追従） */
