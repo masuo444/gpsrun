@@ -404,13 +404,6 @@
                 <input id="name" name="名前" type="text" placeholder="例：山田 太郎" required>
               </div>
               <div>
-                <label for="email">メールアドレス</label>
-                <input id="email" name="メールアドレス" type="email" placeholder="example@example.com" required>
-              </div>
-            </div>
-
-            <div class="field-group">
-              <div>
                 <label for="type">お問い合わせ種類</label>
                 <select id="type" name="お問い合わせ種類" required>
                   <option value="">選択してください</option>
@@ -420,6 +413,20 @@
                   <option value="その他">その他</option>
                 </select>
               </div>
+            </div>
+
+            <div class="field-group">
+              <div>
+                <label for="email">メールアドレス</label>
+                <input id="email" name="メールアドレス" type="email" placeholder="example@example.com" required>
+              </div>
+              <div>
+                <label for="emailConfirm">メールアドレス（確認）</label>
+                <input id="emailConfirm" type="email" placeholder="確認のため、もう一度ご入力ください" autocomplete="off" required>
+              </div>
+            </div>
+
+            <div class="field-group">
               <div>
                 <label for="phone">電話番号<span class="optional">任意</span></label>
                 <input id="phone" name="電話番号" type="tel" inputmode="tel" placeholder="例：090-1234-5678">
@@ -472,6 +479,13 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      const emailConfirm = document.getElementById('emailConfirm');
+      if (document.getElementById('email').value.trim().toLowerCase() !== emailConfirm.value.trim().toLowerCase()) {
+        status.textContent = 'メールアドレスが一致しません。もう一度ご確認ください。';
+        status.classList.add('error');
+        emailConfirm.focus();
+        return;
+      }
       submitBtn.disabled = true;
       submitBtn.textContent = '送信中...';
       status.textContent = '';
