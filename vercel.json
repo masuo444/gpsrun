@@ -3753,11 +3753,6 @@
       "permanent": true
     },
     {
-      "source": "/en",
-      "destination": "/en/",
-      "permanent": true
-    },
-    {
       "source": "/zh",
       "destination": "/",
       "permanent": true
@@ -3769,11 +3764,6 @@
     },
     {
       "source": "/sitemap.html",
-      "destination": "/sitemap.xml",
-      "permanent": true
-    },
-    {
-      "source": "/sitemap.xml",
       "destination": "/sitemap.xml",
       "permanent": true
     },
