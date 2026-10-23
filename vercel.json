@@ -68,6 +68,39 @@
   "rewrites": [],
   "redirects": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.gps-run.com"
+        }
+      ],
+      "destination": "https://gps-run.com/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "official.gps-run.com"
+        }
+      ],
+      "destination": "https://gps-run.com/",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "gpsrun.vercel.app"
+        }
+      ],
+      "destination": "https://gps-run.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [
         {
