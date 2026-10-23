@@ -6,11 +6,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Works | GPS RUNNER Naoki Shimizu</title>
-  <meta name="description" content="GPS art gallery of GPS Runner Naoki Shimizu. Over 1,600 GPS artworks created across 12 countries.">
-  <link rel="alternate" hreflang="ja" href="https://www.gps-run.com/arts.html">
-  <link rel="alternate" hreflang="en" href="https://www.gps-run.com/en/arts.html">
-  <link rel="alternate" hreflang="es" href="https://www.gps-run.com/es/arts.html">
-  <link rel="alternate" hreflang="x-default" href="https://www.gps-run.com/arts.html">
+  <meta name="description" content="GPS art gallery of GPS Runner Naoki Shimizu. Over 1,700 GPS artworks created across 26 countries.">
+  <link rel="alternate" hreflang="ja" href="https://gps-run.com/arts.html">
+  <link rel="alternate" hreflang="en" href="https://gps-run.com/en/arts.html">
+  <link rel="alternate" hreflang="es" href="https://gps-run.com/es/arts.html">
+  <link rel="alternate" hreflang="x-default" href="https://gps-run.com/arts.html">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -128,12 +128,12 @@
     @media(max-width:960px){.mobile-lang{display:inline-block}}
   </style>
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://www.gps-run.com/en/arts.html">
+  <meta property="og:url" content="https://gps-run.com/en/arts.html">
   <meta property="og:title" content="Works | GPS RUNNER Naoki Shimizu">
-  <meta property="og:description" content="GPS art gallery of GPS Runner Naoki Shimizu — over 1,600 artworks across 12 countries.">
-  <meta property="og:image" content="https://www.gps-run.com/images/ogp.jpg">
+  <meta property="og:description" content="GPS art gallery of GPS Runner Naoki Shimizu — over 1,700 artworks across 26 countries.">
+  <meta property="og:image" content="https://gps-run.com/images/ogp.jpg">
   <meta property="og:locale" content="en_US">
-  <link rel="canonical" href="https://www.gps-run.com/en/arts.html">
+  <link rel="canonical" href="https://gps-run.com/en/arts.html">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -185,11 +185,11 @@
   <div class="page-hero">
     <p class="section-label">GPS ART GALLERY</p>
     <h1>Works</h1>
-    <p>The Earth is my canvas — running to draw. A curated selection of GPS artworks created across 12 countries.</p>
+    <p>The Earth is my canvas — running to draw. A curated selection of GPS artworks created across 26 countries.</p>
     <div class="stats-bar">
       <div class="stat"><div class="stat-number" id="totalCount">--</div><div class="stat-label">artworks</div></div>
-      <div class="stat"><div class="stat-number">12<small> countries</small></div><div class="stat-label">created in</div></div>
-      <div class="stat"><div class="stat-number">19,000<small>km</small></div><div class="stat-label">total distance</div></div>
+      <div class="stat"><div class="stat-number">26<small> countries</small></div><div class="stat-label">created in</div></div>
+      <div class="stat"><div class="stat-number">20,000<small>km</small></div><div class="stat-label">total distance</div></div>
     </div>
   </div>
 
@@ -252,6 +252,7 @@
   <script>
     (function() {
       var works = WORKS_DATA;
+      function imgUrl(u) { return (u && !/^(https?:)?\/\//.test(u) && u.charAt(0) !== '/') ? '/' + u : u; }
       var filtered = [];
       var shown = 0;
       var PER_PAGE = 24;
@@ -342,7 +343,7 @@
         var ds = d.getFullYear() + '.' + String(d.getMonth()+1).padStart(2,'0');
         var ct = w.categories.join(' ');
         var cl = ct.indexOf('ILLUSTRATION')>=0?'ILLUSTRATION':(ct.indexOf('CALLIGRAPHY')>=0?'CALLIGRAPHY':'');
-        var src = w.medium_url || w.thumbnail_url || '';
+        var src = imgUrl(w.medium_url || w.thumbnail_url || '');
         el.innerHTML =
           '<div class="work-card-image">' +
             '<img src="'+src+'" alt="Naoki Shimizu GPS Art" loading="lazy">' +
@@ -376,6 +377,7 @@
       function renderLB(animate) {
         var w = filtered[lbIndex];
         if (!w) return;
+        setWorkParam(w);
         lbCtr.textContent = (lbIndex + 1) + ' / ' + filtered.length;
         lbPrev.classList.toggle('disabled', lbIndex === 0);
         lbNext.classList.toggle('disabled', lbIndex === filtered.length - 1);
@@ -393,12 +395,12 @@
           setContent(w);
         }
         [lbIndex - 1, lbIndex + 1].forEach(function(i) {
-          if (filtered[i]) { var pre = new Image(); pre.src = filtered[i].medium_url || filtered[i].full_image_url || ''; }
+          if (filtered[i]) { var pre = new Image(); pre.src = imgUrl(filtered[i].medium_url || filtered[i].full_image_url || ''); }
         });
       }
 
       function setContent(w) {
-        lbImg.src = w.medium_url || w.full_image_url || '';
+        lbImg.src = imgUrl(w.medium_url || w.full_image_url || '');
         lbImg.alt = w.title_en||w.title;
         document.getElementById('lbDate').textContent = w.date;
         document.getElementById('lbTitle').textContent = w.title_en||w.title;
@@ -443,6 +445,7 @@
       function closeLB() {
         document.getElementById('lightbox').classList.remove('active');
         document.body.style.overflow = '';
+        clearWorkParam();
       }
 
       window.onscroll = function(){ document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50); };
@@ -451,7 +454,25 @@
         document.getElementById('mobileNav').classList.toggle('active');
       };
 
+      // Deep link: arts.html?work=<id> opens that work
+      var baseTitle = document.title;
+      function setWorkParam(w) {
+        document.title = w.title + ' | ' + baseTitle;
+        if (history.replaceState) history.replaceState(null, '', location.pathname + '?work=' + w.id);
+      }
+      function clearWorkParam() {
+        document.title = baseTitle;
+        if (history.replaceState) history.replaceState(null, '', location.pathname);
+      }
+
       doFilter();
+      var workMatch = /[?&]work=(\d+)/.exec(location.search);
+      if (workMatch) {
+        var workId = parseInt(workMatch[1], 10);
+        for (var wi = 0; wi < filtered.length; wi++) {
+          if (filtered[wi].id === workId) { openLB(wi); break; }
+        }
+      }
     })();
   </script>
   <script>
