@@ -228,6 +228,9 @@
     .header-actions{display:flex;align-items:center;gap:.5rem}
     .mobile-lang{display:none}
     @media(max-width:960px){.mobile-lang{display:inline-block}}
+      .support-banner{padding:0 2rem 4rem}
+    .support-banner img{display:block;width:100%;max-width:1000px;height:auto;margin:0 auto;border-radius:20px;border:1px solid var(--gray-800)}
+    @media(max-width:768px){.support-banner{padding:0 1rem 3rem}.support-banner img{border-radius:12px}}
   </style>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="GPS RUNNER 志水直樹">
@@ -318,6 +321,11 @@
     </div>
   </section>
 
+  <!-- BANNER -->
+  <div class="support-banner fade-in">
+    <img src="images/support-banner.jpg" alt="GPSランナー 志水直樹 RUN FOR SMILE 全ての軌跡で世界の笑顔をつなぐ" width="1600" height="838" loading="lazy">
+  </div>
+
   <!-- WHY SUPPORT -->
   <section class="alt-bg">
     <div class="container">
@@ -331,16 +339,16 @@
             <div class="why-label">Global Scope</div>
             <div class="why-num">01</div>
           </div>
-          <h3>活動は世界規模</h3>
-          <p>11ヵ国を駆け巡る渡航費・宿泊費・装備費。一つひとつのプロジェクトに大きなコストがかかります。</p>
+          <h3>活動は世界へ広がる</h3>
+          <p>日本から世界へ。GPSアートを通じて人と人、地域と地域をつなぐ挑戦を続けています。新たな作品やプロジェクトを生み出すためには、渡航費・宿泊費・装備費など、さまざまな活動資金が必要です。</p>
         </div>
         <div class="why-card fade-in">
           <div class="why-card-top">
             <div class="why-label">Keep Creating</div>
             <div class="why-num">02</div>
           </div>
-          <h3>アートは止められない</h3>
-          <p>スポンサー料やイベント出演料だけでは賄いきれない。継続的な支援が、創作を止めない力になります。</p>
+          <h3>創作を未来へつなぐ</h3>
+          <p>一つの作品が、次の挑戦の始まりになる。スポンサーやイベント出演だけでは支えきれない創作活動を、継続的なサポートが後押しします。支援があるからこそ、新しいアイデアを形にし、挑戦を続けることができます。</p>
         </div>
         <div class="why-card fade-in">
           <div class="why-card-top">
@@ -348,15 +356,15 @@
             <div class="why-num">03</div>
           </div>
           <h3>一緒に走る仲間</h3>
-          <p>サポーターは「支援者」ではなく「チームメンバー」。活動レポートで旅を共有し、一緒に世界を走ります。</p>
+          <p>サポーターは、活動を見守るだけの「支援者」ではなく、一緒に夢を追いかけるチームメンバー。活動の裏側や作品が生まれる過程を共有しながら、一人では届かない場所へ、みんなで走っていきます。</p>
         </div>
         <div class="why-card fade-in">
           <div class="why-card-top">
             <div class="why-label">Next Generation</div>
             <div class="why-num">04</div>
           </div>
-          <h3>次世代につなぐ</h3>
-          <p>教え子や世界中の子どもたちに挑戦する楽しさを伝え、"競わない"ランニング文化を次の世代へ。</p>
+          <h3>次の世代へつなぐ</h3>
+          <p>走ることに、速さや順位だけではない楽しさを。教え子や世界中の子どもたちに、挑戦する喜びや自分らしく表現する面白さを伝え、「競わないランニング文化」を未来へつないでいきます。</p>
         </div>
       </div>
     </div>
@@ -408,7 +416,7 @@
             <li>毎月の活動レポート記事</li>
             <li>サポーターズウォールにお名前掲載（GOLD）</li>
             <li>限定写真・動画コンテンツ</li>
-            <li>年1回、限定応援グッズ詰め合わせ</li>
+            <li>毎年3月9日に、地球のどこかから感謝の動画をお届け</li>
             <li>プロジェクト中はレポート増刊も</li>
           </ul>
           <a href="contact.html" class="plan-btn plan-btn-outline" data-plan="personal-sponsor">このプランで応援する</a>
@@ -456,7 +464,7 @@
         <div class="q">&ldquo;</div>
         <p>
           僕は「走ること」を通じて、世界中の人に笑顔を届けたいと思っています。<br><br>
-          GPSアートは、競争ではなく、創造のために走るという新しい文化。<br>
+          GPSアートは、競争ではなく、日本中・世界中の心をつなぐために走るという新しい文化。<br>
           この活動を続けられているのは、応援してくださる皆さんのおかげです。<br><br>
           継続的にサポートしてくださる方がいるだけで、<br>
           「次はどんな作品を描こう」と新しい挑戦に踏み出せます。<br><br>
@@ -494,8 +502,8 @@
           <div class="faq-a"><p>ご登録いただいたメールアドレスにお届けします。プロジェクト進行中は臨時レポートが届くこともあります。</p></div>
         </div>
         <div class="faq-item">
-          <button class="faq-q" onclick="toggleFaq(this)">グッズ（PERSONAL SPONSORプラン）はいつ届きますか？<span class="faq-icon">+</span></button>
-          <div class="faq-a"><p>年に1回、限定応援グッズの詰め合わせをお届けします。時期は活動状況に合わせてお知らせいたします。</p></div>
+          <button class="faq-q" onclick="toggleFaq(this)">感謝の動画（PERSONAL SPONSORプラン）はいつ届きますか？<span class="faq-icon">+</span></button>
+          <div class="faq-a"><p>毎年3月9日に、地球のどこかから感謝の動画をお届けします。</p></div>
         </div>
         <div class="faq-item">
           <button class="faq-q" onclick="toggleFaq(this)">企業・団体としてスポンサーしたいのですが？<span class="faq-icon">+</span></button>
